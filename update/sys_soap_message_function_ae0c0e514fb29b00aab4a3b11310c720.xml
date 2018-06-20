@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_soap_message_function">
+    <sys_soap_message_function action="INSERT_OR_UPDATE">
+        <authentication_type/>
+        <basic_auth_password/>
+        <basic_auth_profile/>
+        <basic_auth_user/>
+        <certificate/>
+        <enable_mutual_auth>false</enable_mutual_auth>
+        <envelope><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://TechnologyOneCorp.com/T1.W1.Public/Services">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ser:Resource_DoRead>
+         <!--Optional:-->
+         <ser:Request WorkSystemName="${Resource_DoRead.Request}" ResourceGroupCode="${Resource_DoRead.Request}" ResourceCode="${Resource_DoRead.Request}" EffectiveDate="${Resource_DoRead.Request}" ActivityCode="${Resource_DoRead.Request}" FormatResourceCode="${Resource_DoRead.Request}" TaskNumber="">
+            <!--Optional:-->
+            <ser:Auth UserId="${Request.Auth}" Password="${Request.Auth}" Config="${Request.Auth}" FunctionName="${Request.Auth}"/>
+            <!--Optional:-->
+            <ser:Version Major="${Request.Version}" Minor="${Request.Version}" Revision="${Request.Version}" Patch="${Request.Version}"/>
+         </ser:Request>
+      </ser:Resource_DoRead>
+   </soapenv:Body>
+</soapenv:Envelope>]]></envelope>
+        <function_name>W1_ServicesSoap.Resource_DoRead</function_name>
+        <key_store/>
+        <key_store_alias/>
+        <key_store_password/>
+        <lock>false</lock>
+        <protocol_profile/>
+        <qualified_name>CES-DEV [ W1_ServicesSoap.Resource_DoRead ]</qualified_name>
+        <soap_action>http://TechnologyOneCorp.com/T1.W1.Public/Services/Resource_DoRead</soap_action>
+        <soap_endpoint>http://cestier01-dev/T1CSUSER/app/w1_services.asmx</soap_endpoint>
+        <soap_message display_value="CES-DEV">c3edce07dbee570073ab787dbf9619eb</soap_message>
+        <strip_whitespace>false</strip_whitespace>
+        <sys_class_name>sys_soap_message_function</sys_class_name>
+        <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+        <sys_created_on>2018-06-18 22:41:55</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>ae0c0e514fb29b00aab4a3b11310c720</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>W1_ServicesSoap.Resource_DoRead</sys_name>
+        <sys_package display_value="Timesheets" source="x_cio19_timesheets">f4afbb85dbaa530073ab787dbf9619ce</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Timesheets">f4afbb85dbaa530073ab787dbf9619ce</sys_scope>
+        <sys_update_name>sys_soap_message_function_ae0c0e514fb29b00aab4a3b11310c720</sys_update_name>
+        <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+        <sys_updated_on>2018-06-18 22:41:55</sys_updated_on>
+        <use_basic_auth>false</use_basic_auth>
+        <use_mid_server/>
+        <use_ws_security>false</use_ws_security>
+        <ws_security_type/>
+        <ws_security_username_profile/>
+        <ws_security_x509_profile/>
+    </sys_soap_message_function>
+</record_update>

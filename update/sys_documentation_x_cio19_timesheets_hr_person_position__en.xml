@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update>
+    <sys_documentation element="" label="Timesheets HR person position" language="en" table="x_cio19_timesheets_hr_person_position">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element/>
+            <help/>
+            <hint/>
+            <label>Timesheets HR person position</label>
+            <language>en</language>
+            <name>x_cio19_timesheets_hr_person_position</name>
+            <plural>Timesheets HR person positions</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+            <sys_created_on>2018-06-19 00:13:48</sys_created_on>
+            <sys_customer_update>false</sys_customer_update>
+            <sys_id>d0112ad14ff29b00aab4a3b11310c790</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Timesheets HR person position</sys_name>
+            <sys_package display_value="Timesheets" source="x_cio19_timesheets">f4afbb85dbaa530073ab787dbf9619ce</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="Timesheets">f4afbb85dbaa530073ab787dbf9619ce</sys_scope>
+            <sys_update_name>sys_documentation_x_cio19_timesheets_hr_person_position__en</sys_update_name>
+            <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+            <sys_updated_on>2018-06-19 00:13:48</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

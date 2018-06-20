@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_soap_message_function">
+    <sys_soap_message_function action="INSERT_OR_UPDATE">
+        <authentication_type/>
+        <basic_auth_password/>
+        <basic_auth_profile/>
+        <basic_auth_user/>
+        <certificate/>
+        <enable_mutual_auth>false</enable_mutual_auth>
+        <envelope><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://TechnologyOneCorp.com/T1.W1.Public/Services">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ser:Task_DoCreateV2>
+         <!--Optional:-->
+         <ser:Request>
+            <!--Optional:-->
+            <ser:Auth UserId="${Request.Auth}" Password="${Request.Auth}" Config="${Request.Auth}" FunctionName="${Request.Auth}"/>
+            <!--Optional:-->
+            <ser:Version Major="${Request.Version}" Minor="${Request.Version}" Revision="${Request.Version}" Patch="${Request.Version}"/>
+            <!--Optional:-->
+            <ser:Task WorkSystemName="${Request.Task}" TemplateInd="${Request.Task}" TemplateTaskNumber="${Request.Task}" TaskNumber="${Request.Task}" TaskNumberUserEntered="${Request.Task}" Description="${Request.Task}" Narration="${Request.Task}" ApproveTask="${Request.Task}" UpdateStage="${Request.Task}" BudgetTaskInd="${Request.Task}" TaskType="${Request.Task}" EstimatedStartDate="${Request.Task}" EstimatedFinishDate="${Request.Task}" TaskStartDate="${Request.Task}" TaskFinishDate="${Request.Task}" EstimatedStartTime="${Request.Task}" EstimatedFinishTime="${Request.Task}" TaskStartTime="${Request.Task}" TaskFinishTime="${Request.Task}" RequiredByDate="${Request.Task}" RequiredByTime="${Request.Task}" Duration="${Request.Task}" PercentComplete="${Request.Task}" AvailableForBudgetingInd="${Request.Task}" Proclaim1UniqueId="${Request.Task}" Proclaim1EventCtr="${Request.Task}" PRSourceEventID="${Request.Task}" ThirdPartyEntityKey1="${Request.Task}" ThirdPartyEntityKey2="${Request.Task}" ThirdPartyEntityKey3="${Request.Task}" ThirdPartyEntityKey4="${Request.Task}" ThirdPartyEntityKey5="${Request.Task}" ExternalReference="${Request.Task}" ResponsiblePerson="${Request.Task}" ProjectCode="${Request.Task}" ActivityCode="${Request.Task}" PriorityCode="${Request.Task}" TaskSource="3P" TaskLevel="${Request.Task}" HeaderTaskNbr="${Request.Task}" WorkTypeCode="${Request.Task}" GISLayer="${Request.Task}" Location="${Request.Task}" LocationDescr="${Request.Task}" TransmissionPrintInd="${Request.Task}" TransmissionFaxInd="${Request.Task}" TransmissionEmailInd="${Request.Task}" TransmissionEmailAttachmentType="${Request.Task}" TransmissionEmailSeparatorCharacter="${Request.Task}" TransmissionEmailQuoteCharacter="${Request.Task}" TransmissionExportInd="${Request.Task}" TransmissionSuppressPrintTransmitInd="${Request.Task}" Comment="${Request.Task}" BillingGenerateSeparateBillInd="${Request.Task}" BillingLdgCode="${Request.Task}" BillingAccnbri="${Request.Task}" BillingRechResGroup="${Request.Task}" BillingRechResCode="${Request.Task}" BillingDocDefnName="${Request.Task}" BillingVatRateCode="${Request.Task}" BillingAccRevItemTypeInd="${Request.Task}" BillingAccRevLdgCode="${Request.Task}" BillingAccRevAccnbri="${Request.Task}" BillingItemCode="${Request.Task}" BillingType="${Request.Task}" BillingMethod="${Request.Task}" BillingLimitInd="${Request.Task}" BillingLimitAmt="${Request.Task}" BillingLimitRevEstInd="${Request.Task}" BillingComment="${Request.Task}" BillingTermsDays="${Request.Task}" BillAddressCode="${Request.Task}" BillPrintInd="${Request.Task}" BillFaxInd="${Request.Task}" BillEmailInd="${Request.Task}" BillEmailAttach="${Request.Task}" BillEmailSep="${Request.Task}" BillEmailQuote="${Request.Task}" BillExportInd="${Request.Task}" BillSuppressInd="${Request.Task}" MilestoneBasis="${Request.Task}" BillableInd="${Request.Task}" StopTimeAndMaterialsBillingInd="${Request.Task}" StopTimeAndMaterialsBillingEffectiveDate="${Request.Task}" StopTimeAndMaterialsBillingComment="${Request.Task}" RevenueRecognitionInd="${Request.Task}" RevenueLdgCode="${Request.Task}" RevenueAccnbri="${Request.Task}" RevenueDocDefnName="${Request.Task}" RevenueVATType="${Request.Task}" RevenueVATRateType="${Request.Task}" RevenueVATRateCode="${Request.Task}" RevenueItemType="${Request.Task}" RevenueItemCode="${Request.Task}" RevenueLimitInd="${Request.Task}" RevenueLimitAmt="${Request.Task}" RevenueLimitRevEstInd="${Request.Task}" PerformCommit="true" PerformReadDescriptions="false" PerformReadAttachments="false" PerformAttachmentUpload="${Request.Task}" PerformSetDefaults="true" IgnoreSecurity="false" WindowName="${Request.Task}" CreateUser="${Request.Task}" CreateDate="${Request.Task}" CreateTime="${Request.Task}" CreateDateTime="${Request.Task}" CreateNode="${Request.Task}" CreateWindow="${Request.Task}" LastModUser="${Request.Task}" LastModDate="${Request.Task}" LastModTime="${Request.Task}" LastModDateTime="${Request.Task}" LastModNode="${Request.Task}" LastModWindow="${Request.Task}">
+               <!--Optional:-->
+               <ser:CaptialComponents>
+                  <!--Zero or more repetitions:-->
+                  <ser:Capital>${CaptialComponents.Capital}</ser:Capital>
+               </ser:CaptialComponents>
+               <!--Optional:-->
+               <ser:OperatingComponents>
+                  <!--Zero or more repetitions:-->
+                  <ser:Operating>${OperatingComponents.Operating}</ser:Operating>
+               </ser:OperatingComponents>
+               <!--Optional:-->
+               <ser:GeneralComponents>
+                  <!--Zero or more repetitions:-->
+                  <ser:General>${GeneralComponents.General}</ser:General>
+               </ser:GeneralComponents>
+               <!--Optional:-->
+               <ser:Attachments>
+                  <!--Zero or more repetitions:-->
+                  <ser:Attachment>
+                     <ser:AllowModifyRetention>${Attachment.AllowModifyRetention}</ser:AllowModifyRetention>
+                     <ser:CanEditServerFile>${Attachment.CanEditServerFile}</ser:CanEditServerFile>
+                     <ser:ModifiedFileUploaded>${Attachment.ModifiedFileUploaded}</ser:ModifiedFileUploaded>
+                     <!--Optional:-->
+                     <ser:SourceDescr>${Attachment.SourceDescr}</ser:SourceDescr>
+                     <!--Optional:-->
+                     <ser:MasterAttachment>${Attachment.MasterAttachment}</ser:MasterAttachment>
+                     <!--Optional:-->
+                     <ser:SysKey>${Attachment.SysKey}</ser:SysKey>
+                     <!--Optional:-->
+                     <ser:OriginalAuditGroup>${Attachment.OriginalAuditGroup}</ser:OriginalAuditGroup>
+                     <!--Optional:-->
+                     <ser:EntityType>${Attachment.EntityType}</ser:EntityType>
+                     <!--Optional:-->
+                     <ser:UniqueNbr>${Attachment.UniqueNbr}</ser:UniqueNbr>
+                     <!--Optional:-->
+                     <ser:SequenceNbr>${Attachment.SequenceNbr}</ser:SequenceNbr>
+                     <!--Optional:-->
+                     <ser:AttLabel>${Attachment.AttLabel}</ser:AttLabel>
+                     <!--Optional:-->
+                     <ser:AttDate>${Attachment.AttDate}</ser:AttDate>
+                     <!--Optional:-->
+                     <ser:AttEndDate>${Attachment.AttEndDate}</ser:AttEndDate>
+                     <!--Optional:-->
+                     <ser:AttTypeInd>${Attachment.AttTypeInd}</ser:AttTypeInd>
+                     <!--Optional:-->
+                     <ser:DirCode>${Attachment.DirCode}</ser:DirCode>
+                     <!--Optional:-->
+                     <ser:LocalFileName>${Attachment.LocalFileName}</ser:LocalFileName>
+                     <!--Optional:-->
+                     <ser:AttFileName>${Attachment.AttFileName}</ser:AttFileName>
+                     <!--Optional:-->
+                     <ser:AttFileExt>${Attachment.AttFileExt}</ser:AttFileExt>
+                     <!--Optional:-->
+                     <ser:RetainUntilDate>${Attachment.RetainUntilDate}</ser:RetainUntilDate>
+                     <!--Optional:-->
+                     <ser:ServerFileNameExtension>${Attachment.ServerFileNameExtension}</ser:ServerFileNameExtension>
+                     <!--Optional:-->
+                     <ser:AttachmentType>${Attachment.AttachmentType}</ser:AttachmentType>
+                     <!--Optional:-->
+                     <ser:NotesData>${Attachment.NotesData}</ser:NotesData>
+                     <!--Optional:-->
+                     <ser:OldAttLabel>${Attachment.OldAttLabel}</ser:OldAttLabel>
+                     <!--Optional:-->
+                     <ser:OldAttTypeIndicator>${Attachment.OldAttTypeIndicator}</ser:OldAttTypeIndicator>
+                     <!--Optional:-->
+                     <ser:OldAttFileExtension>${Attachment.OldAttFileExtension}</ser:OldAttFileExtension>
+                     <!--Optional:-->
+                     <ser:OldAttachmentType>${Attachment.OldAttachmentType}</ser:OldAttachmentType>
+                     <!--Optional:-->
+                     <ser:OldAttDate>${Attachment.OldAttDate}</ser:OldAttDate>
+                     <!--Optional:-->
+                     <ser:OldNotesData>${Attachment.OldNotesData}</ser:OldNotesData>
+                     <!--Optional:-->
+                     <ser:OldRetainUntilDate>${Attachment.OldRetainUntilDate}</ser:OldRetainUntilDate>
+                     <!--Optional:-->
+                     <ser:CanDeleteLocalFile>${Attachment.CanDeleteLocalFile}</ser:CanDeleteLocalFile>
+                     <!--Optional:-->
+                     <ser:Errors>
+                        <!--Zero or more repetitions:-->
+                        <ser:ErrorItem Code="${Errors.ErrorItem}" Data="${Errors.ErrorItem}" Descr="${Errors.ErrorItem}" ShortDescr="${Errors.ErrorItem}" ErrorType="${Errors.ErrorItem}" FieldID="${Errors.ErrorItem}" Label="${Errors.ErrorItem}" Severity="${Errors.ErrorItem}" TableDescr="${Errors.ErrorItem}" MessageType="${Errors.ErrorItem}" ResponseType="${Errors.ErrorItem}" TextCollection="${Errors.ErrorItem}">
+                           <!--Optional:-->
+                           <ser:Text1>${ErrorItem.Text1}</ser:Text1>
+                           <!--Optional:-->
+                           <ser:Text2>${ErrorItem.Text2}</ser:Text2>
+                           <!--Optional:-->
+                           <ser:Text3>${ErrorItem.Text3}</ser:Text3>
+                        </ser:ErrorItem>
+                     </ser:Errors>
+                     <!--Optional:-->
+                     <ser:LoadedInd>${Attachment.LoadedInd}</ser:LoadedInd>
+                     <ser:AttachmentUploadGuid>${Attachment.AttachmentUploadGuid}</ser:AttachmentUploadGuid>
+                     <!--Optional:-->
+                     <ser:DownloadedFileName>${Attachment.DownloadedFileName}</ser:DownloadedFileName>
+                     <ser:DMSCheckoutStatus>${Attachment.DMSCheckoutStatus}</ser:DMSCheckoutStatus>
+                     <!--Optional:-->
+                     <ser:FileLastModifiedDate>${Attachment.FileLastModifiedDate}</ser:FileLastModifiedDate>
+                     <ser:SSDocSetId>${Attachment.SSDocSetId}</ser:SSDocSetId>
+                     <ser:SSDocumentId>${Attachment.SSDocumentId}</ser:SSDocumentId>
+                     <!--Optional:-->
+                     <ser:SSLinkAttUniqueNbr>${Attachment.SSLinkAttUniqueNbr}</ser:SSLinkAttUniqueNbr>
+                     <!--Optional:-->
+                     <ser:SSLinkAttSequenceNbr>${Attachment.SSLinkAttSequenceNbr}</ser:SSLinkAttSequenceNbr>
+                     <!--Optional:-->
+                     <ser:SSProcessStatus>${Attachment.SSProcessStatus}</ser:SSProcessStatus>
+                     <!--Optional:-->
+                     <ser:SSTransferToECMStatus>${Attachment.SSTransferToECMStatus}</ser:SSTransferToECMStatus>
+                     <ser:IsEmptySSDocument>${Attachment.IsEmptySSDocument}</ser:IsEmptySSDocument>
+                  </ser:Attachment>
+               </ser:Attachments>
+               <!--Optional:-->
+               <ser:AttachmentsV2>
+                  <!--Zero or more repetitions:-->
+                  <ser:Attachment SysKey="" SequenceNbr="${AttachmentsV2.Attachment}" AttachmentType="" AttLabel="" AttFileName="" AttFileExt="" AttTypeInd="" NotesData="" AttachmentUploadGuid="${AttachmentsV2.Attachment}" CanEditServerFile="false" SSDocSetId="0" SSDocumentId="0" UniqueNbr="" EntityType="" Action="U"/>
+               </ser:AttachmentsV2>
+               <!--Optional:-->
+               <ser:UserFields>
+                  <!--Zero or more repetitions:-->
+                  <ser:UserField ValueInternal="${UserFields.UserField}" Value="${UserFields.UserField}" Description="${UserFields.UserField}"/>
+               </ser:UserFields>
+               <!--Optional:-->
+               <ser:SelectionCodes>
+                  <!--Zero or more repetitions:-->
+                  <ser:SelectionCode Value="${SelectionCodes.SelectionCode}" Description="${SelectionCodes.SelectionCode}"/>
+               </ser:SelectionCodes>
+               <!--Optional:-->
+               <ser:WorkTypeUserFields>
+                  <!--Zero or more repetitions:-->
+                  <ser:WorkTypeUserField ValueInternal="${WorkTypeUserFields.WorkTypeUserField}" Value="${WorkTypeUserFields.WorkTypeUserField}" Description="${WorkTypeUserFields.WorkTypeUserField}"/>
+               </ser:WorkTypeUserFields>
+               <!--Optional:-->
+               <ser:WorkTypeSelectionCodes>
+                  <!--Zero or more repetitions:-->
+                  <ser:WorkTypeSelectionCode Value="${WorkTypeSelectionCodes.WorkTypeSelectionCode}" Description="${WorkTypeSelectionCodes.WorkTypeSelectionCode}"/>
+               </ser:WorkTypeSelectionCodes>
+            </ser:Task>
+            <!--Optional:-->
+            <ser:TaskAssets>
+               <!--Zero or more repetitions:-->
+               <ser:TaskAsset SysKey="${TaskAssets.TaskAsset}" WorkSystemName="${TaskAssets.TaskAsset}" TaskNumberi="${TaskAssets.TaskAsset}" RegisterName="${TaskAssets.TaskAsset}" Assnbr="${TaskAssets.TaskAsset}" RowID="${TaskAssets.TaskAsset}" DefectsCheckedInd="${TaskAssets.TaskAsset}" Bknbr="${TaskAssets.TaskAsset}" MaintenanceScheduleCode="${TaskAssets.TaskAsset}" AffectNextMaintenance="${TaskAssets.TaskAsset}" MaintenanceDateActual="${TaskAssets.TaskAsset}" MaintenanceDatePlanned="${TaskAssets.TaskAsset}" Comments="${TaskAssets.TaskAsset}" PercentAllocation="${TaskAssets.TaskAsset}" CapitalisationStatus="${TaskAssets.TaskAsset}" Action="${TaskAssets.TaskAsset}"/>
+            </ser:TaskAssets>
+            <!--Optional:-->
+            <ser:TaskLines>
+               <!--Zero or more repetitions:-->
+               <ser:TaskLines SysKey="${TaskLines.TaskLines}" WorkSystemName="${TaskLines.TaskLines}" TaskNumberi="${TaskLines.TaskLines}" TaskApprovalStatus="${TaskLines.TaskLines}" ResourceGroupCode="${TaskLines.TaskLines}" ResourceCode="${TaskLines.TaskLines}" ResourceDescr="${TaskLines.TaskLines}" ResourceUom="${TaskLines.TaskLines}" EstimatedUnits1="${TaskLines.TaskLines}" EstimatedUnitRate1="${TaskLines.TaskLines}" EstimatedOncostAmount1="${TaskLines.TaskLines}" VariationUnits1="${TaskLines.TaskLines}" VariationUnitRate1="${TaskLines.TaskLines}" VariationOncostAmount1="${TaskLines.TaskLines}" VariationToDateAmount="0" VariationToDateUnits="0" EstimateVariationDate="${TaskLines.TaskLines}" EstimateVariationComments="${TaskLines.TaskLines}" ForecastUnits1="${TaskLines.TaskLines}" ForecastUnitRate1="${TaskLines.TaskLines}" ForecastOncostAmount1="${TaskLines.TaskLines}" BillingOption="${TaskLines.TaskLines}" BillingOptionAmount="${TaskLines.TaskLines}" CostingMatrix="${TaskLines.TaskLines}" PayrollMatrix="${TaskLines.TaskLines}" BillingMatrix="${TaskLines.TaskLines}" RevisedEstAmount="0" RevisedEstUnits="0" SupplierCode="${TaskLines.TaskLines}" SupplierProductNumber="${TaskLines.TaskLines}" SupplierLedgerCode="${TaskLines.TaskLines}" SupplierAccount="${TaskLines.TaskLines}" Action="${TaskLines.TaskLines}">
+                  <!--Optional:-->
+                  <ser:SelectionCodes>
+                     <!--Zero or more repetitions:-->
+                     <ser:SelectionCode Value="${SelectionCodes.SelectionCode}" Description="${SelectionCodes.SelectionCode}"/>
+                  </ser:SelectionCodes>
+                  <!--Optional:-->
+                  <ser:UserFields>
+                     <!--Zero or more repetitions:-->
+                     <ser:UserField ValueInternal="${UserFields.UserField}" Value="${UserFields.UserField}" Description="${UserFields.UserField}"/>
+                  </ser:UserFields>
+                  <!--Optional:-->
+                  <ser:CaptialComponents>
+                     <!--Zero or more repetitions:-->
+                     <ser:CapitalComponent>${CaptialComponents.CapitalComponent}</ser:CapitalComponent>
+                  </ser:CaptialComponents>
+                  <!--Optional:-->
+                  <ser:OperatingComponents>
+                     <!--Zero or more repetitions:-->
+                     <ser:OperatingComponent>${OperatingComponents.OperatingComponent}</ser:OperatingComponent>
+                  </ser:OperatingComponents>
+                  <!--Optional:-->
+                  <ser:GeneralComponents>
+                     <!--Zero or more repetitions:-->
+                     <ser:GeneralComponent>${GeneralComponents.GeneralComponent}</ser:GeneralComponent>
+                  </ser:GeneralComponents>
+               </ser:TaskLines>
+            </ser:TaskLines>
+            <!--Optional:-->
+            <ser:TaskFixedPriceSchedule>
+               <!--Zero or more repetitions:-->
+               <ser:TaskFixedPriceSchedule Seqnbr="${TaskFixedPriceSchedule.TaskFixedPriceSchedule}" WorkSystemName="${TaskFixedPriceSchedule.TaskFixedPriceSchedule}" TaskNumberi="${TaskFixedPriceSchedule.TaskFixedPriceSchedule}" MilestoneDate="${TaskFixedPriceSchedule.TaskFixedPriceSchedule}" MilestoneTaskNbr="${TaskFixedPriceSchedule.TaskFixedPriceSchedule}" MilestonePercComp="${TaskFixedPriceSchedule.TaskFixedPriceSchedule}" MilestoneDescription="${TaskFixedPriceSchedule.TaskFixedPriceSchedule}" Amount1="${TaskFixedPriceSchedule.TaskFixedPriceSchedule}" Loaded="false" OnHoldIndicator="${TaskFixedPriceSchedule.TaskFixedPriceSchedule}" OnHoldReason="${TaskFixedPriceSchedule.TaskFixedPriceSchedule}" Action="${TaskFixedPriceSchedule.TaskFixedPriceSchedule}"/>
+            </ser:TaskFixedPriceSchedule>
+            <!--Optional:-->
+            <ser:Geographies>
+               <!--Zero or more repetitions:-->
+               <ser:Geographies ElementType="${Geographies.Geographies}" Description="" Layer="" State="${Geographies.Geographies}">
+                  <!--Zero or more repetitions:-->
+                  <ser:Points Latitude="${Geographies.Points}" Longitude="${Geographies.Points}"/>
+               </ser:Geographies>
+            </ser:Geographies>
+         </ser:Request>
+      </ser:Task_DoCreateV2>
+   </soapenv:Body>
+</soapenv:Envelope>]]></envelope>
+        <function_name>W1_ServicesSoap.Task_DoCreateV2</function_name>
+        <key_store/>
+        <key_store_alias/>
+        <key_store_password/>
+        <lock>false</lock>
+        <protocol_profile/>
+        <qualified_name>CES-DEV [ W1_ServicesSoap.Task_DoCreateV2 ]</qualified_name>
+        <soap_action>http://TechnologyOneCorp.com/T1.W1.Public/Services/Task_DoCreateV2</soap_action>
+        <soap_endpoint>http://cestier01-dev/T1CSUSER/app/w1_services.asmx</soap_endpoint>
+        <soap_message display_value="CES-DEV">c3edce07dbee570073ab787dbf9619eb</soap_message>
+        <strip_whitespace>false</strip_whitespace>
+        <sys_class_name>sys_soap_message_function</sys_class_name>
+        <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+        <sys_created_on>2018-06-18 22:41:49</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>010cca514fb29b00aab4a3b11310c79d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>W1_ServicesSoap.Task_DoCreateV2</sys_name>
+        <sys_package display_value="Timesheets" source="x_cio19_timesheets">f4afbb85dbaa530073ab787dbf9619ce</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Timesheets">f4afbb85dbaa530073ab787dbf9619ce</sys_scope>
+        <sys_update_name>sys_soap_message_function_010cca514fb29b00aab4a3b11310c79d</sys_update_name>
+        <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+        <sys_updated_on>2018-06-18 22:41:49</sys_updated_on>
+        <use_basic_auth>false</use_basic_auth>
+        <use_mid_server/>
+        <use_ws_security>false</use_ws_security>
+        <ws_security_type/>
+        <ws_security_username_profile/>
+        <ws_security_x509_profile/>
+    </sys_soap_message_function>
+</record_update>

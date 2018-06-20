@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_soap_message_function">
+    <sys_soap_message_function action="INSERT_OR_UPDATE">
+        <authentication_type/>
+        <basic_auth_password/>
+        <basic_auth_profile/>
+        <basic_auth_user/>
+        <certificate/>
+        <enable_mutual_auth>false</enable_mutual_auth>
+        <envelope><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:ser="http://technologyonecorp.com/T1.Hr.Public/Services">
+   <soap:Header/>
+   <soap:Body>
+      <ser:Employee_DoGetTermination>
+         <!--Optional:-->
+         <ser:request IdNumber="0" EmploymentActiveAsAt="0001-01-01T00:00:00">
+            <!--Optional:-->
+            <ser:Auth UserId="${request.Auth}" Password="${request.Auth}" Config="${request.Auth}" FunctionName="${request.Auth}"/>
+            <!--Optional:-->
+            <ser:Version Major="${request.Version}" Minor="${request.Version}" Revision="${request.Version}" Patch="${request.Version}"/>
+         </ser:request>
+      </ser:Employee_DoGetTermination>
+   </soap:Body>
+</soap:Envelope>]]></envelope>
+        <function_name>HR_ServicesSoap12.Employee_DoGetTermination</function_name>
+        <key_store/>
+        <key_store_alias/>
+        <key_store_password/>
+        <lock>false</lock>
+        <protocol_profile/>
+        <qualified_name>CES_HR-DEV [ HR_ServicesSoap12.Employee_DoGetTermination ]</qualified_name>
+        <soap_action>http://technologyonecorp.com/T1.Hr.Public/Services/Employee_DoGetTermination</soap_action>
+        <soap_endpoint>http://cestier01-dev/T1CSUSER/app/hr_services.asmx</soap_endpoint>
+        <soap_message display_value="CES_HR-DEV">fff59a594fb29b00aab4a3b11310c777</soap_message>
+        <strip_whitespace>false</strip_whitespace>
+        <sys_class_name>sys_soap_message_function</sys_class_name>
+        <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+        <sys_created_on>2018-06-18 23:26:11</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>4f2692594fb29b00aab4a3b11310c717</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>HR_ServicesSoap12.Employee_DoGetTermination</sys_name>
+        <sys_package display_value="Timesheets" source="x_cio19_timesheets">f4afbb85dbaa530073ab787dbf9619ce</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Timesheets">f4afbb85dbaa530073ab787dbf9619ce</sys_scope>
+        <sys_update_name>sys_soap_message_function_4f2692594fb29b00aab4a3b11310c717</sys_update_name>
+        <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+        <sys_updated_on>2018-06-18 23:26:11</sys_updated_on>
+        <use_basic_auth>false</use_basic_auth>
+        <use_mid_server/>
+        <use_ws_security>false</use_ws_security>
+        <ws_security_type/>
+        <ws_security_username_profile/>
+        <ws_security_x509_profile/>
+    </sys_soap_message_function>
+</record_update>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_script_fix">
+    <sys_script_fix action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <before>false</before>
+        <description/>
+        <flush_cache>false</flush_cache>
+        <name>Test Functions Querys</name>
+        <run_once>true</run_once>
+        <script><![CDATA[var hr_person=new GlideRecord('u_hr_person');
+hr_person.addQuery('u_pay_number','502554');
+var gdt=new GlideDateTime();
+hr_person.addQuery('u_end','').addOrCondition('u_end','>',gdt.getDate());
+//hr_person.addQuery('u_end','>',gdt.getDate());
+hr_person.query();
+while(hr_person.next()){
+var hr_posass=new GlideRecord('u_hr_position_assignment');
+hr_posass.addQuery('u_person',hr_person.sys_id);
+hr_posass.addQuery('u_end','').addOrCondition('u_end','>',gdt.getDate());
+hr_posass.orderByDesc('u_start');
+hr_posass.setLimit(1);
+hr_posass.query();
+	var user=gs.getUserName();
+	var hr_user=user.split('@');
+	var login=hr_user[0];
+	gs.info('TIMESHEET HR:'+hr_person.u_user_id+', '+hr_posass.u_nominal_position+', '+hr_person.getRowCount()+', '+gs.getUserName()+', '+login);
+	while(hr_posass.next()){
+		gs.info('TIMESHEET HR PosAss: '+hr_person.u_user_id+', '+hr_posass.u_position+', '+hr_posass.getRowCount());
+		var hr_pos=new GlideRecord('u_hr_position');
+		if(hr_posass.u_occupancy=='n'){
+		hr_pos.addQuery('sys_id',hr_posass.u_nominal_position);
+		}
+		hr_pos.addQuery('sys_id',hr_posass.u_position);
+		//hr_pos.addQuery('u_end','<',gdt.getDate());
+		hr_pos.query();
+		while(hr_pos.next()){
+			gs.info('TIMESHEET HR Pos: '+hr_person.u_user_id+', '+hr_pos.u_position_number+', '+hr_pos.u_supervisor_position+', '+hr_pos.getRowCount()+', '+hr_pos.u_division+', '+hr_pos.u_section+', '+hr_pos.u_team);
+			
+			var team=new GlideRecord('u_hr_position');
+			team.addQuery('u_supervisor_position',hr_posass.u_position);
+			team.query();
+			while(team.next()){
+				gs.info('Timesheet HR Team: '+team.u_position_number+', '+team.u_division+', '+team.u_section+', '+team.u_team+', '+team.sys_id);
+				var teamassign=new GlideRecord('u_hr_position_assignment');
+				teamassign.addQuery('u_position',team.sys_id);
+				
+				teamassign.query();
+				while(teamassign.next()){
+					gs.info('TIMESHEET HR TeamPerson: '+teamassign.u_person.u_preferred_name+', '+teamassign.u_person.u_user_id+', '+teamassign.getRowCount());
+				}
+			}
+			
+		}
+	}
+//alert('TIMESHEET HR:'+hr.u_user_id+', '+hr.sys_id+', '+hr.getRowCount());
+}]]></script>
+        <sys_class_name>sys_script_fix</sys_class_name>
+        <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+        <sys_created_on>2018-06-18 23:43:20</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>abb81ad94fb29b00aab4a3b11310c700</sys_id>
+        <sys_mod_count>56</sys_mod_count>
+        <sys_name>Test Functions Querys</sys_name>
+        <sys_package display_value="Timesheets" source="x_cio19_timesheets">f4afbb85dbaa530073ab787dbf9619ce</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Timesheets">f4afbb85dbaa530073ab787dbf9619ce</sys_scope>
+        <sys_update_name>sys_script_fix_abb81ad94fb29b00aab4a3b11310c700</sys_update_name>
+        <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+        <sys_updated_on>2018-06-19 05:24:29</sys_updated_on>
+        <unloadable>false</unloadable>
+    </sys_script_fix>
+</record_update>

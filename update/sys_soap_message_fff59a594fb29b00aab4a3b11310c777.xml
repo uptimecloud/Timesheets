@@ -1,0 +1,1507 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_soap_message">
+    <sys_soap_message action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <authentication_type/>
+        <basic_auth_password/>
+        <basic_auth_profile/>
+        <basic_auth_user/>
+        <description/>
+        <download_wsdl>false</download_wsdl>
+        <enable_mutual_auth>false</enable_mutual_auth>
+        <name>CES_HR-DEV</name>
+        <protocol_profile/>
+        <sys_class_name>sys_soap_message</sys_class_name>
+        <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+        <sys_created_on>2018-06-18 23:25:56</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>fff59a594fb29b00aab4a3b11310c777</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>CES_HR-DEV</sys_name>
+        <sys_package display_value="Timesheets" source="x_cio19_timesheets">f4afbb85dbaa530073ab787dbf9619ce</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Timesheets">f4afbb85dbaa530073ab787dbf9619ce</sys_scope>
+        <sys_update_name>sys_soap_message_fff59a594fb29b00aab4a3b11310c777</sys_update_name>
+        <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+        <sys_updated_on>2018-06-18 23:25:56</sys_updated_on>
+        <use_basic_auth>false</use_basic_auth>
+        <wsdl/>
+        <wsdl_xml><![CDATA[<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://technologyonecorp.com/T1.Hr.Public/Services" xmlns:s1="WebService" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://technologyonecorp.com/T1.Hr.Public/Services">
+<wsdl:types>
+<s:schema elementFormDefault="qualified" targetNamespace="http://technologyonecorp.com/T1.Hr.Public/Services">
+<s:import namespace="WebService"/>
+<s:element name="Employee_DoGetList">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="request" type="tns:Employee_DoGetListRequest"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:complexType name="Employee_DoGetListRequest">
+<s:complexContent mixed="false">
+<s:extension base="tns:RequestBase">
+<s:attribute default="0001-01-01T00:00:00" name="ActiveAsAt" type="s:dateTime"/>
+<s:attribute default="0" name="CompanyCode" type="s:int"/>
+<s:attribute default="" name="EmployeeClass" type="s:string"/>
+<s:attribute default="" name="EmployeeType" type="s:string"/>
+<s:attribute default="" name="IdClassCode" type="s:string"/>
+<s:attribute default="0001-01-01T00:00:00" name="ModifiedSince" type="s:dateTime"/>
+<s:attribute default="" name="OrganisationUnit" type="s:string"/>
+<s:attribute default="" name="PositionCode" type="s:string"/>
+</s:extension>
+</s:complexContent>
+</s:complexType>
+<s:complexType name="RequestBase">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="Auth" type="tns:Authentication"/>
+<s:element minOccurs="0" maxOccurs="1" name="Version" type="tns:AppVersion"/>
+</s:sequence>
+</s:complexType>
+<s:complexType name="Authentication">
+<s:attribute name="UserId" type="s:string"/>
+<s:attribute name="Password" type="s:string"/>
+<s:attribute name="Config" type="s:string"/>
+<s:attribute name="FunctionName" type="s:string"/>
+</s:complexType>
+<s:complexType name="AppVersion">
+<s:attribute name="Major" type="s:int" use="required"/>
+<s:attribute name="Minor" type="s:int" use="required"/>
+<s:attribute name="Revision" type="s:int" use="required"/>
+<s:attribute name="Patch" type="s:int" use="required"/>
+</s:complexType>
+<s:element name="Employee_DoGetListResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="Employee_DoGetListResult" type="tns:Employee_DoGetListResponse"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:complexType name="Employee_DoGetListResponse">
+<s:complexContent mixed="false">
+<s:extension base="tns:ResponseBase">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="EmployeeList" type="tns:ArrayOfEmployee"/>
+</s:sequence>
+</s:extension>
+</s:complexContent>
+</s:complexType>
+<s:complexType name="ResponseBase">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="Errors" type="s1:WebErrors"/>
+</s:sequence>
+</s:complexType>
+<s:complexType name="ArrayOfEmployee">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="unbounded" name="Employee" nillable="true" type="tns:Employee"/>
+</s:sequence>
+</s:complexType>
+<s:complexType name="Employee">
+<s:attribute default="0" name="IdNumber" type="s:int"/>
+<s:attribute default="" name="IdClassCode" type="s:string"/>
+<s:attribute default="" name="IdClassDesc" type="s:string"/>
+<s:attribute default="" name="FamilyName" type="s:string"/>
+<s:attribute default="" name="GivenName" type="s:string"/>
+<s:attribute default="" name="OtherGivenNames" type="s:string"/>
+<s:attribute default="" name="ReferenceId" type="s:string"/>
+<s:attribute default="" name="UserId" type="s:string"/>
+</s:complexType>
+<s:element name="Employee_DoGetAchievedCompetencyList">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="request" type="tns:Employee_DoGetAchievedCompetencyListRequest"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:complexType name="Employee_DoGetAchievedCompetencyListRequest">
+<s:complexContent mixed="false">
+<s:extension base="tns:RequestBase">
+<s:attribute default="0" name="IdNumber" type="s:int"/>
+<s:attribute default="0001-01-01T00:00:00" name="EffectiveAsAt" type="s:dateTime"/>
+</s:extension>
+</s:complexContent>
+</s:complexType>
+<s:element name="Employee_DoGetAchievedCompetencyListResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="Employee_DoGetAchievedCompetencyListResult" type="tns:Employee_DoGetAchievedCompetencyListResponse"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:complexType name="Employee_DoGetAchievedCompetencyListResponse">
+<s:complexContent mixed="false">
+<s:extension base="tns:ResponseBase">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="AchievedCompetencyList" type="tns:ArrayOfEmployeeCompetency"/>
+</s:sequence>
+</s:extension>
+</s:complexContent>
+</s:complexType>
+<s:complexType name="ArrayOfEmployeeCompetency">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="unbounded" name="Competency" nillable="true" type="tns:EmployeeCompetency"/>
+</s:sequence>
+</s:complexType>
+<s:complexType name="EmployeeCompetency">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="PerformanceLevel" type="tns:PerformanceLevel"/>
+</s:sequence>
+<s:attribute default="0" name="IdNumber" type="s:int"/>
+<s:attribute default="" name="SkillCode" type="s:string"/>
+<s:attribute default="" name="SkillDesc" type="s:string"/>
+<s:attribute default="" name="CompetencyCode" type="s:string"/>
+<s:attribute default="" name="CompetencyDesc" type="s:string"/>
+<s:attribute default="0001-01-01T00:00:00" name="AchievedDate" type="s:dateTime"/>
+<s:attribute default="0001-01-01T00:00:00" name="TargetDate" type="s:dateTime"/>
+<s:attribute default="0001-01-01T00:00:00" name="ExpiryDate" type="s:dateTime"/>
+<s:attribute default="0001-01-01T00:00:00" name="ReviewDate" type="s:dateTime"/>
+<s:attribute default="" name="SourceTypeCode" type="s:string"/>
+<s:attribute default="" name="SourceTypeDesc" type="s:string"/>
+<s:attribute default="" name="SourceId" type="s:string"/>
+<s:attribute default="" name="SourceDesc" type="s:string"/>
+<s:attribute default="" name="Comments" type="s:string"/>
+<s:attribute default="0001-01-01T00:00:00" name="LastModified" type="s:dateTime"/>
+</s:complexType>
+<s:complexType name="PerformanceLevel">
+<s:attribute default="" name="Code" type="s:string"/>
+<s:attribute default="" name="Description" type="s:string"/>
+<s:attribute default="0" name="SequenceNumber" type="s:int"/>
+</s:complexType>
+<s:element name="Employee_DoGetAchievedQualificationList">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="request" type="tns:Employee_DoGetAchievedQualificationListRequest"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:complexType name="Employee_DoGetAchievedQualificationListRequest">
+<s:complexContent mixed="false">
+<s:extension base="tns:RequestBase">
+<s:attribute default="0" name="IdNumber" type="s:int"/>
+</s:extension>
+</s:complexContent>
+</s:complexType>
+<s:element name="Employee_DoGetAchievedQualificationListResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="Employee_DoGetAchievedQualificationListResult" type="tns:Employee_DoGetAchievedQualificationListResponse"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:complexType name="Employee_DoGetAchievedQualificationListResponse">
+<s:complexContent mixed="false">
+<s:extension base="tns:ResponseBase">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="AchievedQualificationList" type="tns:ArrayOfEmployeeQualification"/>
+</s:sequence>
+</s:extension>
+</s:complexContent>
+</s:complexType>
+<s:complexType name="ArrayOfEmployeeQualification">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="unbounded" name="Qualification" nillable="true" type="tns:EmployeeQualification"/>
+</s:sequence>
+</s:complexType>
+<s:complexType name="EmployeeQualification">
+<s:attribute default="0" name="IdNumber" type="s:int"/>
+<s:attribute default="" name="QualificationCode" type="s:string"/>
+<s:attribute default="" name="QualificationDesc" type="s:string"/>
+<s:attribute default="" name="QualificationTypeCode" type="s:string"/>
+<s:attribute default="" name="QualificationTypeDesc" type="s:string"/>
+<s:attribute default="" name="Description" type="s:string"/>
+<s:attribute default="0001-01-01T00:00:00" name="IssuedDate" type="s:dateTime"/>
+<s:attribute default="0001-01-01T00:00:00" name="ExpiryDate" type="s:dateTime"/>
+<s:attribute default="0001-01-01T00:00:00" name="CancelledDate" type="s:dateTime"/>
+<s:attribute default="" name="IssuingInstituteCode" type="s:string"/>
+<s:attribute default="" name="IssuingInstituteName" type="s:string"/>
+<s:attribute default="0001-01-01T00:00:00" name="LastModified" type="s:dateTime"/>
+</s:complexType>
+<s:element name="Employee_DoGetAchievedSkillList">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="request" type="tns:Employee_DoGetAchievedSkillListRequest"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:complexType name="Employee_DoGetAchievedSkillListRequest">
+<s:complexContent mixed="false">
+<s:extension base="tns:RequestBase">
+<s:attribute default="0" name="IdNumber" type="s:int"/>
+<s:attribute default="0001-01-01T00:00:00" name="EffectiveAsAt" type="s:dateTime"/>
+</s:extension>
+</s:complexContent>
+</s:complexType>
+<s:element name="Employee_DoGetAchievedSkillListResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="Employee_DoGetAchievedSkillListResult" type="tns:Employee_DoGetAchievedSkillListResponse"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:complexType name="Employee_DoGetAchievedSkillListResponse">
+<s:complexContent mixed="false">
+<s:extension base="tns:ResponseBase">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="AchievedSkillList" type="tns:ArrayOfEmployeeSkill"/>
+</s:sequence>
+</s:extension>
+</s:complexContent>
+</s:complexType>
+<s:complexType name="ArrayOfEmployeeSkill">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="unbounded" name="Skill" nillable="true" type="tns:EmployeeSkill"/>
+</s:sequence>
+</s:complexType>
+<s:complexType name="EmployeeSkill">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="Proficiency" type="tns:Proficiency"/>
+</s:sequence>
+<s:attribute default="0" name="IdNumber" type="s:int"/>
+<s:attribute default="" name="SkillCode" type="s:string"/>
+<s:attribute default="" name="SkillDesc" type="s:string"/>
+<s:attribute default="0001-01-01T00:00:00" name="AchievedDate" type="s:dateTime"/>
+<s:attribute default="0001-01-01T00:00:00" name="TargetDate" type="s:dateTime"/>
+<s:attribute default="0001-01-01T00:00:00" name="ExpiryDate" type="s:dateTime"/>
+<s:attribute default="0001-01-01T00:00:00" name="ReviewDate" type="s:dateTime"/>
+<s:attribute default="" name="SourceTypeCode" type="s:string"/>
+<s:attribute default="" name="SourceTypeDesc" type="s:string"/>
+<s:attribute default="" name="SourceId" type="s:string"/>
+<s:attribute default="" name="SourceDesc" type="s:string"/>
+<s:attribute default="" name="Comments" type="s:string"/>
+<s:attribute default="0001-01-01T00:00:00" name="LastModified" type="s:dateTime"/>
+</s:complexType>
+<s:complexType name="Proficiency">
+<s:attribute default="" name="Code" type="s:string"/>
+<s:attribute default="" name="Description" type="s:string"/>
+<s:attribute default="0" name="SequenceNumber" type="s:int"/>
+</s:complexType>
+<s:element name="Employee_DoGetActiveJob">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="request" type="tns:Employee_DoGetActiveJobRequest"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:complexType name="Employee_DoGetActiveJobRequest">
+<s:complexContent mixed="false">
+<s:extension base="tns:RequestBase">
+<s:attribute default="0" name="IdNumber" type="s:int"/>
+<s:attribute default="0001-01-01T00:00:00" name="EffectiveAsAt" type="s:dateTime"/>
+</s:extension>
+</s:complexContent>
+</s:complexType>
+<s:element name="Employee_DoGetActiveJobResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="Employee_DoGetActiveJobResult" type="tns:Employee_DoGetActiveJobResponse"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:complexType name="Employee_DoGetActiveJobResponse">
+<s:complexContent mixed="false">
+<s:extension base="tns:ResponseBase">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="ActiveJob" type="tns:EmployeeJob"/>
+</s:sequence>
+</s:extension>
+</s:complexContent>
+</s:complexType>
+<s:complexType name="EmployeeJob">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="PrimaryPosition" type="tns:EmployeePosition"/>
+<s:element minOccurs="0" maxOccurs="1" name="AdditionalPositions" type="tns:ArrayOfEmployeePosition"/>
+</s:sequence>
+<s:attribute default="0" name="IdNumber" type="s:int"/>
+<s:attribute default="0001-01-01T00:00:00" name="JobEffectiveDate" type="s:dateTime"/>
+<s:attribute default="0" name="CompanyCode" type="s:int"/>
+<s:attribute default="" name="CompanyName" type="s:string"/>
+<s:attribute default="0001-01-01T00:00:00" name="DateHired" type="s:dateTime"/>
+<s:attribute default="" name="EmployeeClassCode" type="s:string"/>
+<s:attribute default="" name="EmployeeClassDesc" type="s:string"/>
+<s:attribute default="" name="EmployeeTypeCode" type="s:string"/>
+<s:attribute default="" name="EmployeeTypeDesc" type="s:string"/>
+<s:attribute default="" name="JobTitle" type="s:string"/>
+<s:attribute default="" name="PayBasisCode" type="s:string"/>
+<s:attribute default="" name="PayBasisDesc" type="s:string"/>
+<s:attribute default="" name="PayGroupCode" type="s:string"/>
+<s:attribute default="" name="PayGroupDesc" type="s:string"/>
+<s:attribute default="" name="PayLocationCode" type="s:string"/>
+<s:attribute default="" name="PayLocationDesc" type="s:string"/>
+<s:attribute default="0001-01-01T00:00:00" name="LastModified" type="s:dateTime"/>
+</s:complexType>
+<s:complexType name="EmployeePosition">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="SelectionCodeFields" type="tns:ArrayOfSelectionCodeField"/>
+<s:element minOccurs="0" maxOccurs="1" name="UserFields" type="tns:ArrayOfUserField"/>
+</s:sequence>
+<s:attribute default="0" name="IdNumber" type="s:int"/>
+<s:attribute default="" name="PositionCode" type="s:string"/>
+<s:attribute default="" name="EmploymentConditionCode" type="s:string"/>
+<s:attribute default="" name="EmploymentConditionDesc" type="s:string"/>
+<s:attribute default="" name="EmploymentConditionGradeCode" type="s:string"/>
+<s:attribute default="" name="EmploymentConditionGradeDesc" type="s:string"/>
+<s:attribute default="" name="EmploymentConditionLevelCode" type="s:string"/>
+<s:attribute default="" name="EmploymentConditionLevelDesc" type="s:string"/>
+<s:attribute default="0001-01-01T00:00:00" name="EndDate" type="s:dateTime"/>
+<s:attribute default="0" name="FTE" type="s:double"/>
+<s:attribute default="false" name="IsSupervisor" type="s:boolean"/>
+<s:attribute default="" name="OrganisationUnitCode" type="s:string"/>
+<s:attribute default="" name="OrganisationUnitDesc" type="s:string"/>
+<s:attribute default="" name="PositionDesc" type="s:string"/>
+<s:attribute default="" name="PositionTitle" type="s:string"/>
+<s:attribute default="" name="PositionTypeCode" type="s:string"/>
+<s:attribute default="" name="PositionTypeDesc" type="s:string"/>
+<s:attribute default="0" name="SupervisorId" type="s:int"/>
+<s:attribute default="" name="SupervisorPositionCode" type="s:string"/>
+<s:attribute default="" name="TimesheetFormatDesc" type="s:string"/>
+<s:attribute default="" name="TimesheetFormatName" type="s:string"/>
+<s:attribute default="" name="TimesheetSystemDesc" type="s:string"/>
+<s:attribute default="" name="TimesheetSystemName" type="s:string"/>
+<s:attribute default="" name="TradeCode" type="s:string"/>
+<s:attribute default="" name="TradeDesc" type="s:string"/>
+<s:attribute default="" name="UnionCode" type="s:string"/>
+<s:attribute default="" name="UnionDesc" type="s:string"/>
+<s:attribute default="" name="WorkGroupCode" type="s:string"/>
+<s:attribute default="" name="WorkGroupDesc" type="s:string"/>
+<s:attribute default="0001-01-01T00:00:00" name="LastModified" type="s:dateTime"/>
+</s:complexType>
+<s:complexType name="ArrayOfSelectionCodeField">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="unbounded" name="SelectionCodeField" nillable="true" type="tns:SelectionCodeField"/>
+</s:sequence>
+</s:complexType>
+<s:complexType name="SelectionCodeField">
+<s:attribute default="0" name="SequenceNumber" type="s:int"/>
+<s:attribute default="" name="SelectionType" type="s:string"/>
+<s:attribute default="" name="SelectionTypeDesc" type="s:string"/>
+<s:attribute default="" name="SelectionCode" type="s:string"/>
+<s:attribute default="" name="SelectionCodeDesc" type="s:string"/>
+</s:complexType>
+<s:complexType name="ArrayOfUserField">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="unbounded" name="UserField" nillable="true" type="tns:UserField"/>
+</s:sequence>
+</s:complexType>
+<s:complexType name="UserField">
+<s:attribute default="0" name="SequenceNumber" type="s:int"/>
+<s:attribute default="" name="Name" type="s:string"/>
+<s:attribute default="" name="Value" type="s:string"/>
+</s:complexType>
+<s:complexType name="ArrayOfEmployeePosition">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="unbounded" name="Position" nillable="true" type="tns:EmployeePosition"/>
+</s:sequence>
+</s:complexType>
+<s:element name="Employee_DoGetAddress">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="request" type="tns:Employee_DoGetAddressRequest"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:complexType name="Employee_DoGetAddressRequest">
+<s:complexContent mixed="false">
+<s:extension base="tns:RequestBase">
+<s:attribute default="0" name="IdNumber" type="s:int"/>
+</s:extension>
+</s:complexContent>
+</s:complexType>
+<s:element name="Employee_DoGetAddressResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="Employee_DoGetAddressResult" type="tns:Employee_DoGetAddressResponse"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:complexType name="Employee_DoGetAddressResponse">
+<s:complexContent mixed="false">
+<s:extension base="tns:ResponseBase">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="Address" type="tns:EmployeeAddress"/>
+</s:sequence>
+</s:extension>
+</s:complexContent>
+</s:complexType>
+<s:complexType name="EmployeeAddress">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="PostalAddress" type="tns:Address"/>
+<s:element minOccurs="0" maxOccurs="1" name="StreetAddress" type="tns:Address"/>
+</s:sequence>
+<s:attribute default="0" name="IdNumber" type="s:int"/>
+</s:complexType>
+<s:complexType name="Address">
+<s:attribute default="0" name="AddressCode" type="s:int"/>
+<s:attribute default="" name="Line1" type="s:string"/>
+<s:attribute default="" name="Line2" type="s:string"/>
+<s:attribute default="" name="Line3" type="s:string"/>
+<s:attribute default="" name="City" type="s:string"/>
+<s:attribute default="" name="State" type="s:string"/>
+<s:attribute default="" name="PostCode" type="s:string"/>
+<s:attribute default="" name="CountryCode" type="s:string"/>
+<s:attribute default="" name="DPIdNbr" type="s:string"/>
+<s:attribute default="" name="EmailAddress1" type="s:string"/>
+<s:attribute default="" name="EmailAddress2" type="s:string"/>
+<s:attribute default="" name="Facsimile1" type="s:string"/>
+<s:attribute default="" name="Facsimile2" type="s:string"/>
+<s:attribute default="" name="MobilePhone1" type="s:string"/>
+<s:attribute default="" name="MobilePhone2" type="s:string"/>
+<s:attribute default="" name="Telephone1" type="s:string"/>
+<s:attribute default="" name="Telephone2" type="s:string"/>
+<s:attribute default="" name="Telephone3" type="s:string"/>
+<s:attribute default="0001-01-01T00:00:00" name="LastModified" type="s:dateTime"/>
+</s:complexType>
+<s:element name="Employee_DoGetContactList">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="request" type="tns:Employee_DoGetContactListRequest"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:complexType name="Employee_DoGetContactListRequest">
+<s:complexContent mixed="false">
+<s:extension base="tns:RequestBase">
+<s:attribute default="0" name="IdNumber" type="s:int"/>
+</s:extension>
+</s:complexContent>
+</s:complexType>
+<s:element name="Employee_DoGetContactListResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="Employee_DoGetContactListResult" type="tns:Employee_DoGetContactListResponse"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:complexType name="Employee_DoGetContactListResponse">
+<s:complexContent mixed="false">
+<s:extension base="tns:ResponseBase">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="ContactList" type="tns:ArrayOfEmployeeContact"/>
+</s:sequence>
+</s:extension>
+</s:complexContent>
+</s:complexType>
+<s:complexType name="ArrayOfEmployeeContact">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="unbounded" name="Contact" nillable="true" type="tns:EmployeeContact"/>
+</s:sequence>
+</s:complexType>
+<s:complexType name="EmployeeContact">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="PostalAddress" type="tns:Address"/>
+<s:element minOccurs="0" maxOccurs="1" name="StreetAddress" type="tns:Address"/>
+</s:sequence>
+<s:attribute default="0" name="IdNumber" type="s:int"/>
+<s:attribute default="" name="FamilyName" type="s:string"/>
+<s:attribute default="" name="GivenNames" type="s:string"/>
+<s:attribute default="false" name="IsDependent" type="s:boolean"/>
+<s:attribute default="" name="ContactTypeCode" type="s:string"/>
+<s:attribute default="" name="ContactTypeDesc" type="s:string"/>
+<s:attribute default="0001-01-01T00:00:00" name="LastModified" type="s:dateTime"/>
+</s:complexType>
+<s:element name="Employee_DoGetDetails">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="request" type="tns:Employee_DoGetDetailsRequest"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:complexType name="Employee_DoGetDetailsRequest">
+<s:complexContent mixed="false">
+<s:extension base="tns:RequestBase">
+<s:attribute default="0" name="IdNumber" type="s:int"/>
+</s:extension>
+</s:complexContent>
+</s:complexType>
+<s:element name="Employee_DoGetDetailsResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="Employee_DoGetDetailsResult" type="tns:Employee_DoGetDetailsResponse"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:complexType name="Employee_DoGetDetailsResponse">
+<s:complexContent mixed="false">
+<s:extension base="tns:ResponseBase">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="Details" type="tns:EmployeeDetails"/>
+</s:sequence>
+</s:extension>
+</s:complexContent>
+</s:complexType>
+<s:complexType name="EmployeeDetails">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="SelectionCodeFields" type="tns:ArrayOfSelectionCodeField"/>
+<s:element minOccurs="0" maxOccurs="1" name="UserFields" type="tns:ArrayOfUserField"/>
+</s:sequence>
+<s:attribute default="0" name="IdNumber" type="s:int"/>
+<s:attribute default="" name="IdClassCode" type="s:string"/>
+<s:attribute default="" name="IdClassDesc" type="s:string"/>
+<s:attribute default="" name="TitleCode" type="s:string"/>
+<s:attribute default="" name="TitleDesc" type="s:string"/>
+<s:attribute default="" name="FamilyName" type="s:string"/>
+<s:attribute default="" name="GivenName" type="s:string"/>
+<s:attribute default="" name="OtherGivenNames" type="s:string"/>
+<s:attribute default="" name="PreferredName" type="s:string"/>
+<s:attribute default="" name="PreviousFamilyName" type="s:string"/>
+<s:attribute default="" name="PreviousGivenName" type="s:string"/>
+<s:attribute default="" name="PreviousOtherGivenNames" type="s:string"/>
+<s:attribute default="0001-01-01T00:00:00" name="DateOfBirth" type="s:dateTime"/>
+<s:attribute default="" name="MaritalStatusCode" type="s:string"/>
+<s:attribute default="" name="MaritalStatusDesc" type="s:string"/>
+<s:attribute default="" name="GenderCode" type="s:string"/>
+<s:attribute default="" name="GenderDesc" type="s:string"/>
+<s:attribute default="" name="NationalityCode" type="s:string"/>
+<s:attribute default="" name="NationalityDesc" type="s:string"/>
+<s:attribute default="" name="MainLanguageCode" type="s:string"/>
+<s:attribute default="" name="MainLanguageDesc" type="s:string"/>
+<s:attribute default="" name="DisabilityCode" type="s:string"/>
+<s:attribute default="" name="DisabilityDesc" type="s:string"/>
+<s:attribute default="" name="EthnicGroupCode" type="s:string"/>
+<s:attribute default="" name="EthnicGroupDesc" type="s:string"/>
+<s:attribute default="" name="ResidentialStatusCode" type="s:string"/>
+<s:attribute default="" name="ResidentialStatusDesc" type="s:string"/>
+<s:attribute default="" name="VisaTypeCode" type="s:string"/>
+<s:attribute default="" name="VisaTypeDesc" type="s:string"/>
+<s:attribute default="" name="ReEmploymentStatusCode" type="s:string"/>
+<s:attribute default="" name="ReEmploymentStatusDesc" type="s:string"/>
+<s:attribute default="0001-01-01T00:00:00" name="LastModified" type="s:dateTime"/>
+</s:complexType>
+<s:element name="Employee_DoGetJobList">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="request" type="tns:Employee_DoGetJobListRequest"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:complexType name="Employee_DoGetJobListRequest">
+<s:complexContent mixed="false">
+<s:extension base="tns:RequestBase">
+<s:attribute default="0" name="IdNumber" type="s:int"/>
+<s:attribute default="0001-01-01T00:00:00" name="ModifiedSince" type="s:dateTime"/>
+</s:extension>
+</s:complexContent>
+</s:complexType>
+<s:element name="Employee_DoGetJobListResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="Employee_DoGetJobListResult" type="tns:Employee_DoGetJobListResponse"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:complexType name="Employee_DoGetJobListResponse">
+<s:complexContent mixed="false">
+<s:extension base="tns:ResponseBase">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="JobList" type="tns:ArrayOfEmployeeJob"/>
+</s:sequence>
+</s:extension>
+</s:complexContent>
+</s:complexType>
+<s:complexType name="ArrayOfEmployeeJob">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="unbounded" name="Job" nillable="true" type="tns:EmployeeJob"/>
+</s:sequence>
+</s:complexType>
+<s:element name="Employee_DoGetTermination">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="request" type="tns:Employee_DoGetTerminationRequest"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:complexType name="Employee_DoGetTerminationRequest">
+<s:complexContent mixed="false">
+<s:extension base="tns:RequestBase">
+<s:attribute default="0" name="IdNumber" type="s:int"/>
+<s:attribute default="0001-01-01T00:00:00" name="EmploymentActiveAsAt" type="s:dateTime"/>
+</s:extension>
+</s:complexContent>
+</s:complexType>
+<s:element name="Employee_DoGetTerminationResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="Employee_DoGetTerminationResult" type="tns:Employee_DoGetTerminationResponse"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:complexType name="Employee_DoGetTerminationResponse">
+<s:complexContent mixed="false">
+<s:extension base="tns:ResponseBase">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="Termination" type="tns:EmployeeTermination"/>
+</s:sequence>
+</s:extension>
+</s:complexContent>
+</s:complexType>
+<s:complexType name="EmployeeTermination">
+<s:attribute default="0" name="IdNumber" type="s:int"/>
+<s:attribute default="0001-01-01T00:00:00" name="TerminationDate" type="s:dateTime"/>
+<s:attribute default="" name="Description" type="s:string"/>
+<s:attribute default="" name="ReasonCode" type="s:string"/>
+<s:attribute default="" name="ReasonDesc" type="s:string"/>
+<s:attribute default="0001-01-01T00:00:00" name="RemovalDate" type="s:dateTime"/>
+<s:attribute default="" name="TerminatedByName" type="s:string"/>
+<s:attribute default="0" name="TerminatedByIdNumber" type="s:int"/>
+<s:attribute default="" name="TerminationTypeCode" type="s:string"/>
+<s:attribute default="" name="TerminationTypeDesc" type="s:string"/>
+<s:attribute default="0001-01-01T00:00:00" name="LastModified" type="s:dateTime"/>
+</s:complexType>
+<s:element name="Employee_DoUpdateAddress">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="request" type="tns:Employee_DoUpdateAddressRequest"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:complexType name="Employee_DoUpdateAddressRequest">
+<s:complexContent mixed="false">
+<s:extension base="tns:RequestBase">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="Address" type="tns:EmployeeAddress"/>
+</s:sequence>
+</s:extension>
+</s:complexContent>
+</s:complexType>
+<s:element name="Employee_DoUpdateAddressResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="Employee_DoUpdateAddressResult" type="tns:Employee_DoUpdateAddressResponse"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:complexType name="Employee_DoUpdateAddressResponse">
+<s:complexContent mixed="false">
+<s:extension base="tns:ResponseBase"/>
+</s:complexContent>
+</s:complexType>
+<s:element name="TimesheetFormat_DoGetFormatLineList">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="request" type="tns:TimesheetFormat_DoGetFormatLineListRequest"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:complexType name="TimesheetFormat_DoGetFormatLineListRequest">
+<s:complexContent mixed="false">
+<s:extension base="tns:RequestBase">
+<s:attribute default="" name="TimesheetSystemName" type="s:string"/>
+<s:attribute default="" name="TimesheetFormatName" type="s:string"/>
+</s:extension>
+</s:complexContent>
+</s:complexType>
+<s:element name="TimesheetFormat_DoGetFormatLineListResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="TimesheetFormat_DoGetFormatLineListResult" type="tns:TimesheetFormat_DoGetFormatLineListResponse"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:complexType name="TimesheetFormat_DoGetFormatLineListResponse">
+<s:complexContent mixed="false">
+<s:extension base="tns:ResponseBase">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="FormatLineList" type="tns:ArrayOfTimesheetFormatLine"/>
+</s:sequence>
+</s:extension>
+</s:complexContent>
+</s:complexType>
+<s:complexType name="ArrayOfTimesheetFormatLine">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="unbounded" name="FormatLine" nillable="true" type="tns:TimesheetFormatLine"/>
+</s:sequence>
+</s:complexType>
+<s:complexType name="TimesheetFormatLine">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="PayComponents" type="tns:ArrayOfPayComponent"/>
+</s:sequence>
+<s:attribute default="" name="LineName" type="s:string"/>
+<s:attribute default="" name="LineTypeName" type="s:string"/>
+</s:complexType>
+<s:complexType name="ArrayOfPayComponent">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="unbounded" name="PayComponent" nillable="true" type="tns:PayComponent"/>
+</s:sequence>
+</s:complexType>
+<s:complexType name="PayComponent">
+<s:attribute default="0" name="Code" type="s:double"/>
+<s:attribute default="" name="Description" type="s:string"/>
+</s:complexType>
+<s:element name="Leave_DoGetApprovedList">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="request" type="tns:Leave_DoGetApprovedListRequest"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:complexType name="Leave_DoGetApprovedListRequest">
+<s:complexContent mixed="false">
+<s:extension base="tns:RequestBase">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="IdNumbers" type="tns:ArrayOfInt"/>
+</s:sequence>
+<s:attribute default="0001-01-01T00:00:00" name="LeaveFrom" type="s:dateTime"/>
+<s:attribute default="0001-01-01T00:00:00" name="LeaveTo" type="s:dateTime"/>
+<s:attribute default="0001-01-01T00:00:00" name="ModifiedSince" type="s:dateTime"/>
+<s:attribute default="true" name="StatusIsApproved" type="s:boolean"/>
+<s:attribute default="true" name="StatusIsCosted" type="s:boolean"/>
+<s:attribute default="true" name="StatusIsPaid" type="s:boolean"/>
+</s:extension>
+</s:complexContent>
+</s:complexType>
+<s:complexType name="ArrayOfInt">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="unbounded" name="IdNumber" type="s:int"/>
+</s:sequence>
+</s:complexType>
+<s:element name="Leave_DoGetApprovedListResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="Leave_DoGetApprovedListResult" type="tns:Leave_DoGetApprovedListResponse"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:complexType name="Leave_DoGetApprovedListResponse">
+<s:complexContent mixed="false">
+<s:extension base="tns:ResponseBase">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="ApprovedList" type="tns:ArrayOfLeaveTransaction"/>
+</s:sequence>
+</s:extension>
+</s:complexContent>
+</s:complexType>
+<s:complexType name="ArrayOfLeaveTransaction">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="unbounded" name="Leave" nillable="true" type="tns:LeaveTransaction"/>
+</s:sequence>
+</s:complexType>
+<s:complexType name="LeaveTransaction">
+<s:attribute default="0" name="IdNumber" type="s:int"/>
+<s:attribute default="0001-01-01T00:00:00" name="TimesheetDate" type="s:dateTime"/>
+<s:attribute default="" name="CostAccount" type="s:string"/>
+<s:attribute default="" name="CostLedgerCode" type="s:string"/>
+<s:attribute default="" name="CostLedgerName" type="s:string"/>
+<s:attribute default="0001-01-01T00:00:00" name="EndDate" type="s:dateTime"/>
+<s:attribute default="0" name="LeavePayComponentCode" type="s:double"/>
+<s:attribute default="" name="LeavePayComponentDesc" type="s:string"/>
+<s:attribute default="" name="LeaveRequestComment" type="s:string"/>
+<s:attribute default="" name="PositionCode" type="s:string"/>
+<s:attribute default="0" name="TimesheetUnits" type="s:double"/>
+<s:attribute default="" name="TimesheetUnitType" type="s:string"/>
+<s:attribute default="0" name="Vers" type="s:int"/>
+<s:attribute default="" name="TimesheetFormatLineName" type="s:string"/>
+<s:attribute default="false" name="IsApproved" type="s:boolean"/>
+<s:attribute default="false" name="IsLocked" type="s:boolean"/>
+</s:complexType>
+<s:element name="Timesheet_DoGetEntryList">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="request" type="tns:Timesheet_DoGetEntryListRequest"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:complexType name="Timesheet_DoGetEntryListRequest">
+<s:complexContent mixed="false">
+<s:extension base="tns:RequestBase">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="IdNumbers" type="tns:ArrayOfInt"/>
+</s:sequence>
+<s:attribute default="0001-01-01T00:00:00" name="TimesheetsFrom" type="s:dateTime"/>
+<s:attribute default="0001-01-01T00:00:00" name="TimesheetsTo" type="s:dateTime"/>
+<s:attribute default="0001-01-01T00:00:00" name="ModifiedSince" type="s:dateTime"/>
+</s:extension>
+</s:complexContent>
+</s:complexType>
+<s:element name="Timesheet_DoGetEntryListResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="Timesheet_DoGetEntryListResult" type="tns:Timesheet_DoGetEntryListResponse"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:complexType name="Timesheet_DoGetEntryListResponse">
+<s:complexContent mixed="false">
+<s:extension base="tns:ResponseBase">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="EntryList" type="tns:ArrayOfTimesheetTransaction"/>
+</s:sequence>
+</s:extension>
+</s:complexContent>
+</s:complexType>
+<s:complexType name="ArrayOfTimesheetTransaction">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="unbounded" name="TimesheetEntry" nillable="true" type="tns:TimesheetTransaction"/>
+</s:sequence>
+</s:complexType>
+<s:complexType name="TimesheetTransaction">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="LinkedPlant" type="tns:ArrayOfTimesheetLinkedPlantTransaction"/>
+</s:sequence>
+<s:attribute default="0" name="IdNumber" type="s:int"/>
+<s:attribute default="0001-01-01T00:00:00" name="TimesheetDate" type="s:dateTime"/>
+<s:attribute default="" name="AssetNumber" type="s:string"/>
+<s:attribute default="0" name="ClockIn" type="s:int"/>
+<s:attribute default="0" name="ClockOut" type="s:int"/>
+<s:attribute default="" name="Comments" type="s:string"/>
+<s:attribute default="" name="CostAccount" type="s:string"/>
+<s:attribute default="0" name="CostAmount" type="s:double"/>
+<s:attribute default="" name="CostLedgerCode" type="s:string"/>
+<s:attribute default="" name="CostLedgerName" type="s:string"/>
+<s:attribute default="0" name="CostRateAmount" type="s:double"/>
+<s:attribute default="" name="CostRateCode" type="s:string"/>
+<s:attribute default="" name="CostRateType" type="s:string"/>
+<s:attribute default="0" name="CostUnitAmount" type="s:double"/>
+<s:attribute default="" name="EmploymentCondition" type="s:string"/>
+<s:attribute default="" name="EmploymentConditionGrade" type="s:string"/>
+<s:attribute default="" name="EmploymentConditionLevel" type="s:string"/>
+<s:attribute default="0001-01-01T00:00:00" name="EndDate" type="s:dateTime"/>
+<s:attribute default="" name="ItemCode" type="s:string"/>
+<s:attribute default="" name="ItemRateCode" type="s:string"/>
+<s:attribute default="" name="ItemRateType" type="s:string"/>
+<s:attribute default="0" name="ItemUnits" type="s:double"/>
+<s:attribute default="0" name="Meter1Units" type="s:double"/>
+<s:attribute default="0" name="Meter2Units" type="s:double"/>
+<s:attribute default="0" name="Meter3Units" type="s:double"/>
+<s:attribute default="0" name="Meter4Units" type="s:double"/>
+<s:attribute default="0" name="PayComponentCode" type="s:double"/>
+<s:attribute default="" name="PayComponentDesc" type="s:string"/>
+<s:attribute default="" name="PositionCode" type="s:string"/>
+<s:attribute default="" name="SelectionCode1" type="s:string"/>
+<s:attribute default="" name="SelectionCode2" type="s:string"/>
+<s:attribute default="" name="SelectionCode3" type="s:string"/>
+<s:attribute default="" name="SelectionCode4" type="s:string"/>
+<s:attribute default="" name="SelectionCode5" type="s:string"/>
+<s:attribute default="" name="SelectionCode6" type="s:string"/>
+<s:attribute default="" name="SelectionCode7" type="s:string"/>
+<s:attribute default="" name="SelectionCode8" type="s:string"/>
+<s:attribute default="" name="SelectionCode9" type="s:string"/>
+<s:attribute default="" name="SelectionCode10" type="s:string"/>
+<s:attribute default="" name="SelectionCode11" type="s:string"/>
+<s:attribute default="" name="SelectionCode12" type="s:string"/>
+<s:attribute default="0" name="TimesheetUnits" type="s:double"/>
+<s:attribute default="" name="TimesheetUnitType" type="s:string"/>
+<s:attribute default="" name="Userfield1" type="s:string"/>
+<s:attribute default="" name="Userfield2" type="s:string"/>
+<s:attribute default="" name="Userfield3" type="s:string"/>
+<s:attribute default="" name="Userfield4" type="s:string"/>
+<s:attribute default="" name="Userfield5" type="s:string"/>
+<s:attribute default="" name="Userfield6" type="s:string"/>
+<s:attribute default="" name="Userfield7" type="s:string"/>
+<s:attribute default="" name="Userfield8" type="s:string"/>
+<s:attribute default="" name="Userfield9" type="s:string"/>
+<s:attribute default="" name="Userfield10" type="s:string"/>
+<s:attribute default="" name="Userfield11" type="s:string"/>
+<s:attribute default="" name="Userfield12" type="s:string"/>
+<s:attribute default="0" name="Vers" type="s:int"/>
+<s:attribute default="" name="TimesheetFormatLineName" type="s:string"/>
+<s:attribute default="false" name="IsApproved" type="s:boolean"/>
+<s:attribute default="false" name="IsLocked" type="s:boolean"/>
+</s:complexType>
+<s:complexType name="ArrayOfTimesheetLinkedPlantTransaction">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="unbounded" name="Plant" nillable="true" type="tns:TimesheetLinkedPlantTransaction"/>
+</s:sequence>
+</s:complexType>
+<s:complexType name="TimesheetLinkedPlantTransaction">
+<s:attribute default="0" name="IdNumber" type="s:int"/>
+<s:attribute default="0001-01-01T00:00:00" name="TimesheetDate" type="s:dateTime"/>
+<s:attribute default="" name="AssetNumber" type="s:string"/>
+<s:attribute default="" name="CostAccount" type="s:string"/>
+<s:attribute default="0" name="CostUnitAmount" type="s:double"/>
+<s:attribute default="" name="ItemCode" type="s:string"/>
+<s:attribute default="" name="ItemRateCode" type="s:string"/>
+<s:attribute default="0" name="ItemUnits" type="s:double"/>
+<s:attribute default="0" name="Meter1Units" type="s:double"/>
+<s:attribute default="0" name="Meter2Units" type="s:double"/>
+<s:attribute default="0" name="Meter3Units" type="s:double"/>
+<s:attribute default="0" name="Meter4Units" type="s:double"/>
+<s:attribute default="0" name="Vers" type="s:int"/>
+<s:attribute default="false" name="IsApproved" type="s:boolean"/>
+<s:attribute default="false" name="IsLocked" type="s:boolean"/>
+</s:complexType>
+<s:element name="Training_DoGetApprovedAttendanceList">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="request" type="tns:Training_DoGetApprovedAttendanceListRequest"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:complexType name="Training_DoGetApprovedAttendanceListRequest">
+<s:complexContent mixed="false">
+<s:extension base="tns:RequestBase">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="IdNumbers" type="tns:ArrayOfInt"/>
+</s:sequence>
+<s:attribute default="0001-01-01T00:00:00" name="ModifiedSince" type="s:dateTime"/>
+<s:attribute default="0001-01-01T00:00:00" name="FromDate" type="s:dateTime"/>
+<s:attribute default="0001-01-01T00:00:00" name="ToDate" type="s:dateTime"/>
+<s:attribute default="true" name="StatusIsApprovedOnly" type="s:boolean"/>
+<s:attribute default="true" name="StatusIsApprovedAndCompleted" type="s:boolean"/>
+<s:attribute default="true" name="StatusIsApprovedAndNotCompleted" type="s:boolean"/>
+<s:attribute default="true" name="StatusIsApprovedButCancelled" type="s:boolean"/>
+</s:extension>
+</s:complexContent>
+</s:complexType>
+<s:element name="Training_DoGetApprovedAttendanceListResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="Training_DoGetApprovedAttendanceListResult" type="tns:Training_DoGetApprovedAttendanceListResponse"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:complexType name="Training_DoGetApprovedAttendanceListResponse">
+<s:complexContent mixed="false">
+<s:extension base="tns:ResponseBase">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="ApprovedAttendanceList" type="tns:ArrayOfCourseOccurrenceAttendee"/>
+</s:sequence>
+</s:extension>
+</s:complexContent>
+</s:complexType>
+<s:complexType name="ArrayOfCourseOccurrenceAttendee">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="unbounded" name="Attendee" nillable="true" type="tns:CourseOccurrenceAttendee"/>
+</s:sequence>
+</s:complexType>
+<s:complexType name="CourseOccurrenceAttendee">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="Sessions" type="tns:ArrayOfCourseOccurrenceSession"/>
+</s:sequence>
+<s:attribute default="0" name="IdNumber" type="s:int"/>
+<s:attribute default="" name="CourseCode" type="s:string"/>
+<s:attribute default="" name="CourseTitle" type="s:string"/>
+<s:attribute default="0001-01-01T00:00:00" name="EndDate" type="s:dateTime"/>
+<s:attribute default="0001-01-01T00:00:00" name="EndTime" type="s:dateTime"/>
+<s:attribute default="" name="IssuedGradeLevel" type="s:string"/>
+<s:attribute default="" name="IssuedGradeLevelDesc" type="s:string"/>
+<s:attribute default="0" name="IssuedGradeNumber" type="s:double"/>
+<s:attribute default="" name="LocationCode" type="s:string"/>
+<s:attribute default="" name="LocationDesc" type="s:string"/>
+<s:attribute default="0001-01-01T00:00:00" name="StartDate" type="s:dateTime"/>
+<s:attribute default="0001-01-01T00:00:00" name="StartTime" type="s:dateTime"/>
+<s:attribute default="" name="StatusCode" type="s:string"/>
+<s:attribute default="" name="StatusDesc" type="s:string"/>
+<s:attribute default="" name="TrainingSystemCode" type="s:string"/>
+<s:attribute default="" name="TrainingSystemDesc" type="s:string"/>
+<s:attribute default="0001-01-01T00:00:00" name="LastModified" type="s:dateTime"/>
+</s:complexType>
+<s:complexType name="ArrayOfCourseOccurrenceSession">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="unbounded" name="Session" nillable="true" type="tns:CourseOccurrenceSession"/>
+</s:sequence>
+</s:complexType>
+<s:complexType name="CourseOccurrenceSession">
+<s:attribute default="" name="Description" type="s:string"/>
+<s:attribute default="" name="Comments" type="s:string"/>
+<s:attribute default="0001-01-01T00:00:00" name="Date" type="s:dateTime"/>
+<s:attribute default="0001-01-01T00:00:00" name="Time" type="s:dateTime"/>
+<s:attribute default="0" name="Duration" type="s:double"/>
+<s:attribute default="" name="LocationCode" type="s:string"/>
+<s:attribute default="" name="LocationDesc" type="s:string"/>
+<s:attribute default="0001-01-01T00:00:00" name="LastModified" type="s:dateTime"/>
+</s:complexType>
+</s:schema>
+<s:schema elementFormDefault="qualified" targetNamespace="WebService">
+<s:complexType name="WebErrors">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="Items" type="s1:ArrayOfWebErrorItem"/>
+</s:sequence>
+<s:attribute name="IsError" type="s:boolean" use="required"/>
+<s:attribute name="IsWarning" type="s:boolean" use="required"/>
+</s:complexType>
+<s:complexType name="ArrayOfWebErrorItem">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="unbounded" name="ErrorItem" nillable="true" type="s1:WebErrorItem"/>
+</s:sequence>
+</s:complexType>
+<s:complexType name="WebErrorItem">
+<s:attribute name="ErrorType" type="s:string"/>
+<s:attribute name="ErrorCode" type="s:string"/>
+<s:attribute name="Description" type="s:string"/>
+<s:attribute name="ShortDescription" type="s:string"/>
+</s:complexType>
+</s:schema>
+</wsdl:types>
+<wsdl:message name="Employee_DoGetListSoapIn">
+<wsdl:part name="parameters" element="tns:Employee_DoGetList"/>
+</wsdl:message>
+<wsdl:message name="Employee_DoGetListSoapOut">
+<wsdl:part name="parameters" element="tns:Employee_DoGetListResponse"/>
+</wsdl:message>
+<wsdl:message name="Employee_DoGetAchievedCompetencyListSoapIn">
+<wsdl:part name="parameters" element="tns:Employee_DoGetAchievedCompetencyList"/>
+</wsdl:message>
+<wsdl:message name="Employee_DoGetAchievedCompetencyListSoapOut">
+<wsdl:part name="parameters" element="tns:Employee_DoGetAchievedCompetencyListResponse"/>
+</wsdl:message>
+<wsdl:message name="Employee_DoGetAchievedQualificationListSoapIn">
+<wsdl:part name="parameters" element="tns:Employee_DoGetAchievedQualificationList"/>
+</wsdl:message>
+<wsdl:message name="Employee_DoGetAchievedQualificationListSoapOut">
+<wsdl:part name="parameters" element="tns:Employee_DoGetAchievedQualificationListResponse"/>
+</wsdl:message>
+<wsdl:message name="Employee_DoGetAchievedSkillListSoapIn">
+<wsdl:part name="parameters" element="tns:Employee_DoGetAchievedSkillList"/>
+</wsdl:message>
+<wsdl:message name="Employee_DoGetAchievedSkillListSoapOut">
+<wsdl:part name="parameters" element="tns:Employee_DoGetAchievedSkillListResponse"/>
+</wsdl:message>
+<wsdl:message name="Employee_DoGetActiveJobSoapIn">
+<wsdl:part name="parameters" element="tns:Employee_DoGetActiveJob"/>
+</wsdl:message>
+<wsdl:message name="Employee_DoGetActiveJobSoapOut">
+<wsdl:part name="parameters" element="tns:Employee_DoGetActiveJobResponse"/>
+</wsdl:message>
+<wsdl:message name="Employee_DoGetAddressSoapIn">
+<wsdl:part name="parameters" element="tns:Employee_DoGetAddress"/>
+</wsdl:message>
+<wsdl:message name="Employee_DoGetAddressSoapOut">
+<wsdl:part name="parameters" element="tns:Employee_DoGetAddressResponse"/>
+</wsdl:message>
+<wsdl:message name="Employee_DoGetContactListSoapIn">
+<wsdl:part name="parameters" element="tns:Employee_DoGetContactList"/>
+</wsdl:message>
+<wsdl:message name="Employee_DoGetContactListSoapOut">
+<wsdl:part name="parameters" element="tns:Employee_DoGetContactListResponse"/>
+</wsdl:message>
+<wsdl:message name="Employee_DoGetDetailsSoapIn">
+<wsdl:part name="parameters" element="tns:Employee_DoGetDetails"/>
+</wsdl:message>
+<wsdl:message name="Employee_DoGetDetailsSoapOut">
+<wsdl:part name="parameters" element="tns:Employee_DoGetDetailsResponse"/>
+</wsdl:message>
+<wsdl:message name="Employee_DoGetJobListSoapIn">
+<wsdl:part name="parameters" element="tns:Employee_DoGetJobList"/>
+</wsdl:message>
+<wsdl:message name="Employee_DoGetJobListSoapOut">
+<wsdl:part name="parameters" element="tns:Employee_DoGetJobListResponse"/>
+</wsdl:message>
+<wsdl:message name="Employee_DoGetTerminationSoapIn">
+<wsdl:part name="parameters" element="tns:Employee_DoGetTermination"/>
+</wsdl:message>
+<wsdl:message name="Employee_DoGetTerminationSoapOut">
+<wsdl:part name="parameters" element="tns:Employee_DoGetTerminationResponse"/>
+</wsdl:message>
+<wsdl:message name="Employee_DoUpdateAddressSoapIn">
+<wsdl:part name="parameters" element="tns:Employee_DoUpdateAddress"/>
+</wsdl:message>
+<wsdl:message name="Employee_DoUpdateAddressSoapOut">
+<wsdl:part name="parameters" element="tns:Employee_DoUpdateAddressResponse"/>
+</wsdl:message>
+<wsdl:message name="TimesheetFormat_DoGetFormatLineListSoapIn">
+<wsdl:part name="parameters" element="tns:TimesheetFormat_DoGetFormatLineList"/>
+</wsdl:message>
+<wsdl:message name="TimesheetFormat_DoGetFormatLineListSoapOut">
+<wsdl:part name="parameters" element="tns:TimesheetFormat_DoGetFormatLineListResponse"/>
+</wsdl:message>
+<wsdl:message name="Leave_DoGetApprovedListSoapIn">
+<wsdl:part name="parameters" element="tns:Leave_DoGetApprovedList"/>
+</wsdl:message>
+<wsdl:message name="Leave_DoGetApprovedListSoapOut">
+<wsdl:part name="parameters" element="tns:Leave_DoGetApprovedListResponse"/>
+</wsdl:message>
+<wsdl:message name="Timesheet_DoGetEntryListSoapIn">
+<wsdl:part name="parameters" element="tns:Timesheet_DoGetEntryList"/>
+</wsdl:message>
+<wsdl:message name="Timesheet_DoGetEntryListSoapOut">
+<wsdl:part name="parameters" element="tns:Timesheet_DoGetEntryListResponse"/>
+</wsdl:message>
+<wsdl:message name="Training_DoGetApprovedAttendanceListSoapIn">
+<wsdl:part name="parameters" element="tns:Training_DoGetApprovedAttendanceList"/>
+</wsdl:message>
+<wsdl:message name="Training_DoGetApprovedAttendanceListSoapOut">
+<wsdl:part name="parameters" element="tns:Training_DoGetApprovedAttendanceListResponse"/>
+</wsdl:message>
+<wsdl:portType name="HR_ServicesSoap">
+<wsdl:operation name="Employee_DoGetList">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+Retrieves a list of employees. The list can be filtered by a Modified Since date (which restricts the list to those employees who have been created or modified since the given date). Additional criteria are Active As At, Company, Employee Class, Employee Type, Id Class, Organisation Unit and Position. Results will be returned sorted by Id Number.
+</wsdl:documentation>
+<wsdl:input message="tns:Employee_DoGetListSoapIn"/>
+<wsdl:output message="tns:Employee_DoGetListSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="Employee_DoGetAchievedCompetencyList">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+Retrieves achieved competencies for an employee identified by id number. The competencies retrieved can be filtered by an Effective As At date. Results will be returned sorted by Achieved Date, Skill Code and then Competency Code.
+</wsdl:documentation>
+<wsdl:input message="tns:Employee_DoGetAchievedCompetencyListSoapIn"/>
+<wsdl:output message="tns:Employee_DoGetAchievedCompetencyListSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="Employee_DoGetAchievedQualificationList">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+Retrieves achieved qualifications for an employee identified by id number. Results will be returned sorted by Issued Date and then Qualification Code.
+</wsdl:documentation>
+<wsdl:input message="tns:Employee_DoGetAchievedQualificationListSoapIn"/>
+<wsdl:output message="tns:Employee_DoGetAchievedQualificationListSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="Employee_DoGetAchievedSkillList">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+Retrieves achieved skills for an employee identified by id number. The skills retrieved can be filtered by an Effective As At date. Results will be returned sorted by Achieved Date and then Skill Code.
+</wsdl:documentation>
+<wsdl:input message="tns:Employee_DoGetAchievedSkillListSoapIn"/>
+<wsdl:output message="tns:Employee_DoGetAchievedSkillListSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="Employee_DoGetActiveJob">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+Retrieves active job details as at a given date for an employee identified by id number.
+</wsdl:documentation>
+<wsdl:input message="tns:Employee_DoGetActiveJobSoapIn"/>
+<wsdl:output message="tns:Employee_DoGetActiveJobSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="Employee_DoGetAddress">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+Retrieves street and postal address details for an employee identified by id number.
+</wsdl:documentation>
+<wsdl:input message="tns:Employee_DoGetAddressSoapIn"/>
+<wsdl:output message="tns:Employee_DoGetAddressSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="Employee_DoGetContactList">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+Retrieves a list of emergency contacts for an employee identified by id number. Results will be returned sorted by Contact Type, Family Name and then Given Names.
+</wsdl:documentation>
+<wsdl:input message="tns:Employee_DoGetContactListSoapIn"/>
+<wsdl:output message="tns:Employee_DoGetContactListSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="Employee_DoGetDetails">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+Retrieves details for an employee identified by id number.
+</wsdl:documentation>
+<wsdl:input message="tns:Employee_DoGetDetailsSoapIn"/>
+<wsdl:output message="tns:Employee_DoGetDetailsSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="Employee_DoGetJobList">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+Retrieves a list of jobs for an employee identified by id number. The jobs retrieved can be filtered by a Modified Since date (which restricts the job list to jobs which have been created or modified since the given date). Results will be returned sorted by Job Effective Date.
+</wsdl:documentation>
+<wsdl:input message="tns:Employee_DoGetJobListSoapIn"/>
+<wsdl:output message="tns:Employee_DoGetJobListSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="Employee_DoGetTermination">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+Retrieves termination details for an employee identified by id number. The termination details retrieved will apply to the employment period identified by the given Employment Active As At date.
+</wsdl:documentation>
+<wsdl:input message="tns:Employee_DoGetTerminationSoapIn"/>
+<wsdl:output message="tns:Employee_DoGetTerminationSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="Employee_DoUpdateAddress">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+Updates street and postal address details for an employee identified by id number.
+</wsdl:documentation>
+<wsdl:input message="tns:Employee_DoUpdateAddressSoapIn"/>
+<wsdl:output message="tns:Employee_DoUpdateAddressSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="TimesheetFormat_DoGetFormatLineList">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+Retrieves a list of timesheet format lines for a timesheet format identified by format name and system name.
+</wsdl:documentation>
+<wsdl:input message="tns:TimesheetFormat_DoGetFormatLineListSoapIn"/>
+<wsdl:output message="tns:TimesheetFormat_DoGetFormatLineListSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="Leave_DoGetApprovedList">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+Retrieves a list of timesheet transactions for approved leave. The list can filtered by Leave From and Leave To dates. Additional criteria are Modified Since (which filters the list for those transactions that have been created or modified since the given date), Status Is Approved (which filters for transactions that have been approved but are not yet paid or costed), Status Is Costed (which filters for transactions that have been costed) and Status Is Paid (which filters for transactions that have been paid). Results will be returned sorted by Id Number, Timesheet Date and then Leave Pay Component Code. Note, retrieval is limited to 300 records. A warning message will be returned if results have been excluded due to this limit (ErrorCode 'HRPUB0001'). Retrieval criteria should be applied to ensure that results do not exceed this limit.
+</wsdl:documentation>
+<wsdl:input message="tns:Leave_DoGetApprovedListSoapIn"/>
+<wsdl:output message="tns:Leave_DoGetApprovedListSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="Timesheet_DoGetEntryList">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+Retrieves a list of timesheet transactions. The list can be filtered by Timesheets From and Timesheets To dates (which restrict the list to timesheet transactions for days within the given date range). An additional criterion is Modified Since (which filters the list for details of timesheets created or modified since the given date). Results will be returned sorted by Id Number, Timesheet Date and then Pay Component Code. Note, retrieval is limited to 300 records. A warning message will be returned if results have been excluded due to this limit (ErrorCode 'HRPUB0001'). Retrieval criteria should be applied to ensure that results do not exceed this limit.
+</wsdl:documentation>
+<wsdl:input message="tns:Timesheet_DoGetEntryListSoapIn"/>
+<wsdl:output message="tns:Timesheet_DoGetEntryListSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="Training_DoGetApprovedAttendanceList">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+Retrieves a list of approved Training Course attendees. The list can be filtered by a Modified Since date (which restricts the list to those attendees whose attendance details have been created or modified since the given date). Additional criteria are as follows: Id Numbers (which filters the list by Id Number); From Date and To Date (which filter the list for attendees whose approved courses are held on one or more dates within the given date range); Status Is Approved Only (which filters the list for attendees who have been approved for attendance); Status Is Approved And Completed (which filters the list for attendees who have completed their approved Training Courses); Status Is Approved And Not Completed (which filters the list for attendees who have failed to complete their approved Training Courses); and Status Is Approved But Cancelled (which filters the list for attendees who were approved for attendance but whose attendance has since been cancelled). Results will be returned sorted by Id Number, Start Date and then Training Course Code. Note, retrieval is limited to 300 records. A warning message will be returned if results have been excluded due to this limit (ErrorCode 'HRPUB0001'). Retrieval criteria should be applied to ensure that results do not exceed this limit.
+</wsdl:documentation>
+<wsdl:input message="tns:Training_DoGetApprovedAttendanceListSoapIn"/>
+<wsdl:output message="tns:Training_DoGetApprovedAttendanceListSoapOut"/>
+</wsdl:operation>
+</wsdl:portType>
+<wsdl:binding name="HR_ServicesSoap" type="tns:HR_ServicesSoap">
+<soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+<wsdl:operation name="Employee_DoGetList">
+<soap:operation soapAction="http://technologyonecorp.com/T1.Hr.Public/Services/Employee_DoGetList" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="Employee_DoGetAchievedCompetencyList">
+<soap:operation soapAction="http://technologyonecorp.com/T1.Hr.Public/Services/Employee_DoGetAchievedCompetencyList" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="Employee_DoGetAchievedQualificationList">
+<soap:operation soapAction="http://technologyonecorp.com/T1.Hr.Public/Services/Employee_DoGetAchievedQualificationList" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="Employee_DoGetAchievedSkillList">
+<soap:operation soapAction="http://technologyonecorp.com/T1.Hr.Public/Services/Employee_DoGetAchievedSkillList" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="Employee_DoGetActiveJob">
+<soap:operation soapAction="http://technologyonecorp.com/T1.Hr.Public/Services/Employee_DoGetActiveJob" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="Employee_DoGetAddress">
+<soap:operation soapAction="http://technologyonecorp.com/T1.Hr.Public/Services/Employee_DoGetAddress" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="Employee_DoGetContactList">
+<soap:operation soapAction="http://technologyonecorp.com/T1.Hr.Public/Services/Employee_DoGetContactList" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="Employee_DoGetDetails">
+<soap:operation soapAction="http://technologyonecorp.com/T1.Hr.Public/Services/Employee_DoGetDetails" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="Employee_DoGetJobList">
+<soap:operation soapAction="http://technologyonecorp.com/T1.Hr.Public/Services/Employee_DoGetJobList" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="Employee_DoGetTermination">
+<soap:operation soapAction="http://technologyonecorp.com/T1.Hr.Public/Services/Employee_DoGetTermination" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="Employee_DoUpdateAddress">
+<soap:operation soapAction="http://technologyonecorp.com/T1.Hr.Public/Services/Employee_DoUpdateAddress" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="TimesheetFormat_DoGetFormatLineList">
+<soap:operation soapAction="http://technologyonecorp.com/T1.Hr.Public/Services/TimesheetFormat_DoGetFormatLineList" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="Leave_DoGetApprovedList">
+<soap:operation soapAction="http://technologyonecorp.com/T1.Hr.Public/Services/Leave_DoGetApprovedList" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="Timesheet_DoGetEntryList">
+<soap:operation soapAction="http://technologyonecorp.com/T1.Hr.Public/Services/Timesheet_DoGetEntryList" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="Training_DoGetApprovedAttendanceList">
+<soap:operation soapAction="http://technologyonecorp.com/T1.Hr.Public/Services/Training_DoGetApprovedAttendanceList" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:binding name="HR_ServicesSoap12" type="tns:HR_ServicesSoap">
+<soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+<wsdl:operation name="Employee_DoGetList">
+<soap12:operation soapAction="http://technologyonecorp.com/T1.Hr.Public/Services/Employee_DoGetList" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="Employee_DoGetAchievedCompetencyList">
+<soap12:operation soapAction="http://technologyonecorp.com/T1.Hr.Public/Services/Employee_DoGetAchievedCompetencyList" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="Employee_DoGetAchievedQualificationList">
+<soap12:operation soapAction="http://technologyonecorp.com/T1.Hr.Public/Services/Employee_DoGetAchievedQualificationList" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="Employee_DoGetAchievedSkillList">
+<soap12:operation soapAction="http://technologyonecorp.com/T1.Hr.Public/Services/Employee_DoGetAchievedSkillList" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="Employee_DoGetActiveJob">
+<soap12:operation soapAction="http://technologyonecorp.com/T1.Hr.Public/Services/Employee_DoGetActiveJob" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="Employee_DoGetAddress">
+<soap12:operation soapAction="http://technologyonecorp.com/T1.Hr.Public/Services/Employee_DoGetAddress" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="Employee_DoGetContactList">
+<soap12:operation soapAction="http://technologyonecorp.com/T1.Hr.Public/Services/Employee_DoGetContactList" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="Employee_DoGetDetails">
+<soap12:operation soapAction="http://technologyonecorp.com/T1.Hr.Public/Services/Employee_DoGetDetails" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="Employee_DoGetJobList">
+<soap12:operation soapAction="http://technologyonecorp.com/T1.Hr.Public/Services/Employee_DoGetJobList" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="Employee_DoGetTermination">
+<soap12:operation soapAction="http://technologyonecorp.com/T1.Hr.Public/Services/Employee_DoGetTermination" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="Employee_DoUpdateAddress">
+<soap12:operation soapAction="http://technologyonecorp.com/T1.Hr.Public/Services/Employee_DoUpdateAddress" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="TimesheetFormat_DoGetFormatLineList">
+<soap12:operation soapAction="http://technologyonecorp.com/T1.Hr.Public/Services/TimesheetFormat_DoGetFormatLineList" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="Leave_DoGetApprovedList">
+<soap12:operation soapAction="http://technologyonecorp.com/T1.Hr.Public/Services/Leave_DoGetApprovedList" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="Timesheet_DoGetEntryList">
+<soap12:operation soapAction="http://technologyonecorp.com/T1.Hr.Public/Services/Timesheet_DoGetEntryList" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="Training_DoGetApprovedAttendanceList">
+<soap12:operation soapAction="http://technologyonecorp.com/T1.Hr.Public/Services/Training_DoGetApprovedAttendanceList" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:service name="HR_Services">
+<wsdl:port name="HR_ServicesSoap" binding="tns:HR_ServicesSoap">
+<soap:address location="http://cestier01-dev/T1CSUSER/app/hr_services.asmx"/>
+</wsdl:port>
+<wsdl:port name="HR_ServicesSoap12" binding="tns:HR_ServicesSoap12">
+<soap12:address location="http://cestier01-dev/T1CSUSER/app/hr_services.asmx"/>
+</wsdl:port>
+</wsdl:service>
+</wsdl:definitions>]]></wsdl_xml>
+    </sys_soap_message>
+</record_update>

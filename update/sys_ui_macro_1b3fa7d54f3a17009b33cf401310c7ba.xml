@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_ui_macro">
+    <sys_ui_macro action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <category>general</category>
+        <description/>
+        <media_type/>
+        <name>TCC_Timesheets_pg001_controller</name>
+        <scoped_name>x_cio19_timesheets_TCC_Timesheets_pg001_controller</scoped_name>
+        <sys_class_name>sys_ui_macro</sys_class_name>
+        <sys_created_by>rwb@townsville.qld.gov.au</sys_created_by>
+        <sys_created_on>2018-06-19 05:55:52</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>1b3fa7d54f3a17009b33cf401310c7ba</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>TCC_Timesheets_pg001_controller</sys_name>
+        <sys_package display_value="Timesheets" source="x_cio19_timesheets">f4afbb85dbaa530073ab787dbf9619ce</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Timesheets">f4afbb85dbaa530073ab787dbf9619ce</sys_scope>
+        <sys_update_name>sys_ui_macro_1b3fa7d54f3a17009b33cf401310c7ba</sys_update_name>
+        <sys_updated_by>rwb@townsville.qld.gov.au</sys_updated_by>
+        <sys_updated_on>2018-06-19 05:55:52</sys_updated_on>
+        <xml><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+	 
+	<script>
+		var drivewayApp = angular.module('drivewayApp', ['angularUtils.directives.dirPagination', 'ui.bootstrap']);	
+		drivewayApp.config(['$httpProvider', function($httpProvider) {
+			//initialize get if not there
+			if (!$httpProvider.defaults.headers.get) {
+				$httpProvider.defaults.headers.get = {};    
+			}    
+ 
+			// Answer edited to include suggestions from comments
+			// because previous version of code introduced browser-related errors 
+
+			//disable IE ajax request caching
+			$httpProvider.defaults.headers.get['If-Modified-Since'] = 'Mon, 26 Jul 1997 05:00:00 GMT';
+			// extra
+			$httpProvider.defaults.headers.get['Cache-Control'] = 'no-cache';
+			$httpProvider.defaults.headers.get['Pragma'] = 'no-cache';
+		}]);
+		
+
+		
+	
+		
+		drivewayApp.controller('drivewayController', function($scope, $http) {
+		
+			$scope.formStatusError = false;
+			$scope.formSelfAssessmentOK = true;
+
+			$scope.formStatusErrorMsg = '';
+			$scope.formNoRadioButtonSelected = '';
+			$scope.permitRequired = '0';
+			$scope.removeTrees = '0';
+			$scope.propertyResidential = '0';
+			$scope.propertyUrban = '0';
+			$scope.propertyGreenfield = '0';
+			$scope.drivewayFirst = '0';
+			$scope.blockCorner = '0';
+			$scope.drivewayCorner = '0';
+
+		
+		
+		
+			$scope.processPage = function () {
+
+				$scope.queryString = '';
+
+				$scope.formStatusError = false;
+				$scope.formSelfAssessmentOK = true;
+		
+				$scope.formStatusErrorMsg = 'You must answer all of the mandatory fields below.';
+				$scope.formNoRadioButtonSelected = 'You must select either YES or NO.';
+
+
+				$scope.permitRequiredError = false;
+				$scope.removeTreesError = false;
+				$scope.propertyResidentialError = false;
+				$scope.propertyUrbanError = false;
+				$scope.propertyGreenfieldError = false;
+				$scope.drivewayFirstError = false;
+				$scope.blockCornerError = false;
+				$scope.drivewayCornerError = false;
+
+				$scope.permitRequiredErrorMsg = '';
+				$scope.removeTreesErrorMsg = '';
+				$scope.propertyResidentialErrorMsg = '';
+				$scope.propertyUrbanErrorMsg = '';
+				$scope.propertyGreenfieldErrorMsg = '';
+				$scope.drivewayFirstErrorMsg = '';
+				$scope.blockCornerErrorMsg = '';
+				$scope.drivewayCornerErrorMsg = '';
+
+				var errorCount = 0;
+				
+				// use normal jquery and javascript to get value of Calendar input field, because Angular scope is NOT
+				// updated when jquery updates the input field. See: 
+				// http://stackoverflow.com/questions/17109850/update-angular-model-after-setting-input-value-with-jquery/17110709#17110709
+		
+				// Note from jquery docs: "Note: Changing the value of an input element using JavaScript, using .val() for example, won't fire the event."
+				// Ref: https://api.jquery.com/change/
+						
+				// build the query string.
+				$scope.queryString = '';
+
+		
+				if ($scope.permitRequired == '0'){
+					// User failed to click a radio button. Show error message telling them to select something.
+					$scope.permitRequiredErrorMsg = $scope.formNoRadioButtonSelected;
+					$scope.permitRequiredError = true;
+
+					// increase the number of errors found
+					errorCount++;
+				}
+				if ($scope.permitRequired == '1'){
+					// User selected YES.  Build the string.
+					//$scope.queryString += '$[AMP]u_permit_required=' + $scope.permitRequired;
+				}
+				if ($scope.permitRequired == '2'){
+					// User selected NO.  *** THIS WILL NOT CAUSE SELF-ASSESSMENT TO FAIL. ***
+//					$scope.formSelfAssessmentOK = false;					
+				}
+
+		
+		
+		
+				if ($scope.removeTrees == '0'){
+					// User failed to click a radio button. Show error message telling them to select something.
+					$scope.removeTreesErrorMsg = $scope.formNoRadioButtonSelected;
+					$scope.removeTreesError = true;
+
+					// increase the number of errors found
+					errorCount++;
+				}
+				if ($scope.removeTrees == '1'){
+					// User selected YES.  Build the string.
+					//$scope.queryString += '$[AMP]u_remove_trees=' + $scope.removeTrees;
+				}
+				if ($scope.removeTrees == '2'){
+					// User selected NO.  *** THIS WILL NOT CAUSE SELF-ASSESSMENT TO FAIL. ***
+//					$scope.formSelfAssessmentOK = false;					
+				}
+
+		
+		
+		
+				if ($scope.propertyResidential == '0'){
+					// User failed to click a radio button. Show error message telling them to select something.
+					$scope.propertyResidentialErrorMsg = $scope.formNoRadioButtonSelected;
+					$scope.propertyResidentialError = true;
+
+					// increase the number of errors found
+					errorCount++;
+				}
+				if ($scope.propertyResidential == '1'){
+					// User selected YES.  Build the string.
+					//$scope.queryString += '$[AMP]u_property_residential=' + $scope.propertyResidential;
+				}
+				if ($scope.propertyResidential == '2'){
+					// User selected NO.  Self-assessment must fail out.
+					$scope.formSelfAssessmentOK = false;					
+				}
+
+		
+		
+		
+				if ($scope.propertyUrban == '0'){
+					// User failed to click a radio button. Show error message telling them to select something.
+					$scope.propertyUrbanErrorMsg = $scope.formNoRadioButtonSelected;
+					$scope.propertyUrbanError = true;
+
+					// increase the number of errors found
+					errorCount++;
+				}
+				if ($scope.propertyUrban == '1'){
+					// User selected YES.  Build the string.
+					//$scope.queryString += '$[AMP]u_property_urban=' + $scope.propertyUrban;
+				}
+				if ($scope.propertyUrban == '2'){
+					// User selected NO.  Self-assessment must fail out.
+					$scope.formSelfAssessmentOK = false;					
+				}
+
+		
+		
+		
+				if ($scope.propertyGreenfield == '0'){
+					// User failed to click a radio button. Show error message telling them to select something.
+					$scope.propertyGreenfieldErrorMsg = $scope.formNoRadioButtonSelected;
+					$scope.propertyGreenfieldError = true;
+
+					// increase the number of errors found
+					errorCount++;
+				}
+				if ($scope.propertyGreenfield == '1'){
+					// User selected YES.  Build the string.
+					//$scope.queryString += '$[AMP]u_property_greenfield=' + $scope.propertyGreenfield;
+				}
+				if ($scope.propertyGreenfield == '2'){
+					// User selected NO.  Self-assessment must fail out.
+					$scope.formSelfAssessmentOK = false;					
+				}
+
+		
+		
+		
+				if ($scope.drivewayFirst == '0'){
+					// User failed to click a radio button. Show error message telling them to select something.
+					$scope.drivewayFirstErrorMsg = $scope.formNoRadioButtonSelected;
+					$scope.drivewayFirstError = true;
+
+					// increase the number of errors found
+					errorCount++;
+				}
+				if ($scope.drivewayFirst == '1'){
+					// User selected YES.  Build the string.
+					//$scope.queryString += '$[AMP]u_driveway_first=' + $scope.drivewayFirst;
+				}
+				if ($scope.drivewayFirst == '2'){
+					// User selected NO.  Self-assessment must fail out.
+					$scope.formSelfAssessmentOK = false;					
+				}
+
+		
+		
+		
+				if ($scope.blockCorner == '0'){
+					// User failed to click a radio button. Show error message telling them to select something.
+					$scope.blockCornerErrorMsg = $scope.formNoRadioButtonSelected;
+					$scope.blockCornerError = true;
+
+					// increase the number of errors found
+					errorCount++;
+				}
+				if ($scope.blockCorner == '1'){
+					// User selected YES.  Build the string.
+					//$scope.queryString += '$[AMP]u_block_corner=' + $scope.blockCorner;
+				}
+				if ($scope.blockCorner == '2'){
+					// User selected NO.  *** THIS WILL NOT CAUSE SELF-ASSESSMENT TO FAIL. ***
+//					$scope.formSelfAssessmentOK = false;					
+				}
+
+		
+		
+		
+				if ($scope.drivewayCorner == '0' $[AMP]$[AMP] $scope.blockCorner == '1'){
+					// User failed to click a radio button. Show error message telling them to select something.
+					$scope.drivewayCornerErrorMsg = $scope.formNoRadioButtonSelected;
+					$scope.drivewayCornerError = true;
+
+					// increase the number of errors found
+					errorCount++;
+				}
+				if ($scope.drivewayCorner == '1'){
+					// User selected YES.  Build the string.
+					//$scope.queryString += '$[AMP]u_driveway_corner=' + $scope.drivewayCorner;
+				}
+				if ($scope.drivewayCorner == '2'){
+					// User selected NO.  Self-assessment must fail out.
+					$scope.formSelfAssessmentOK = false;					
+				}
+		
+		
+		
+		
+				// if we have no errors...
+				if (errorCount == 0) {
+					if ($scope.formSelfAssessmentOK == true){
+						window.top.location.href = '/tcc_rwp_page_002.do';
+					} else {
+						window.top.location.href = '/tcc_rwp_page_assessment_ineligible.do';
+					}
+				} else {
+					$scope.formStatusError = true;
+					window.scrollTo(0, 0);
+				}
+			};
+
+// *************************************************************************************************************************************
+		
+window.scrollTo(0, 0);
+		
+		
+		});
+	</script>
+	
+</j:jelly>]]></xml>
+    </sys_ui_macro>
+</record_update>

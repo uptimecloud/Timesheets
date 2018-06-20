@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_soap_message_function">
+    <sys_soap_message_function action="INSERT_OR_UPDATE">
+        <authentication_type/>
+        <basic_auth_password/>
+        <basic_auth_profile/>
+        <basic_auth_user/>
+        <certificate/>
+        <enable_mutual_auth>false</enable_mutual_auth>
+        <envelope><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:ser="http://TechnologyOneCorp.com/T1.W1.Public/Services">
+   <soap:Header/>
+   <soap:Body>
+      <ser:ContractParty_DoCreate>
+         <!--Optional:-->
+         <ser:Request SkipValidateContract="false" PerformCommit="true">
+            <!--Optional:-->
+            <ser:Auth UserId="${Request.Auth}" Password="${Request.Auth}" Config="${Request.Auth}" FunctionName="${Request.Auth}"/>
+            <!--Optional:-->
+            <ser:Version Major="${Request.Version}" Minor="${Request.Version}" Revision="${Request.Version}" Patch="${Request.Version}"/>
+            <!--Optional:-->
+            <ser:ContractParty ContractProfileName="" ContractNumber="" ContractNumberInternal="" PartyProfileName="" PartyNumber="" ContractPartyDescr="" ContractPartyComments="" ContractPartyStatus="" ContractPartyStageCode="" SellerPurchaser="" BillDocumentDefinition="" BillTermsMethod="" BillVatRateCode="" BillAddressCode=""/>
+            <!--Optional:-->
+            <ser:Userfields ContractProfileName="" ContractNumberInternal="" PartyProfileName="" PartyNumber="" Userfield01Alpha="" Userfield01Numeric="0" Userfield01Date="1900-01-01T00:00:00" Userfield01Descr="" Userfield02Alpha="" Userfield02Numeric="0" Userfield02Date="1900-01-01T00:00:00" Userfield02Descr="" Userfield03Alpha="" Userfield03Numeric="0" Userfield03Date="1900-01-01T00:00:00" Userfield03Descr="" Userfield04Alpha="" Userfield04Numeric="0" Userfield04Date="1900-01-01T00:00:00" Userfield04Descr="" Userfield05Alpha="" Userfield05Numeric="0" Userfield05Date="1900-01-01T00:00:00" Userfield05Descr="" Userfield06Alpha="" Userfield06Numeric="0" Userfield06Date="1900-01-01T00:00:00" Userfield06Descr="" Userfield07Alpha="" Userfield07Numeric="0" Userfield07Date="1900-01-01T00:00:00" Userfield07Descr="" Userfield08Alpha="" Userfield08Numeric="0" Userfield08Date="1900-01-01T00:00:00" Userfield08Descr="" Userfield09Alpha="" Userfield09Numeric="0" Userfield09Date="1900-01-01T00:00:00" Userfield09Descr="" Userfield10Alpha="" Userfield10Numeric="0" Userfield10Date="1900-01-01T00:00:00" Userfield10Descr="" Userfield11Alpha="" Userfield11Numeric="0" Userfield11Date="1900-01-01T00:00:00" Userfield11Descr="" Userfield12Alpha="" Userfield12Numeric="0" Userfield12Date="1900-01-01T00:00:00" Userfield12Descr="" Userfield13Alpha="" Userfield13Numeric="0" Userfield13Date="1900-01-01T00:00:00" Userfield13Descr="" Userfield14Alpha="" Userfield14Numeric="0" Userfield14Date="1900-01-01T00:00:00" Userfield14Descr="" Userfield15Alpha="" Userfield15Numeric="0" Userfield15Date="1900-01-01T00:00:00" Userfield15Descr="" Userfield16Alpha="" Userfield16Numeric="0" Userfield16Date="1900-01-01T00:00:00" Userfield16Descr="" Userfield17Alpha="" Userfield17Numeric="0" Userfield17Date="1900-01-01T00:00:00" Userfield17Descr="" Userfield18Alpha="" Userfield18Numeric="0" Userfield18Date="1900-01-01T00:00:00" Userfield18Descr="" Userfield19Alpha="" Userfield19Numeric="0" Userfield19Date="1900-01-01T00:00:00" Userfield19Descr="" Userfield20Alpha="" Userfield20Numeric="0" Userfield20Date="1900-01-01T00:00:00" Userfield20Descr=""/>
+         </ser:Request>
+      </ser:ContractParty_DoCreate>
+   </soap:Body>
+</soap:Envelope>]]></envelope>
+        <function_name>W1_ServicesSoap12.ContractParty_DoCreate</function_name>
+        <key_store/>
+        <key_store_alias/>
+        <key_store_password/>
+        <lock>false</lock>
+        <protocol_profile/>
+        <qualified_name>CES-DEV [ W1_ServicesSoap12.ContractParty_DoCreate ]</qualified_name>
+        <soap_action>http://TechnologyOneCorp.com/T1.W1.Public/Services/ContractParty_DoCreate</soap_action>
+        <soap_endpoint>http://cestier01-dev/T1CSUSER/app/w1_services.asmx</soap_endpoint>
+        <soap_message display_value="CES-DEV">c3edce07dbee570073ab787dbf9619eb</soap_message>
+        <strip_whitespace>false</strip_whitespace>
+        <sys_class_name>sys_soap_message_function</sys_class_name>
+        <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+        <sys_created_on>2018-06-18 22:42:22</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>452c8e514fb29b00aab4a3b11310c74b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>W1_ServicesSoap12.ContractParty_DoCreate</sys_name>
+        <sys_package display_value="Timesheets" source="x_cio19_timesheets">f4afbb85dbaa530073ab787dbf9619ce</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Timesheets">f4afbb85dbaa530073ab787dbf9619ce</sys_scope>
+        <sys_update_name>sys_soap_message_function_452c8e514fb29b00aab4a3b11310c74b</sys_update_name>
+        <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+        <sys_updated_on>2018-06-18 22:42:22</sys_updated_on>
+        <use_basic_auth>false</use_basic_auth>
+        <use_mid_server/>
+        <use_ws_security>false</use_ws_security>
+        <ws_security_type/>
+        <ws_security_username_profile/>
+        <ws_security_x509_profile/>
+    </sys_soap_message_function>
+</record_update>

@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_soap_message_function">
+    <sys_soap_message_function action="INSERT_OR_UPDATE">
+        <authentication_type/>
+        <basic_auth_password/>
+        <basic_auth_profile/>
+        <basic_auth_user/>
+        <certificate/>
+        <enable_mutual_auth>false</enable_mutual_auth>
+        <envelope><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://TechnologyOneCorp.com/T1.W1.Public/Services">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ser:Project_DoCreateV2>
+         <!--Optional:-->
+         <ser:Request UserEntered="${Project_DoCreateV2.Request}">
+            <!--Optional:-->
+            <ser:Auth UserId="${Request.Auth}" Password="${Request.Auth}" Config="${Request.Auth}" FunctionName="${Request.Auth}"/>
+            <!--Optional:-->
+            <ser:Version Major="${Request.Version}" Minor="${Request.Version}" Revision="${Request.Version}" Patch="${Request.Version}"/>
+            <!--Optional:-->
+            <ser:Project WorkSystemName="${Request.Project}" ProjectCode="${Request.Project}" TemplateProjectCode="${Request.Project}" Description="${Request.Project}" Narration="${Request.Project}" UpdateStage="${Request.Project}" TemplateInd="${Request.Project}" CapitalWorkInd="${Request.Project}" OperatingWorkInd="${Request.Project}" GeneralWorkInd="${Request.Project}" OutstandingCapitalCostOptn="${Request.Project}" ProjectManager="${Request.Project}" ParentProjectCode="${Request.Project}" EstimatedStartDate="${Request.Project}" EstimatedFinishDate="${Request.Project}" ProjectStartDate="${Request.Project}" ProjectFinishDate="${Request.Project}" PercentComplete="${Request.Project}" ForceTaskActivitiesInd="${Request.Project}" LimitTaskActualsOption="${Request.Project}" LimitTaskActualsInd="${Request.Project}" UpdateFcstVarFinOptn="${Request.Project}" UpdateFcstVarFinInd="${Request.Project}" StopRequisitionsInd="${Request.Project}" StopRequisitionsEffDate="${Request.Project}" StopRequisitionsComment="${Request.Project}" StopTasksInd="${Request.Project}" StopTasksEffDate="${Request.Project}" StopTasksComment="${Request.Project}" StopBillingInd="${Request.Project}" StopBillingEffDate="${Request.Project}" StopBillingComment="${Request.Project}" ForceActivityBudgetRateInd="${Request.Project}" ForceActivityBudgetRateOption="${Request.Project}" ProjectBillingType="${Request.Project}" BillingGenerateSeparateBillInd="${Request.Project}" BillingLdgCode="${Request.Project}" BillingAccnbri="${Request.Project}" BillingRechResGroup="${Request.Project}" BillingRechResCode="${Request.Project}" BillingDocDefnName="${Request.Project}" BillingVatRateCode="${Request.Project}" BillingAccRevItemTypeInd="${Request.Project}" BillingAccRevLdgCode="${Request.Project}" BillingAccRevAccnbri="${Request.Project}" BillingItemCode="${Request.Project}" BillingType="${Request.Project}" BillingMethod="${Request.Project}" BillingLimitInd="${Request.Project}" BillingLimitAmt="${Request.Project}" BillingLimitRevEstInd="${Request.Project}" BillingComment="${Request.Project}" BillingTermsDays="${Request.Project}" DefaultInvoiceLdgCode="${Request.Project}" DefaultInvoiceAccnbri="${Request.Project}" DefaultInvoiceDocDefnName="${Request.Project}" DefaultVatRateCode="${Request.Project}" DefaultRevenueItemCode="${Request.Project}" DefaultRechargeLdgCode="${Request.Project}" DefaultRechargeAccnbri="${Request.Project}" DefaultRechargeDocDefnName="${Request.Project}" DefaultRechargeItemCode="${Request.Project}" BillAddressCode="${Request.Project}" BillPrintInd="${Request.Project}" BillFaxInd="${Request.Project}" BillEmailInd="${Request.Project}" BillEmailAttach="${Request.Project}" BillEmailSep="${Request.Project}" BillEmailQuote="${Request.Project}" BillExportInd="${Request.Project}" BillSuppressInd="${Request.Project}" ContractRatesInd="${Request.Project}" MilestoneBasis="${Request.Project}" RevenueRecognitionInd="${Request.Project}" RevenueLdgCode="${Request.Project}" RevenueAccnbri="${Request.Project}" RevenueDocDefnName="${Request.Project}" RevenueVATType="${Request.Project}" RevenueVATRateType="${Request.Project}" RevenueVATRateCode="${Request.Project}" RevenueItemType="${Request.Project}" RevenueItemCode="${Request.Project}" RevenueLimitInd="${Request.Project}" RevenueLimitAmt="${Request.Project}" RevenueLimitRevEstInd="${Request.Project}" PerformCommit="true" PerformSetDefaults="true" PerformReadAttachments="false" PerformAttachmentUpload="${Request.Project}" PerformTaskStatusUpdate="false" WindowName="${Request.Project}">
+               <!--Optional:-->
+               <ser:CaptialComponents>
+                  <!--Zero or more repetitions:-->
+                  <ser:Capital>${CaptialComponents.Capital}</ser:Capital>
+               </ser:CaptialComponents>
+               <!--Optional:-->
+               <ser:OperatingComponents>
+                  <!--Zero or more repetitions:-->
+                  <ser:Operating>${OperatingComponents.Operating}</ser:Operating>
+               </ser:OperatingComponents>
+               <!--Optional:-->
+               <ser:GeneralComponents>
+                  <!--Zero or more repetitions:-->
+                  <ser:General>${GeneralComponents.General}</ser:General>
+               </ser:GeneralComponents>
+               <!--Optional:-->
+               <ser:Attachments>
+                  <!--Zero or more repetitions:-->
+                  <ser:Attachment>
+                     <ser:AllowModifyRetention>${Attachment.AllowModifyRetention}</ser:AllowModifyRetention>
+                     <ser:CanEditServerFile>${Attachment.CanEditServerFile}</ser:CanEditServerFile>
+                     <ser:ModifiedFileUploaded>${Attachment.ModifiedFileUploaded}</ser:ModifiedFileUploaded>
+                     <!--Optional:-->
+                     <ser:SourceDescr>${Attachment.SourceDescr}</ser:SourceDescr>
+                     <!--Optional:-->
+                     <ser:MasterAttachment>${Attachment.MasterAttachment}</ser:MasterAttachment>
+                     <!--Optional:-->
+                     <ser:SysKey>${Attachment.SysKey}</ser:SysKey>
+                     <!--Optional:-->
+                     <ser:OriginalAuditGroup>${Attachment.OriginalAuditGroup}</ser:OriginalAuditGroup>
+                     <!--Optional:-->
+                     <ser:EntityType>${Attachment.EntityType}</ser:EntityType>
+                     <!--Optional:-->
+                     <ser:UniqueNbr>${Attachment.UniqueNbr}</ser:UniqueNbr>
+                     <!--Optional:-->
+                     <ser:SequenceNbr>${Attachment.SequenceNbr}</ser:SequenceNbr>
+                     <!--Optional:-->
+                     <ser:AttLabel>${Attachment.AttLabel}</ser:AttLabel>
+                     <!--Optional:-->
+                     <ser:AttDate>${Attachment.AttDate}</ser:AttDate>
+                     <!--Optional:-->
+                     <ser:AttEndDate>${Attachment.AttEndDate}</ser:AttEndDate>
+                     <!--Optional:-->
+                     <ser:AttTypeInd>${Attachment.AttTypeInd}</ser:AttTypeInd>
+                     <!--Optional:-->
+                     <ser:DirCode>${Attachment.DirCode}</ser:DirCode>
+                     <!--Optional:-->
+                     <ser:LocalFileName>${Attachment.LocalFileName}</ser:LocalFileName>
+                     <!--Optional:-->
+                     <ser:AttFileName>${Attachment.AttFileName}</ser:AttFileName>
+                     <!--Optional:-->
+                     <ser:AttFileExt>${Attachment.AttFileExt}</ser:AttFileExt>
+                     <!--Optional:-->
+                     <ser:RetainUntilDate>${Attachment.RetainUntilDate}</ser:RetainUntilDate>
+                     <!--Optional:-->
+                     <ser:ServerFileNameExtension>${Attachment.ServerFileNameExtension}</ser:ServerFileNameExtension>
+                     <!--Optional:-->
+                     <ser:AttachmentType>${Attachment.AttachmentType}</ser:AttachmentType>
+                     <!--Optional:-->
+                     <ser:NotesData>${Attachment.NotesData}</ser:NotesData>
+                     <!--Optional:-->
+                     <ser:OldAttLabel>${Attachment.OldAttLabel}</ser:OldAttLabel>
+                     <!--Optional:-->
+                     <ser:OldAttTypeIndicator>${Attachment.OldAttTypeIndicator}</ser:OldAttTypeIndicator>
+                     <!--Optional:-->
+                     <ser:OldAttFileExtension>${Attachment.OldAttFileExtension}</ser:OldAttFileExtension>
+                     <!--Optional:-->
+                     <ser:OldAttachmentType>${Attachment.OldAttachmentType}</ser:OldAttachmentType>
+                     <!--Optional:-->
+                     <ser:OldAttDate>${Attachment.OldAttDate}</ser:OldAttDate>
+                     <!--Optional:-->
+                     <ser:OldNotesData>${Attachment.OldNotesData}</ser:OldNotesData>
+                     <!--Optional:-->
+                     <ser:OldRetainUntilDate>${Attachment.OldRetainUntilDate}</ser:OldRetainUntilDate>
+                     <!--Optional:-->
+                     <ser:CanDeleteLocalFile>${Attachment.CanDeleteLocalFile}</ser:CanDeleteLocalFile>
+                     <!--Optional:-->
+                     <ser:Errors>
+                        <!--Zero or more repetitions:-->
+                        <ser:ErrorItem Code="${Errors.ErrorItem}" Data="${Errors.ErrorItem}" Descr="${Errors.ErrorItem}" ShortDescr="${Errors.ErrorItem}" ErrorType="${Errors.ErrorItem}" FieldID="${Errors.ErrorItem}" Label="${Errors.ErrorItem}" Severity="${Errors.ErrorItem}" TableDescr="${Errors.ErrorItem}" MessageType="${Errors.ErrorItem}" ResponseType="${Errors.ErrorItem}" TextCollection="${Errors.ErrorItem}">
+                           <!--Optional:-->
+                           <ser:Text1>${ErrorItem.Text1}</ser:Text1>
+                           <!--Optional:-->
+                           <ser:Text2>${ErrorItem.Text2}</ser:Text2>
+                           <!--Optional:-->
+                           <ser:Text3>${ErrorItem.Text3}</ser:Text3>
+                        </ser:ErrorItem>
+                     </ser:Errors>
+                     <!--Optional:-->
+                     <ser:LoadedInd>${Attachment.LoadedInd}</ser:LoadedInd>
+                     <ser:AttachmentUploadGuid>${Attachment.AttachmentUploadGuid}</ser:AttachmentUploadGuid>
+                     <!--Optional:-->
+                     <ser:DownloadedFileName>${Attachment.DownloadedFileName}</ser:DownloadedFileName>
+                     <ser:DMSCheckoutStatus>${Attachment.DMSCheckoutStatus}</ser:DMSCheckoutStatus>
+                     <!--Optional:-->
+                     <ser:FileLastModifiedDate>${Attachment.FileLastModifiedDate}</ser:FileLastModifiedDate>
+                     <ser:SSDocSetId>${Attachment.SSDocSetId}</ser:SSDocSetId>
+                     <ser:SSDocumentId>${Attachment.SSDocumentId}</ser:SSDocumentId>
+                     <!--Optional:-->
+                     <ser:SSLinkAttUniqueNbr>${Attachment.SSLinkAttUniqueNbr}</ser:SSLinkAttUniqueNbr>
+                     <!--Optional:-->
+                     <ser:SSLinkAttSequenceNbr>${Attachment.SSLinkAttSequenceNbr}</ser:SSLinkAttSequenceNbr>
+                     <!--Optional:-->
+                     <ser:SSProcessStatus>${Attachment.SSProcessStatus}</ser:SSProcessStatus>
+                     <!--Optional:-->
+                     <ser:SSTransferToECMStatus>${Attachment.SSTransferToECMStatus}</ser:SSTransferToECMStatus>
+                     <ser:IsEmptySSDocument>${Attachment.IsEmptySSDocument}</ser:IsEmptySSDocument>
+                  </ser:Attachment>
+               </ser:Attachments>
+               <!--Optional:-->
+               <ser:AttachmentsV2>
+                  <!--Zero or more repetitions:-->
+                  <ser:Attachment SysKey="" SequenceNbr="${AttachmentsV2.Attachment}" AttachmentType="" AttLabel="" AttFileName="" AttFileExt="" AttTypeInd="" NotesData="" AttachmentUploadGuid="${AttachmentsV2.Attachment}" CanEditServerFile="false" SSDocSetId="0" SSDocumentId="0" UniqueNbr="" EntityType="" Action="U"/>
+               </ser:AttachmentsV2>
+               <!--Optional:-->
+               <ser:UserFields>
+                  <!--Zero or more repetitions:-->
+                  <ser:UserField ValueInternal="${UserFields.UserField}" Value="${UserFields.UserField}" Description="${UserFields.UserField}"/>
+               </ser:UserFields>
+               <!--Optional:-->
+               <ser:SelectionCodes>
+                  <!--Zero or more repetitions:-->
+                  <ser:SelectionCode Value="${SelectionCodes.SelectionCode}" Description="${SelectionCodes.SelectionCode}"/>
+               </ser:SelectionCodes>
+            </ser:Project>
+            <!--Optional:-->
+            <ser:ContractRates>
+               <!--Zero or more repetitions:-->
+               <ser:ContractRate SysKey="${ContractRates.ContractRate}" WorkSystemName="${ContractRates.ContractRate}" ProjectCode="${ContractRates.ContractRate}" ActivityCode="${ContractRates.ContractRate}" ResourceGroupCode="${ContractRates.ContractRate}" ResourceCode="${ContractRates.ContractRate}" ResourceCodeDescr="${ContractRates.ContractRate}" ResourceUOM="${ContractRates.ContractRate}" RateAmt="${ContractRates.ContractRate}" Action="${ContractRates.ContractRate}"/>
+            </ser:ContractRates>
+            <!--Optional:-->
+            <ser:FixedPriceSchedules>
+               <!--Zero or more repetitions:-->
+               <ser:FixedPriceSchedule Seqnbr="${FixedPriceSchedules.FixedPriceSchedule}" WorkSystemName="${FixedPriceSchedules.FixedPriceSchedule}" ProjectCode="${FixedPriceSchedules.FixedPriceSchedule}" ActivityCode="${FixedPriceSchedules.FixedPriceSchedule}" MilestoneDate="${FixedPriceSchedules.FixedPriceSchedule}" MilestoneTaskNbr="${FixedPriceSchedules.FixedPriceSchedule}" MilestonePercComp="${FixedPriceSchedules.FixedPriceSchedule}" MilestoneDescription="${FixedPriceSchedules.FixedPriceSchedule}" WorkType="${FixedPriceSchedules.FixedPriceSchedule}" Amount1="${FixedPriceSchedules.FixedPriceSchedule}" OnHoldIndicator="${FixedPriceSchedules.FixedPriceSchedule}" OnHoldReason="${FixedPriceSchedules.FixedPriceSchedule}" Action="${FixedPriceSchedules.FixedPriceSchedule}"/>
+            </ser:FixedPriceSchedules>
+            <!--Optional:-->
+            <ser:OperationalItems>
+               <!--Zero or more repetitions:-->
+               <ser:OperationalItem Seqnbr="${OperationalItems.OperationalItem}" WorkSystemName="${OperationalItems.OperationalItem}" ProjectCode="${OperationalItems.OperationalItem}" ActivityCode="${OperationalItems.OperationalItem}" BudgetCostUOM="${OperationalItems.OperationalItem}" BudgetCostUnits1="${OperationalItems.OperationalItem}" BudgetCostUnitRate="${OperationalItems.OperationalItem}" BudgetAmount1="${OperationalItems.OperationalItem}" BudgetRevenueUOM="${OperationalItems.OperationalItem}" BudgetRevenueUnits1="${OperationalItems.OperationalItem}" BudgetRevenueUnitRate="${OperationalItems.OperationalItem}" BudgetRevenueAmount1="${OperationalItems.OperationalItem}" Action="${OperationalItems.OperationalItem}">
+                  <!--Optional:-->
+                  <ser:InProjectSelectionCodes>
+                     <!--Zero or more repetitions:-->
+                     <ser:InProjectSelectionCodes>${InProjectSelectionCodes.InProjectSelectionCodes}</ser:InProjectSelectionCodes>
+                  </ser:InProjectSelectionCodes>
+                  <!--Optional:-->
+                  <ser:InProjectUserFields>
+                     <!--Zero or more repetitions:-->
+                     <ser:InProjectUserFields>${InProjectUserFields.InProjectUserFields}</ser:InProjectUserFields>
+                  </ser:InProjectUserFields>
+               </ser:OperationalItem>
+            </ser:OperationalItems>
+         </ser:Request>
+      </ser:Project_DoCreateV2>
+   </soapenv:Body>
+</soapenv:Envelope>]]></envelope>
+        <function_name>W1_ServicesSoap.Project_DoCreateV2</function_name>
+        <key_store/>
+        <key_store_alias/>
+        <key_store_password/>
+        <lock>false</lock>
+        <protocol_profile/>
+        <qualified_name>CES-DEV [ W1_ServicesSoap.Project_DoCreateV2 ]</qualified_name>
+        <soap_action>http://TechnologyOneCorp.com/T1.W1.Public/Services/Project_DoCreateV2</soap_action>
+        <soap_endpoint>http://cestier01-dev/T1CSUSER/app/w1_services.asmx</soap_endpoint>
+        <soap_message display_value="CES-DEV">c3edce07dbee570073ab787dbf9619eb</soap_message>
+        <strip_whitespace>false</strip_whitespace>
+        <sys_class_name>sys_soap_message_function</sys_class_name>
+        <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+        <sys_created_on>2018-06-18 22:44:20</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>7d9c0a914fb29b00aab4a3b11310c77c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>W1_ServicesSoap.Project_DoCreateV2</sys_name>
+        <sys_package display_value="Timesheets" source="x_cio19_timesheets">f4afbb85dbaa530073ab787dbf9619ce</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Timesheets">f4afbb85dbaa530073ab787dbf9619ce</sys_scope>
+        <sys_update_name>sys_soap_message_function_7d9c0a914fb29b00aab4a3b11310c77c</sys_update_name>
+        <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+        <sys_updated_on>2018-06-18 22:44:20</sys_updated_on>
+        <use_basic_auth>false</use_basic_auth>
+        <use_mid_server/>
+        <use_ws_security>false</use_ws_security>
+        <ws_security_type/>
+        <ws_security_username_profile/>
+        <ws_security_x509_profile/>
+    </sys_soap_message_function>
+</record_update>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_embedded_help_role">
+    <sys_embedded_help_role action="INSERT_OR_UPDATE">
+        <order>1000</order>
+        <role display_value="x_cio19_timesheets.ces_api_functions_user" name="x_cio19_timesheets.ces_api_functions_user">615816094ff65b00aab4a3b11310c713</role>
+        <sys_class_name>sys_embedded_help_role</sys_class_name>
+        <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+        <sys_created_on>2018-06-18 04:57:10</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>2d5816094ff65b00aab4a3b11310c714</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>615816094ff65b00aab4a3b11310c713</sys_name>
+        <sys_package display_value="Timesheets" source="x_cio19_timesheets">f4afbb85dbaa530073ab787dbf9619ce</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Timesheets">f4afbb85dbaa530073ab787dbf9619ce</sys_scope>
+        <sys_update_name>sys_embedded_help_role_2d5816094ff65b00aab4a3b11310c714</sys_update_name>
+        <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+        <sys_updated_on>2018-06-18 04:57:10</sys_updated_on>
+    </sys_embedded_help_role>
+</record_update>

@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_ui_macro">
+    <sys_ui_macro action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <category>general</category>
+        <description/>
+        <media_type/>
+        <name>TCC_Timesheets_home_controller</name>
+        <scoped_name>x_cio19_timesheets_TCC_Timesheets_home_controller</scoped_name>
+        <sys_class_name>sys_ui_macro</sys_class_name>
+        <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+        <sys_created_on>2018-06-06 04:56:50</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>57342cd9dbea530073ab787dbf9619fe</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>TCC_Timesheets_home_controller</sys_name>
+        <sys_package display_value="Timesheets" source="x_cio19_timesheets">f4afbb85dbaa530073ab787dbf9619ce</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Timesheets">f4afbb85dbaa530073ab787dbf9619ce</sys_scope>
+        <sys_update_name>sys_ui_macro_57342cd9dbea530073ab787dbf9619fe</sys_update_name>
+        <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+        <sys_updated_on>2018-06-06 04:59:41</sys_updated_on>
+        <xml><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+	 
+	<script>
+		var Timesheets = angular.module('Timesheets', ['angularUtils.directives.dirPagination', 'ui.bootstrap']);	
+		Timesheets.config(['$httpProvider', function($httpProvider) {
+			//initialize get if not there
+			if (!$httpProvider.defaults.headers.get) {
+				$httpProvider.defaults.headers.get = {};    
+			}    
+ 
+			// Answer edited to include suggestions from comments
+			// because previous version of code introduced browser-related errors 
+
+			//disable IE ajax request caching
+			$httpProvider.defaults.headers.get['If-Modified-Since'] = 'Mon, 26 Jul 1997 05:00:00 GMT';
+			// extra
+			$httpProvider.defaults.headers.get['Cache-Control'] = 'no-cache';
+			$httpProvider.defaults.headers.get['Pragma'] = 'no-cache';
+		}]);
+		
+
+		
+	
+		
+		Timesheets.controller('TimesheetController', function($scope, $http) {
+			$scope.reportedByNameList = [];
+			$scope.incidentNumberList = [];
+			$scope.formStatusList = [];
+			
+			$scope.reportedByName = '';
+			$scope.incidentNumber = '';
+			$scope.formStatus = '';
+						
+			$scope.loggedInUserEmail = '';
+			$scope.loggedInUserFullName = '';
+
+			$scope.reportedBynameErrorMsg = '';
+			$scope.incidentNumberErrorMsg = '';
+			$scope.formStatusErrorMsg = '';
+			
+			$scope.queryString = '';
+			
+			$scope.incidentList = [];
+		
+			$scope.concatString = '';
+			$scope.sigWordsArray = [];
+			
+			<!-- dirPagination -->
+			$scope.pageSize = 20;
+			$scope.currentPage = 1;
+			
+			$scope.ifLoading = false;
+			$scope.resultsOK = false;
+			$scope.searchFor = false;
+			$scope.showNoMatch = false;
+
+			$scope.useMyNameToSearch = false;
+			$scope.searchByName = false;
+		
+			$scope.currentUser = '';
+
+			$scope.formSubmitter = '';
+			$scope.formSubmitterEmail = '';
+			$scope.incidentDescription = '';
+			$scope.incidentNumber = '';
+			$scope.suburb = '';
+			$scope.formStatus = '';
+			$scope.stolenDateTimeValue = '';
+			$scope.dateSearchString = '';
+			$scope.dateSearchStart = '';
+			$scope.dateSearchEnd = '';
+	
+			$scope.submitterEmailAddress = '';
+		
+		
+			$scope.searchIncident = function() {
+				$scope.incidentList = [];
+				$scope.queryString = '';
+				$scope.concatString = '';
+				$scope.dateSearchString = '';
+				$scope.dateSearchStart = '';
+				$scope.dateSearchEnd = '';
+				$scope.showNoMatch = false;
+		
+				$scope.queryString1 = '';
+				$scope.queryString2 = '';
+			
+				// hide the div that holds results
+				$scope.resultsOK = false;
+				
+				$scope.reportedBynameErrorMsg = false;
+				$scope.incidentNumberErrorMsg = false;
+				$scope.formStatusErrorMsg = false;
+				var errorCount = 0;
+		
+				// build the search string
+				if ($scope.formSubmitter != '' $[AMP]$[AMP] $scope.formSubmitter != null) {
+					if ($scope.queryString != '') {
+						// the query string already has at least one key pair.  Need to put a carat (^) before the next key pair
+						$scope.queryString += '^';
+					}
+					// build the query string.  Note the use of "^" to create a traditional key pair in a GET query string
+					if ($scope.useMyNameToSearch == true) {
+						$scope.queryString += 'sys_created_by=' + $scope.formSubmitterEmail;
+					} else {
+						if ($scope.searchByName == true) {   // We are searching by another recognised name
+							$scope.queryString += 'sys_created_by=' + $scope.submitterEmailAddress;
+						} else {
+						alert("Error - unrecognised identifer");   // We have somehow gotten an unrecognised name
+						}
+					}
+				} else {
+					$scope.queryString = '';
+				}
+		
+				if ($scope.incidentDescription != '') { 					
+				// build the query string.  Note the use of '^OR' to concatenate the string's significant words
+					var i = 0;
+					$scope.concatString = '';
+					$scope.sigWordsArray = $scope.incidentDescription.split(' ');
+					while (i ${AMP}lt; $scope.sigWordsArray.length) {
+						$scope.concatString += 'u_description_of_incidentLIKE' + $scope.sigWordsArray[i];
+						if (i ${AMP}lt; ($scope.sigWordsArray.length-1)) {
+						   $scope.concatString += '^OR';
+						}
+						i++;
+					}
+					$scope.queryString += '^' + $scope.concatString;
+				}
+		
+				if ($scope.incidentNumber != '') {
+					if ($scope.queryString != '') {
+						// the query string already has at least one key pair.  Need to put a carat (^) before the next key pair
+						$scope.queryString += '^';
+					}
+					// build the query string.  Note the use of "^" to create a traditional key pair in a GET query string
+					$scope.queryString += 'u_incident_number=' + $scope.incidentNumber;
+				}
+				if ($scope.suburb != '') {
+					if ($scope.queryString != '') {
+						// the query string already has at least one key pair. Need to put a carat (^) before the next key pair
+						$scope.queryString += '^';
+					}
+					// build the query string.  Note the use of "^" to create a traditional key pair in a GET query string
+					$scope.queryString += 'u_suburb=' + $scope.suburb;
+				}
+
+				if ($scope.formStatus != '') {
+					if ($scope.queryString != '') {
+						// the query string already has at least one key pair.  Need to put a carat (^) before the next key pair
+						$scope.queryString += '^';
+					}
+					// build the query string.  Note the use of "^" to create a traditional key pair in a GET query string
+					$scope.queryString += 'u_form_status=' + $scope.formStatus;
+				}
+
+				if  ($j('#datetimepickerInput').val() != ''){
+					// use normal jquery and javascript to get value of Calendar input field, because Angular scope is NOT
+					// updated when jquery updates the input field. See: 
+					// http://stackoverflow.com/questions/17109850/update-angular-model-after-setting-input-value-with-jquery/17110709#17110709
+
+					// Note from jquery docs: "Note: Changing the value of an input element using JavaScript, using .val() for example, won't fire the event."
+					// Ref: https://api.jquery.com/change/
+
+					var dateString = $j('#datetimepickerInput').val();
+
+					// input is an Australia format date string. Eg,  DD/MM/YYYY Time AM
+					// we need to convert the time portion from AM/PM into 24 hour notation.  Eg 5:00 PM becomes 17:00
+					// Javascript has built in way to do this, using:  new Date()
+					// However, javascript works with USA format, which is  MM/DD/YYYY Time AM
+					// So we need to change our input string to USA format, do the 24 hour notation, then turn it back into Australia format.
+
+					// split the day and month from the rest of the string.
+					var datePartsArray = dateString.split("/");
+
+					// re-construct the date string into USA format, with month first.  Eg,  MM/DD/YYYY Time AM
+					var finalDateString = datePartsArray[1] + '/' + datePartsArray[0] + '/' + datePartsArray[2];
+
+					var date = new Date( finalDateString );
+
+					//zero-pad a single zero if needed
+					var zp = function (val){
+						return (val > 9 ? '' + val : '0' + val);
+						}
+
+					var d = date.getDate();
+					var m = date.getMonth() + 1;
+					var y = date.getFullYear();
+
+					$scope.stolenDateTimeValue = '' + y + '-' + zp(m) + '-' + zp(d);
+				}
+		
+				if ($scope.stolenDateTimeValue != '') {
+					if ($scope.queryString != '') {
+						// the query string already has at least one key pair.  Need to put a carat (^) before the next key pair
+						$scope.queryString += '^';
+					}
+					// build the query string.  Note the use of "^" to create a traditional key pair in a GET query string
+					$scope.dateSearchStart = "@javascript:gs.dateGenerate('" + $scope.stolenDateTimeValue + "','start')";
+					$scope.dateSearchEnd = "@javascript:gs.dateGenerate('" + $scope.stolenDateTimeValue + "','end')";
+					$scope.queryString += "u_datetimeON" + $scope.stolenDateTimeValue + $scope.dateSearchStart + $scope.dateSearchEnd;
+				}
+		
+		//alert($scope.queryString);
+		
+				if(errorCount == 0){
+
+					// hide the search form
+					$scope.searchFor = false;
+
+					// show the spinning image
+					$scope.ifLoading = true;
+
+					$http.get('/api/cio19/stolen_items/searchIncidents?query=' + $scope.queryString)
+					.then(function (response){
+		
+						$scope.incidentList = response.data.result;
+						$scope.queryString = '';
+		
+						// hide the spinning image
+						$scope.ifLoading = false;
+						if($scope.incidentList.length == 0){
+		
+							// show the error
+							$scope.showNoMatch = true;
+		
+						} else {
+							
+							// code to show list of results here
+		
+							// show the div that holds results
+							$scope.resultsOK = true;
+		
+		
+						}
+					window.scrollTo(0, 0);
+
+					});
+				}
+				
+			};
+			
+		
+		
+		
+		
+			$scope.clearForm = function() {
+				$scope.reportedByName = '';
+				$scope.incidentNumber = '';
+				$scope.formStatus = '';
+
+				// hide the spinning image
+				$scope.ifLoading = false;
+
+				$scope.showNoMatch = false;
+				$scope.searchFor = false;
+		
+				// hide the div that holds results
+				$scope.resultsOK = false;
+		
+				$scope.incidentList = [];
+				
+				$scope.reportedByNameError = false;
+				$scope.incidentNumberError = false;
+				$scope.formStatusError = false;
+				
+				$scope.reportedByNameErrorMsg = '';
+				$scope.incidentNumberErrorMsg = '';
+				$scope.formStatusErrorMsg = '';
+
+				window.scrollTo(0, 0);
+		
+			};
+
+		
+		
+		
+		
+			$scope.showHide = function() { 
+				// hide the spinning image
+				$scope.ifLoading = false;
+				
+				// show the search form
+				$scope.searchFor = true;
+		
+				// hide the div that holds results
+				$scope.resultsOK = false;
+		
+			};
+
+		
+		
+		
+
+			// Get logged-in user object array
+			$http.get('/api/cio19/general/userLoggedIn', { headers : { "X-UserToken" : window.g_ck } } )
+				.then(function (userResponse){
+
+					// store user details object array in the scope
+					$scope.loggedInUserArray = userResponse.data.result;
+//alert("First name = " + $scope.loggedInUserArray.firstName);
+					// how to get the user email
+					$scope.loggedInUserEmail = $scope.loggedInUserArray.name;
+					$scope.loggedInUserFullName = $scope.loggedInUserArray.displayName;
+			});
+		
+
+		
+		
+		
+			$scope.useMyName = function (qId) {
+				   if($scope.answers[qId]){ //If it is checked
+						$scope.searchByName = true;
+						$scope.useMyNameToSearch = true;
+						$scope.formSubmitter = $scope.loggedInUserFullName;
+						$scope.formSubmitterEmail = $scope.loggedInUserEmail;
+					} else {
+						$scope.searchByName = false;
+						$scope.useMyNameToSearch = false;
+						$scope.formSubmitter = '';
+						$scope.formSubmitterEmail = '';
+					}		
+				}
+		
+		
+		
+
+		
+			$scope.getUserList = function () {
+				// shown for clarity. the query string starts off empty.  build the query you want and add to this string.
+				$scope.queryString = '';
+				$scope.queryString += 'active=true^ORDERBYname';
+				// Call GENERAL API to get user list
+				$http.get('/api/cio19/general/userList?query=' + $scope.queryString )
+				.then(function (response){
+					$scope.userList = response.data.result;
+					$scope.queryString = '';
+					// Check if we received a valid result from the database query
+					if ($scope.userList.length == 0) {
+					alert("Error - no users");
+					} else {
+						$scope.userListString = JSON.stringify($scope.userList);
+						// alert( $scope.userListString);
+						// alert( $scope.userList.length + " users");
+					}
+				  });
+			};  // end $scope.userList = function
+
+
+		
+		
+		
+			$scope.startsWith = function(item, viewValue) {
+				   return item.substr(0, viewValue.length).toLowerCase() == viewValue.toLowerCase();
+			}      
+
+
+		
+
+
+			// On page load, run the function to get the user list
+			$scope.getUserList();
+
+
+		
+
+		
+			$scope.setUser = function(userArray, modelNameToUpdate) {
+				// Update the desired model.
+				// eg, this will do:  $scope.selectedUser = "some value here";  The [ ] are necessary because the . version did not work when passing the model name as a string to the function.
+				$scope[modelNameToUpdate] = userArray.username; // eg, this will do:  $scope.modelToUpdate = "some value here";  The [ ] are necessary because the . version did not work when passing the model name as a string to the function.
+				$scope.searchByName = true;
+				$scope.useMyNameToSearch = false;
+			};
+		
+		
+		
+		
+	
+			$scope.truncateString = function(str, limit) {
+					var return_string = str;
+					if (str.length >= limit) {
+						return_string = str.substring(0, limit-3) + "...";
+					}
+					return return_string;
+			}
+		
+		});
+	</script>
+	
+</j:jelly>]]></xml>
+    </sys_ui_macro>
+</record_update>

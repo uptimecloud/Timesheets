@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_ui_macro">
+    <sys_ui_macro action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <category>general</category>
+        <description/>
+        <media_type/>
+        <name>TCC_Timesheets_pg001_template</name>
+        <scoped_name>x_cio19_timesheets_TCC_Timesheets_pg001_template</scoped_name>
+        <sys_class_name>sys_ui_macro</sys_class_name>
+        <sys_created_by>rwb@townsville.qld.gov.au</sys_created_by>
+        <sys_created_on>2018-06-19 05:55:09</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>870f27954f3a17009b33cf401310c70a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>TCC_Timesheets_pg001_template</sys_name>
+        <sys_package display_value="Timesheets" source="x_cio19_timesheets">f4afbb85dbaa530073ab787dbf9619ce</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Timesheets">f4afbb85dbaa530073ab787dbf9619ce</sys_scope>
+        <sys_update_name>sys_ui_macro_870f27954f3a17009b33cf401310c70a</sys_update_name>
+        <sys_updated_by>rwb@townsville.qld.gov.au</sys_updated_by>
+        <sys_updated_on>2018-06-19 05:55:09</sys_updated_on>
+        <xml><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+  
+<!-- bootstrap-datetimepicker.css -->
+<link href="cd762b5b4f329640aab4a3b11310c7a4.cssdbx" rel="stylesheet" type="text/css"></link>
+
+	<g:requires name="moment.jsdbx" />
+	<g:requires name="transition.jsdbx" />
+	<g:requires name="collapse.jsdbx" />
+	<g:requires name="bootstrap-datetimepicker.jsdbx" />
+	<g:requires name="tcc_javascript.jsdbx" />
+
+	
+<div class="container-fluid driveway_container" ng-app="drivewayApp" ng-controller="drivewayController">
+	
+	<!-- dirPagination -->
+	<script type="text/ng-template" id="dirPagination.tpl.html">
+		<ul class="pagination" ng-if="1 ${AMP}lt; pages.length">
+		    <li ng-if="boundaryLinks" ng-class="{ disabled : pagination.current == 1 }">
+		        <a href="" ng-click="setCurrent(1)">laquo;</a>
+		    </li>
+		    <li ng-if="directionLinks" ng-class="{ disabled : pagination.current == 1 }" class="ng-scope">
+		        <a href="" ng-click="setCurrent(pagination.current - 1)" class="ng-binding">‹</a>
+		    </li>
+		    <li ng-repeat="pageNumber in pages track by $index" ng-class="{ active : pagination.current == pageNumber, disabled : pageNumber == '...' }">
+		        <a href="" ng-click="setCurrent(pageNumber)">{{ pageNumber }}</a>
+		    </li>
+		    <li ng-if="directionLinks" ng-class="{ disabled : pagination.current == pagination.last }" class="ng-scope">
+		        <a href="" ng-click="setCurrent(pagination.current + 1)" class="ng-binding">›</a>
+		    </li>
+		    <li ng-if="boundaryLinks"  ng-class="{ disabled : pagination.current == pagination.last }">
+		        <a href="" ng-click="setCurrent(pagination.last)">raquo;</a>
+		    </li>
+		</ul>
+	</script>
+	
+<!--	<div ng-show="hideFormStepThermometer == false"> -->
+
+		<div class="row">
+			<div class="col-md-12" style="text-align: right;">
+				<h5><b>Step 1</b>$[SP]of 8</h5>
+			</div>
+		</div>
+		<div class="row margin-top-10">
+			<div class="col-md-12">
+				<div class="thermometer_background" style="background: #eee; height: 6px; width: 20%; margin-left: 10px; padding: 1px 2px; float: right;">
+				   <div class="thermometer_progress" style="width: 12%; background-color: #77cbef; height: 5px; opacity: 1.0;">
+				   </div>
+				</div>
+			</div>
+		</div>
+<!--	</div>  -->
+	
+	<div class="row">
+        <div class="col-md-3 col-sm-2 col-xs-2"></div>
+        <div class="col-md-6 col-sm-8 col-xs-8">
+            <div class="center-block">
+                <p>$[SP]</p>
+				<h2 class="text-left margin-bottom-20">APPLICATION FOR ROAD WORK PERMIT</h2>
+					<h3 class="page-header">SELF ASSESSABLE</h3>
+                <p>$[SP]</p>
+				<p></p>
+				<h4 class="text-left margin-bottom-20">Introduction</h4>
+				<p></p>
+				Council approval is required before carrying out any work within the road reserve, under Subordinate Local Law 1.15.  Work must not commence prior to payment of fees and the granting of a permit.
+				<p></p>
+				This self-assessable road work permit application is for residential driveways that meet certain criteria.  These criteria are described in the$[SP]<a href="http://www.townsville.qld.gov.au">information sheet</a>$[SP]on council's website.  If your application meets these criteria, you will receive a road work permit by email shortly after submitting this form. Council inspections will not be required, although random audits will be carried out by Asset Inspectors from time to time.
+				<p></p>
+				If your driveway plan does not meet these criteria, you will need to apply for a road work permit with full council assessment, via$[SP]<a href="http://www.townsville.qld.gov.au">this form</a>$[SP]instead.
+				<p></p>
+				Refer to council's$[SP]<a href="http://www.townsville.qld.gov.au">information sheet</a>$[SP]for general information on driveways and other works in the road reserve.
+				<p></p>
+				<i>(Note that all fields are mandatory.)</i>		
+                <p>$[SP]</p>
+                <p>$[SP]</p>
+				<p></p>
+
+				<div name="userForms" class="ng-cloak" ng-if="formStatusError == true">
+					<p class="help-block alert-danger"><font size="4"><b>{{formStatusErrorMsg}}</b></font></p>
+				</div>
+				
+				<h3 class="page-header"></h3>
+				<h4 class="text-left margin-bottom-20">Road corridor permit (Department of Transport and Main Roads)</h4>
+				<p></p>
+				A road corridor permit from the Department of Transport and Main Roads is required if:
+				<ul>
+					<li>the works are on a state-controlled road;</li>
+					<li>within 150 metres of a state-controlled road; or</li>
+					<li>if the works will affect traffic associated with a state-controlled road.</li>
+				</ul>
+				<p></p>
+				If a road corridor permit is required, this application will not be processed until a copy of the road corridor permit (or acknowledgement letter) is given to council.
+                <p>$[SP]</p>
+				<div class="form-group margin-bottom-20">
+					<label for="permitRequired">Do your works require a Road Corridor Permit?</label><p></p>
+					<label class="radio-inline"><input type="radio" ng-model="permitRequired" value="1"></input>Yes</label>
+					<label class="radio-inline"><input type="radio" ng-model="permitRequired" value="2"></input>No</label>
+					<div name="userForms" class="ng-cloak" ng-if="permitRequiredError == true">
+						<p class="help-block alert-danger"><font size="4"><b>{{permitRequiredErrorMsg}}</b></font></p>
+					</div>
+
+					<div name="rcpForm" class="ng-cloak" ng-if="permitRequired == true">
+						<p>$[SP]</p>
+						<div class="form-group margin-bottom-20">
+							<div class="form-group">
+								<label>Upload your Road Corridor Permit as an attachment below.</label>
+								<input type="file" class="filestyle" data-icon="false" size="50"></input>
+							</div>
+						</div>
+					</div>
+				</div>
+								
+				
+				<p>$[SP]</p>
+				<p></p>
+
+				<h3 class="page-header"></h3>
+				<h4 class="text-left margin-bottom-20">Approval to remove or prune trees or shrubs</h4>
+				<p></p>
+				If you need any trees or branches removed (branches more than 2.5cm diameter) to enable the driveway or other works to proceed, you must already have approval from council's Maintenance Services (Parks).
+                <p>$[SP]</p>
+				<div class="form-group margin-bottom-20">
+					<label for="removeTrees">Do any trees, shrubs or plants require removing or pruning to allow the driveway to be constructed?</label><p></p>
+					<label class="radio-inline"><input type="radio" ng-model="removeTrees" value="1"></input>Yes</label>
+					<label class="radio-inline"><input type="radio" ng-model="removeTrees" value="2"></input>No</label>
+					<div name="userForms" class="ng-cloak" ng-if="removeTreesError == true">
+						<p class="help-block alert-danger"><font size="4"><b>{{removeTreesErrorMsg}}</b></font></p>
+					</div>
+
+
+					<div name="ptsForm" class="ng-cloak" ng-if="removeTrees == true">
+						<p>$[SP]</p>
+						<div class="form-group margin-bottom-20">
+							<div class="form-group">
+								<label>Upload your Approved Tree Removal Permit as an attachment below.</label>
+								<input type="file" class="filestyle" data-icon="false" size="50"></input>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				
+                <p>$[SP]</p>
+				<p></p>
+
+				<h3 class="page-header"></h3>
+				<h4 class="text-left margin-bottom-20">Property and driveway criteria</h4>
+				<p></p>
+				<div class="form-group margin-bottom-20">
+					<label for="propertyResidential">Is the property zoned as residential?</label><p></p>
+					<label class="radio-inline"><input type="radio" ng-model="propertyResidential" value="1"></input>Yes</label>
+					<label class="radio-inline"><input type="radio" ng-model="propertyResidential" value="2"></input>No</label>
+					<div name="userForms" class="ng-cloak" ng-if="propertyResidentialError == true">
+						<p class="help-block alert-danger"><font size="4"><b>{{propertyResidentialErrorMsg}}</b></font></p>
+					</div>
+				</div>
+				
+ 				<p>$[SP]</p>
+				<div class="form-group margin-bottom-20">
+					<label for="propertyUrban">Is the property located in an urban area (urban does NOT include rural or park residential zone)?</label><p></p>
+					<label class="radio-inline"><input type="radio" ng-model="propertyUrban" value="1"></input>Yes</label>
+					<label class="radio-inline"><input type="radio" ng-model="propertyUrban" value="2"></input>No</label>
+					<div name="userForms" class="ng-cloak" ng-if="propertyUrbanError == true">
+						<p class="help-block alert-danger"><font size="4"><b>{{propertyUrbanErrorMsg}}</b></font></p>
+					</div>
+				</div>
+				
+ 				<p>$[SP]</p>
+				<div class="form-group margin-bottom-20">
+					<label for="propertyGreenfield">Is the property located in a greenfield area, ie a newly developed estate?</label><p></p>
+					<label class="radio-inline"><input type="radio" ng-model="propertyGreenfield" value="1"></input>Yes</label>
+					<label class="radio-inline"><input type="radio" ng-model="propertyGreenfield" value="2"></input>No</label>
+					<div name="userForms" class="ng-cloak" ng-if="propertyGreenfieldError == true">
+						<p class="help-block alert-danger"><font size="4"><b>{{propertyGreenfieldErrorMsg}}</b></font></p>
+					</div>
+				</div>
+				
+ 				<p>$[SP]</p>
+				<div class="form-group margin-bottom-20">
+					<label for="drivewayFirst">Will this be the first driveway for the property?</label><p></p>
+					<label class="radio-inline"><input type="radio" ng-model="drivewayFirst" value="1"></input>Yes</label>
+					<label class="radio-inline"><input type="radio" ng-model="drivewayFirst" value="2"></input>No</label>
+					<div name="userForms" class="ng-cloak" ng-if="drivewayFirstError == true">
+						<p class="help-block alert-danger"><font size="4"><b>{{drivewayFirstErrorMsg}}</b></font></p>
+					</div>
+				</div>
+				
+ 				<p>$[SP]</p>
+				<div class="form-group margin-bottom-20">
+					<label for="blockCorner">Is the property on a corner block?</label><p></p>
+					<label class="radio-inline"><input type="radio" ng-model="blockCorner" value="1"></input>Yes</label>
+					<label class="radio-inline"><input type="radio" ng-model="blockCorner" value="2"></input>No</label>
+					<div name="userForms" class="ng-cloak" ng-if="blockCornerError == true">
+						<p class="help-block alert-danger"><font size="4"><b>{{blockCornerErrorMsg}}</b></font></p>
+					</div>
+				</div>
+				
+ 				<p>$[SP]</p>
+				<div ng-show="blockCorner == '1'">
+					<div class="form-group margin-bottom-20">
+						<label for="drivewayCorner">As the property is on a corner block, will the driveway be constructed in your street address?</label><p></p>
+						<label class="radio-inline"><input type="radio" ng-model="drivewayCorner" value="1"></input>Yes</label>
+						<label class="radio-inline"><input type="radio" ng-model="drivewayCorner" value="2"></input>No</label>
+					<div name="userForms" class="ng-cloak" ng-if="drivewayCornerError == true">
+						<p class="help-block alert-danger"><font size="4"><b>{{drivewayCornerErrorMsg}}</b></font></p>
+					</div>
+					</div>
+				</div>
+				
+<!-- ***************************************************************************************************************************  -->				
+ 				<p>$[SP]</p>
+ 				<p>$[SP]</p>
+				<div align="right">
+					<a class="btn btn-default btn-sm disabled fixed-width margin-left-10" href="/tcc_rwp_page_home.do" target="_parent">Home</a>$[SP]
+					<a class="btn btn-info btn-sm fixed-width margin-left-0" href="/tcc_rwp_page_home.do" target="_parent">Restart</a>$[SP]
+					<button name="buttonNext" type="button" class="btn btn-primary btn-sm fixed-width" ng-click="processPage()">Next</button>
+					<p>$[SP]</p>
+					<p>$[SP]</p>
+				</div>
+			</div>
+        </div>
+    </div>
+	
+
+	
+</div>
+
+
+</j:jelly>]]></xml>
+    </sys_ui_macro>
+</record_update>

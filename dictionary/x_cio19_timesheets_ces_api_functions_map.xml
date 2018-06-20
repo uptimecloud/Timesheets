@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element label="CES_API_Functions_Map" max_length="40" name="x_cio19_timesheets_ces_api_functions_map" type="collection">
+        <element label="description" max_length="100" name="description" type="string"/>
+        <element label="function" max_length="100" name="function" type="string"/>
+        <element label="lookup" max_length="100" name="lookup" type="string"/>
+    </element>
+</database>

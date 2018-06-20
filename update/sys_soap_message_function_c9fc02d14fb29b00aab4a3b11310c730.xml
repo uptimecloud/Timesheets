@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_soap_message_function">
+    <sys_soap_message_function action="INSERT_OR_UPDATE">
+        <authentication_type/>
+        <basic_auth_password/>
+        <basic_auth_profile/>
+        <basic_auth_user/>
+        <certificate/>
+        <enable_mutual_auth>false</enable_mutual_auth>
+        <envelope><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:ser="http://TechnologyOneCorp.com/T1.W1.Public/Services">
+   <soap:Header/>
+   <soap:Body>
+      <ser:Asset_DoCreateV2>
+         <!--Optional:-->
+         <ser:Request>
+            <!--Optional:-->
+            <ser:Auth UserId="${Request.Auth}" Password="${Request.Auth}" Config="${Request.Auth}" FunctionName="${Request.Auth}"/>
+            <!--Optional:-->
+            <ser:Version Major="${Request.Version}" Minor="${Request.Version}" Revision="${Request.Version}" Patch="${Request.Version}"/>
+            <!--Optional:-->
+            <ser:Asset RegName="${Request.Asset}" AssetNbr="${Request.Asset}" UserEnteredAssetNbr="${Request.Asset}" TemplateAssetNbr="${Request.Asset}" Descr="${Request.Asset}" LongDescr="${Request.Asset}" ShortDescr="${Request.Asset}" AssetType="${Request.Asset}" AssetStatus="${Request.Asset}" Barcode="${Request.Asset}" ExpCommDate="${Request.Asset}" DisposalDate="${Request.Asset}" DeprAssetInd="${Request.Asset}" LeaseAssetInd="${Request.Asset}" ConsAssetInd="${Request.Asset}" StocktakeInd="${Request.Asset}" InspectInd="${Request.Asset}" Condition="${Request.Asset}" SamAssetId="${Request.Asset}" GisId="${Request.Asset}" CapitalWorkLedgerCode="${Request.Asset}" CapitalWorkAccount="${Request.Asset}" OperatingWorkLedgerCode="${Request.Asset}" OperatingWorkAccount="${Request.Asset}" ManufName="${Request.Asset}" ManufDate="${Request.Asset}" ModelNbr="${Request.Asset}" Make="${Request.Asset}" SerialNbr="${Request.Asset}" RegistnNbr="${Request.Asset}" OtherNbr="${Request.Asset}" SuppMethCode="${Request.Asset}" SuppName="${Request.Asset}" SuppRef="${Request.Asset}" ConditionInd="N" AcqnDate="${Request.Asset}" WarrExpryDate="${Request.Asset}" Comment1="${Request.Asset}" Comment2="${Request.Asset}" Comment3="${Request.Asset}" InsurerName="${Request.Asset}" PolicyNbr="${Request.Asset}" RenewalDate="${Request.Asset}" InsuredAmt="${Request.Asset}" ReplmtAmt="${Request.Asset}" PrimaryAttachmentSeqNbr="${Request.Asset}" OperatingAssetStatus="${Request.Asset}" Meter1ReadUnits="${Request.Asset}" Meter1ReadDate="${Request.Asset}" Meter1ReadTime="${Request.Asset}" Meter1RunningUnits="${Request.Asset}" Meter1AvgUsage="${Request.Asset}" Meter2ReadUnits="${Request.Asset}" Meter2ReadDate="${Request.Asset}" Meter2ReadTime="${Request.Asset}" Meter2RunningUnits="${Request.Asset}" Meter2AvgUsage="${Request.Asset}" Meter3ReadUnits="${Request.Asset}" Meter3ReadDate="${Request.Asset}" Meter3ReadTime="${Request.Asset}" Meter3RunningUnits="${Request.Asset}" Meter3AvgUsage="${Request.Asset}" Meter4ReadUnits="${Request.Asset}" Meter4ReadDate="${Request.Asset}" Meter4ReadTime="${Request.Asset}" Meter4RunningUnits="${Request.Asset}" Meter4AvgUsage="${Request.Asset}" HireInd="${Request.Asset}" HireCostLedgerCode="${Request.Asset}" HireCostAccountNbr="${Request.Asset}" HireRecoveryLedgerCode="${Request.Asset}" HireRecoveryAccountNbr="${Request.Asset}" FinancialRegisterName="${Request.Asset}" FinancialAssetNumber="${Request.Asset}" ClassCode="${Request.Asset}" ComplexAssetType="${Request.Asset}" ParentAssetNbrInternal="${Request.Asset}" ClassComponentDescr="${Request.Asset}">
+               <!--Optional:-->
+               <ser:SelectionCodes>
+                  <!--Zero or more repetitions:-->
+                  <ser:SelectionCodes>${SelectionCodes.SelectionCodes}</ser:SelectionCodes>
+               </ser:SelectionCodes>
+               <!--Optional:-->
+               <ser:UserFields>
+                  <!--Zero or more repetitions:-->
+                  <ser:UserFields>${UserFields.UserFields}</ser:UserFields>
+               </ser:UserFields>
+            </ser:Asset>
+            <!--Optional:-->
+            <ser:AssetAttributes>
+               <!--Zero or more repetitions:-->
+               <ser:AssetAttribute AttrCode="${AssetAttributes.AssetAttribute}" SearchPath="${AssetAttributes.AssetAttribute}">
+                  <!--Optional:-->
+                  <ser:AttrLevelUserFields>
+                     <!--Zero or more repetitions:-->
+                     <ser:Asset_AttrLevelUserFields LevelNbr="${AttrLevelUserFields.Asset_AttrLevelUserFields}">
+                        <!--Optional:-->
+                        <ser:SelectionCodes>
+                           <!--Zero or more repetitions:-->
+                           <ser:SelectionCodes>${SelectionCodes.SelectionCodes}</ser:SelectionCodes>
+                        </ser:SelectionCodes>
+                        <!--Optional:-->
+                        <ser:UserFields>
+                           <!--Zero or more repetitions:-->
+                           <ser:UserFields>${UserFields.UserFields}</ser:UserFields>
+                        </ser:UserFields>
+                     </ser:Asset_AttrLevelUserFields>
+                  </ser:AttrLevelUserFields>
+               </ser:AssetAttribute>
+            </ser:AssetAttributes>
+            <!--Optional:-->
+            <ser:MaintenanceSchedules>
+               <!--Zero or more repetitions:-->
+               <ser:MaintenanceSchedule MaintenanceScheduleCode="${MaintenanceSchedules.MaintenanceSchedule}" MaintenanceStartDate="${MaintenanceSchedules.MaintenanceSchedule}"/>
+            </ser:MaintenanceSchedules>
+            <!--Optional:-->
+            <ser:CostRates>
+               <!--Zero or more repetitions:-->
+               <ser:CostRate WorkSystemName="${CostRates.CostRate}" WorkCode="${CostRates.CostRate}" ActivityCode="${CostRates.CostRate}" HireUnitOfMeasure="${CostRates.CostRate}" RateCode="${CostRates.CostRate}"/>
+            </ser:CostRates>
+            <!--Optional:-->
+            <ser:RecoveryRates>
+               <!--Zero or more repetitions:-->
+               <ser:RecoveryRate WorkSystemName="${RecoveryRates.RecoveryRate}" WorkCode="${RecoveryRates.RecoveryRate}" ActivityCode="${RecoveryRates.RecoveryRate}" HireUnitOfMeasure="${RecoveryRates.RecoveryRate}" RateCode="${RecoveryRates.RecoveryRate}"/>
+            </ser:RecoveryRates>
+            <!--Optional:-->
+            <ser:AssetBoms>
+               <!--Zero or more repetitions:-->
+               <ser:AssetBoms WorkSystemName="${AssetBoms.AssetBoms}" BomCode="${AssetBoms.AssetBoms}"/>
+            </ser:AssetBoms>
+         </ser:Request>
+      </ser:Asset_DoCreateV2>
+   </soap:Body>
+</soap:Envelope>]]></envelope>
+        <function_name>W1_ServicesSoap12.Asset_DoCreateV2</function_name>
+        <key_store/>
+        <key_store_alias/>
+        <key_store_password/>
+        <lock>false</lock>
+        <protocol_profile/>
+        <qualified_name>CES-DEV [ W1_ServicesSoap12.Asset_DoCreateV2 ]</qualified_name>
+        <soap_action>http://TechnologyOneCorp.com/T1.W1.Public/Services/Asset_DoCreateV2</soap_action>
+        <soap_endpoint>http://cestier01-dev/T1CSUSER/app/w1_services.asmx</soap_endpoint>
+        <soap_message display_value="CES-DEV">c3edce07dbee570073ab787dbf9619eb</soap_message>
+        <strip_whitespace>false</strip_whitespace>
+        <sys_class_name>sys_soap_message_function</sys_class_name>
+        <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+        <sys_created_on>2018-06-18 22:45:55</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>c9fc02d14fb29b00aab4a3b11310c730</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>W1_ServicesSoap12.Asset_DoCreateV2</sys_name>
+        <sys_package display_value="Timesheets" source="x_cio19_timesheets">f4afbb85dbaa530073ab787dbf9619ce</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Timesheets">f4afbb85dbaa530073ab787dbf9619ce</sys_scope>
+        <sys_update_name>sys_soap_message_function_c9fc02d14fb29b00aab4a3b11310c730</sys_update_name>
+        <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+        <sys_updated_on>2018-06-18 22:45:55</sys_updated_on>
+        <use_basic_auth>false</use_basic_auth>
+        <use_mid_server/>
+        <use_ws_security>false</use_ws_security>
+        <ws_security_type/>
+        <ws_security_username_profile/>
+        <ws_security_x509_profile/>
+    </sys_soap_message_function>
+</record_update>

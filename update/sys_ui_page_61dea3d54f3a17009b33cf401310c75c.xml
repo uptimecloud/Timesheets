@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_ui_page">
+    <sys_ui_page action="INSERT_OR_UPDATE">
+        <category>general</category>
+        <client_script/>
+        <description/>
+        <direct>false</direct>
+        <endpoint>x_cio19_timesheets_TCC_Timesheets_page_001.do</endpoint>
+        <html><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">	
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+  
+	<!-- JQuery -->
+	<g:requires name="jquery.min.v1.11.jsdbx" /> 
+	<g:requires name="keystone-jQueryFix.jsdbx" /> 
+	
+	<!--  Angular  -->
+	<g:requires name="angularjs.min.1.5.0.jsdbx" /> 
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.13.4/ui-bootstrap-tpls.min.js"></script>
+
+	<!-- Boostrap v3.3.6 -->
+	<g:requires name="bootstrap.min.3.3.6.jsdbx" />  
+	<link href="4002f6334f3412005596c61f0310c77e.cssdbx" rel="stylesheet" type="text/css"></link>
+	
+	<!-- FontAwesome -->
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet"></link>
+	
+	<!-- dirPagination-->
+	<g:requires name="dirPagination.jsdbx" /> 
+	
+	<!-- TCC theme -->
+	<link href="434ad2484f991600aab4a3b11310c7d4.cssdbx" rel="stylesheet" type="text/css"></link>
+	
+	
+	
+ <g:macro_invoke macro="x_cio19_timesheets_TCC_Timesheets_pg001_controller" /> 
+<g:macro_invoke macro="x_cio19_timesheets_TCC_Timesheets_pg001_template" /> 
+
+</j:jelly>]]></html>
+        <name>TCC_Timesheets_page_001</name>
+        <processing_script/>
+        <sys_class_name>sys_ui_page</sys_class_name>
+        <sys_created_by>rwb@townsville.qld.gov.au</sys_created_by>
+        <sys_created_on>2018-06-19 05:54:09</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>61dea3d54f3a17009b33cf401310c75c</sys_id>
+        <sys_mod_count>15</sys_mod_count>
+        <sys_name>TCC_Timesheets_page_001</sys_name>
+        <sys_package display_value="Timesheets" source="x_cio19_timesheets">f4afbb85dbaa530073ab787dbf9619ce</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Timesheets">f4afbb85dbaa530073ab787dbf9619ce</sys_scope>
+        <sys_update_name>sys_ui_page_61dea3d54f3a17009b33cf401310c75c</sys_update_name>
+        <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+        <sys_updated_on>2018-06-20 00:35:03</sys_updated_on>
+    </sys_ui_page>
+</record_update>

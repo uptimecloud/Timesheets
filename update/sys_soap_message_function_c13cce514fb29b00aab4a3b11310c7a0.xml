@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_soap_message_function">
+    <sys_soap_message_function action="INSERT_OR_UPDATE">
+        <authentication_type/>
+        <basic_auth_password/>
+        <basic_auth_profile/>
+        <basic_auth_user/>
+        <certificate/>
+        <enable_mutual_auth>false</enable_mutual_auth>
+        <envelope><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:ser="http://TechnologyOneCorp.com/T1.W1.Public/Services">
+   <soap:Header/>
+   <soap:Body>
+      <ser:AssetNotes_DoCreate>
+         <!--Optional:-->
+         <ser:Request RegName="${AssetNotes_DoCreate.Request}" AssetNbr="${AssetNotes_DoCreate.Request}">
+            <!--Optional:-->
+            <ser:Auth UserId="${Request.Auth}" Password="${Request.Auth}" Config="${Request.Auth}" FunctionName="${Request.Auth}"/>
+            <!--Optional:-->
+            <ser:Version Major="${Request.Version}" Minor="${Request.Version}" Revision="${Request.Version}" Patch="${Request.Version}"/>
+            <!--Optional:-->
+            <ser:Notes>
+               <!--Zero or more repetitions:-->
+               <ser:Note NoteNbr="${Notes.Note}" NoteDate="${Notes.Note}" Subject="${Notes.Note}" Note="${Notes.Note}" ShortNote="${Notes.Note}" NoteType="${Notes.Note}"/>
+            </ser:Notes>
+         </ser:Request>
+      </ser:AssetNotes_DoCreate>
+   </soap:Body>
+</soap:Envelope>]]></envelope>
+        <function_name>W1_ServicesSoap12.AssetNotes_DoCreate</function_name>
+        <key_store/>
+        <key_store_alias/>
+        <key_store_password/>
+        <lock>false</lock>
+        <protocol_profile/>
+        <qualified_name>CES-DEV [ W1_ServicesSoap12.AssetNotes_DoCreate ]</qualified_name>
+        <soap_action>http://TechnologyOneCorp.com/T1.W1.Public/Services/AssetNotes_DoCreate</soap_action>
+        <soap_endpoint>http://cestier01-dev/T1CSUSER/app/w1_services.asmx</soap_endpoint>
+        <soap_message display_value="CES-DEV">c3edce07dbee570073ab787dbf9619eb</soap_message>
+        <strip_whitespace>false</strip_whitespace>
+        <sys_class_name>sys_soap_message_function</sys_class_name>
+        <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+        <sys_created_on>2018-06-18 22:42:38</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>c13cce514fb29b00aab4a3b11310c7a0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>W1_ServicesSoap12.AssetNotes_DoCreate</sys_name>
+        <sys_package display_value="Timesheets" source="x_cio19_timesheets">f4afbb85dbaa530073ab787dbf9619ce</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Timesheets">f4afbb85dbaa530073ab787dbf9619ce</sys_scope>
+        <sys_update_name>sys_soap_message_function_c13cce514fb29b00aab4a3b11310c7a0</sys_update_name>
+        <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+        <sys_updated_on>2018-06-18 22:42:38</sys_updated_on>
+        <use_basic_auth>false</use_basic_auth>
+        <use_mid_server/>
+        <use_ws_security>false</use_ws_security>
+        <ws_security_type/>
+        <ws_security_username_profile/>
+        <ws_security_x509_profile/>
+    </sys_soap_message_function>
+</record_update>

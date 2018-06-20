@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_ui_macro">
+    <sys_ui_macro action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <category>general</category>
+        <description/>
+        <media_type/>
+        <name>TCC_Timesheets_home_template</name>
+        <scoped_name>x_cio19_timesheets_TCC_Timesheets_home_template</scoped_name>
+        <sys_class_name>sys_ui_macro</sys_class_name>
+        <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+        <sys_created_on>2018-06-06 04:56:55</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>19e4e4d9dbea530073ab787dbf9619c1</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>TCC_Timesheets_home_template</sys_name>
+        <sys_package display_value="Timesheets" source="x_cio19_timesheets">f4afbb85dbaa530073ab787dbf9619ce</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Timesheets">f4afbb85dbaa530073ab787dbf9619ce</sys_scope>
+        <sys_update_name>sys_ui_macro_19e4e4d9dbea530073ab787dbf9619c1</sys_update_name>
+        <sys_updated_by>rwb@townsville.qld.gov.au</sys_updated_by>
+        <sys_updated_on>2018-06-19 05:52:57</sys_updated_on>
+        <xml><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+ 
+	<!-- grab TCC customer service phone number from system properties  -->
+	<g:evaluate var="jvar_cust_service" object="true">
+		var sp = new GlideRecord("sys_properties");
+		sp.addQuery("name", "tcc.telephone.customer.service");
+		sp.query();
+		sp.next();
+		sp;
+	</g:evaluate>  
+ 
+<!-- bootstrap-datetimepicker.css -->
+<link href="cd762b5b4f329640aab4a3b11310c7a4.cssdbx" rel="stylesheet" type="text/css"></link>
+
+	<g:requires name="moment.jsdbx" />
+	<g:requires name="transition.jsdbx" />
+	<g:requires name="collapse.jsdbx" />
+	<g:requires name="bootstrap-datetimepicker.jsdbx" />
+	<g:requires name="tcc_javascript.jsdbx" />
+
+	
+<div class="container-fluid Timesheets" ng-app="Timesheets" ng-controller="TimesheetController">
+	
+	<!-- dirPagination -->
+	<script type="text/ng-template" id="dirPagination.tpl.html">
+		<ul class="pagination" ng-if="1 ${AMP}lt; pages.length">
+		    <li ng-if="boundaryLinks" ng-class="{ disabled : pagination.current == 1 }">
+		        <a href="" ng-click="setCurrent(1)">laquo;</a>
+		    </li>
+		    <li ng-if="directionLinks" ng-class="{ disabled : pagination.current == 1 }" class="ng-scope">
+		        <a href="" ng-click="setCurrent(pagination.current - 1)" class="ng-binding">‹</a>
+		    </li>
+		    <li ng-repeat="pageNumber in pages track by $index" ng-class="{ active : pagination.current == pageNumber, disabled : pageNumber == '...' }">
+		        <a href="" ng-click="setCurrent(pageNumber)">{{ pageNumber }}</a>
+		    </li>
+		    <li ng-if="directionLinks" ng-class="{ disabled : pagination.current == pagination.last }" class="ng-scope">
+		        <a href="" ng-click="setCurrent(pagination.current + 1)" class="ng-binding">›</a>
+		    </li>
+		    <li ng-if="boundaryLinks"  ng-class="{ disabled : pagination.current == pagination.last }">
+		        <a href="" ng-click="setCurrent(pagination.last)">raquo;</a>
+		    </li>
+		</ul>
+	</script>
+	
+	
+	<div class="row">
+        <div class="col-md-6 col-sm-8 col-xs-8">
+            <div class="center-block">
+                <p>$[SP]</p>
+                   <h2 class="text-center margin-bottom-20">Stolen Items Register</h2>
+                   <h5 class="text-center margin-bottom-20">v2.2</h5>    
+                <p>$[SP]</p>
+				
+				<h4>This system is designed to allow the user to record all relevant details with regard to an incident in which TCC assets have been$[SP]<b>stolen</b>.$[SP]$[SP]This$[SP]<u>does not</u>$[SP]include personal items, or instances where TCC assets have been lost or misplaced.</h4>
+                <p>$[SP]</p>
+				<h4>Lodgement of stolen items information is a three-step process:<br></br>
+					<b>1.</b>$[SP]$[SP]Submit a draft (initial) report, which decribes the incident and the items stolen;<br></br>
+					<b>2.</b>$[SP]$[SP]Gather all required relevant details such as asset numbers and value of items stolen, names of witnesses, and so on (a checklist can be printed out to assist you with this); and<br></br>
+					<b>3.</b>$[SP]$[SP]Enter the gathered information to complete the report.</h4>
+                <p>$[SP]</p>
+                <p>$[SP]</p>
+				
+				<div class="panel panel-info">
+					<div class="panel-heading text-center margin-bottom-0 padding-top-0"><h5><b>Searching/reviewing text fields</b></h5></div>
+				<div class="panel-body">Note that when searching  or reviewing incidents and items, some entered data may exceed the size of the screen text fields.  To view the data in its entirety, click on the<span class="fa-stack fa-sm margin-top-0 margin-bottom-0"><i class="fa fa-circle fa-stack-2x" style="color: #FFFFFF;"></i><i class="fa fa-info-circle fa-stack-1x" style="color: #3A73EF;"></i></span>icon alongside it to display the text in a dialog box.</div>
+				</div>
+
+                <p>$[SP]</p>
+                <p>$[SP]</p> 
+				<h4>Click <b>$[SP]New Incident$[SP]</b> to create a new draft incident report, or <b>$[SP]Search$[SP]</b> to search for an existing incident.</h4>
+                <p>$[SP]</p>
+				<p></p>
+				
+                <a class="btn btn-primary fixed-width" href="/x_cio19_timesheets_home.do" target="_parent">New Timesheet</a>$[SP] 
+                <a class="btn btn-info fixed-width" ng-click="showHide()">Search</a>
+
+				<p>$[SP]</p>
+                <p>$[SP]</p>
+
+				<div ng-show="showNoMatch == true" class="alert alert-danger" role="alert">
+					<h4><b>No matches found.</b>$[SP]$[SP]Please try again, or call the$[SP]<b>Service Desk</b>$[SP]on<b>$[SP]11</b>.</h4>
+				</div>
+				<div id="divname1" ng-show="searchFor == true" class="form-group">
+				
+					<h4>You can search by name of the person who submitted the initial draft report, by description of the incident (significant words), by incident number, by suburb, by date of the incident, and/or by form completion status (either draft or completed).</h4>
+					<p>$[SP]</p>
+					
+					Use the typeahead-editable="false" attribute to bind model only when a selection is made. 
+					<div>
+						<label for="formSubmitter">Name</label>
+						<input class="form-control" 
+							   name="formSubmitter"
+							   ng-model="formSubmitter" 
+							   type="text"
+							   typeahead="user.name as user.name for user in userList | filter:$viewValue | limitTo:12"  
+							   typeahead-on-select="setUser($item, 'submitterEmailAddress')"
+							   typeahead-editable="false"
+							   placeholder="Enter the name of the person who created/submitted the initial incident report"
+							   />
+					</div>
+					<div id="usemyname" class="checkbox padding-left-5"><label><input name="Use_my_name" type="checkbox" ng-model="answers[1]" value="" ng-change="useMyName(1)">Use my name</input></label></div>
+
+					<div class="form-group margin-bottom-20">
+						<label for="incidentDescription">Incident description  <i>(Maximum 250 characters)</i></label>
+						<input type="text" ng-model="incidentDescription" class="form-control" name="incidentDescription" uib-typeahead="s for s in reportedByNameList | filter:$viewValue:startsWith | limitTo:8" placeholder="Enter some significant words relating to the incident description" />
+					</div>
+					<div class="form-group margin-bottom-20">
+						<label for="incidentNumber">Incident number</label>
+						<input name="incidentNumber" type="text" ng-model="incidentNumber" class="form-control" uib-typeahead="s for s in incidentNumberList | filter:$viewValue:startsWith | limitTo:8" placeholder="Enter the incident number" />
+					</div>
+					<div class="form-group margin-bottom-20">
+						<label for="suburb">Suburb</label>
+						<input name="suburb" type="text" ng-model="suburb" class="form-control" uib-typeahead="s for s in incidentNumberList | filter:$viewValue:startsWith | limitTo:8" placeholder="Enter the suburb where the incident occurred" />
+					</div>
+
+					<div class="form-group" style="display:block; width:75%;">
+						<div class="form-group">
+							<label for="Date">Date of incident</label>
+							<div style="overflow:hidden;">
+								<div class="form-group">
+									<div class="row">
+										<div class="col-md-8">
+											<div id="datetimepicker">
+												<input id="datetimepickerInput" type='hidden' ng-model="stolenDateTime" name="stolenDateTime" class="form-control" value="now"/>
+											</div>
+										</div>
+									</div>
+								</div>
+							<script type="text/javascript">
+
+								var $j = jQuery.noConflict(); 
+
+								$j(document).ready(function() {
+
+									$j('#datetimepicker').datetimepicker({
+										inline: true,	
+										sideBySide: true,
+										useCurrent: false,
+										format: 'DD/MM/YYYY'
+									}).trigger('#datetimepicker input');
+
+								});
+							</script>
+							</div>
+						</div> 
+					</div>
+					
+					<div class="form-group margin-bottom-20">
+						<label for="formStatus">Form completion status</label><p></p>
+						<label class="radio-inline"><input type="radio" ng-model="formStatus" value="1"></input>Draft</label>
+						<label class="radio-inline"><input type="radio" ng-model="formStatus" value="2"></input>Completed</label>
+					</div>
+					<div class="form-group padding-top-20">
+						<button name="Search" type="button" class="btn btn-success fixed-width margin-right-20" ng-click="searchIncident()">Go</button>
+						<button name="Clear" type="button" class="btn btn-default fixed-width" ng-click="clearForm()">Start again</button>
+					</div>
+				</div> 
+            </div>
+             Search spinner 
+			<div ng-show="ifLoading == true" id="searching_spinner" name="Searching" class="col-md-12 searching_spinner">
+				<i class="fa fa-spinner fa-spin fa-2x margin-right-20"></i> Searching ... 
+			</div>
+        </div>
+        <div class="col-md-3 col-sm-2 col-xs-2"></div>
+    </div>
+	
+
+	<div id="divname2" ng-show="resultsOK == true" class="form-group">
+	
+		
+		<div class="row results" ng-show="incidentList.length > 0">
+			<div class="col-md-3 col-sm-2 col-xs-2"></div>
+			<div class="col-md-6 col-sm-8 col-xs-8">
+
+				dirPagination controls 
+				<div class="text-center">
+					<dir-pagination-controls boundary-links="true" max-size="5" template-url="dirPagination.tpl.html" pagination-id="kbPagination"></dir-pagination-controls>
+				</div>
+
+				<table class="table table-striped">
+					<thead>
+						<tr ng-show="incidentList.length > 0" class="bg-info">
+							<th>Incident Number</th>
+							<th>Date</th>
+							<th>Description of incident</th>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr dir-paginate="incident in incidentList | itemsPerPage: pageSize" current-page="currentPage" pagination-id="kbPagination">
+							<td class="col-sm-3">
+								<p ng-show="incident.u_incident_number.length > 0">
+									<b>{{incident.u_incident_number}}</b>
+								</p>
+							</td>
+							<td class="col-sm-2">
+								<p ng-show="incident.u_incident_number.length > 0">
+									<i>{{incident.u_datetime.substring(0,10)}}</i>
+								</p>
+							</td>
+							<td class="col-sm-5">
+								<p ng-show="incident.u_incident_number.length > 0">
+									<i> {{ truncateString(incident.u_description_of_incident, 40) }}</i>
+								</p>
+							</td>
+							<td class="col-sm-2"><a href="stolen_items_followup.do?incidentNumber={{incident.u_incident_number}}" class="btn btn-primary center-block" style="color: #fff !important;">Choose</a></td>		
+
+						</tr>
+					</tbody>
+				</table>
+
+
+
+			</div>
+		</div>
+    </div>
+	
+</div>
+
+
+</j:jelly>]]></xml>
+    </sys_ui_macro>
+</record_update>

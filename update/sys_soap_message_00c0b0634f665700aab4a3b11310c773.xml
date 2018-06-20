@@ -1,0 +1,1399 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_soap_message">
+    <sys_soap_message action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <authentication_type/>
+        <basic_auth_password/>
+        <basic_auth_profile/>
+        <basic_auth_user/>
+        <description/>
+        <download_wsdl>false</download_wsdl>
+        <enable_mutual_auth>false</enable_mutual_auth>
+        <name>Boomi Timesheets</name>
+        <protocol_profile/>
+        <sys_class_name>sys_soap_message</sys_class_name>
+        <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+        <sys_created_on>2018-06-13 05:36:54</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>00c0b0634f665700aab4a3b11310c773</sys_id>
+        <sys_mod_count>21</sys_mod_count>
+        <sys_name>Boomi Timesheets</sys_name>
+        <sys_package display_value="Timesheets" source="x_cio19_timesheets">f4afbb85dbaa530073ab787dbf9619ce</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Timesheets">f4afbb85dbaa530073ab787dbf9619ce</sys_scope>
+        <sys_update_name>sys_soap_message_00c0b0634f665700aab4a3b11310c773</sys_update_name>
+        <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+        <sys_updated_on>2018-06-18 06:28:58</sys_updated_on>
+        <use_basic_auth>false</use_basic_auth>
+        <wsdl>http://intapp01-dev.corporate.townsville.qld.gov.au:9090/ws/soap/timesheets?wsdl</wsdl>
+        <wsdl_xml><![CDATA[<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns3="http://technologyonecorp.com/T1.Hr.Public/Services" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://TechnologyOneCorp.com/T1.W1.Public/Services" xmlns:xs="http://www.w3.org/2001/XMLSchema" name="WebServiceProvider" targetNamespace="http://TechnologyOneCorp.com/T1.W1.Public/Services">
+<wsdl:types>
+<xs:schema xmlns:tns="http://technologyonecorp.com/T1.Hr.Public/Services" elementFormDefault="qualified" targetNamespace="http://technologyonecorp.com/T1.Hr.Public/Services" version="1.0">
+<xs:element name="Employee_DoGetContactList" type="tns:Employee_DoGetContactList"/>
+<xs:complexType name="AppVersion">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="Major" type="xs:decimal" use="required"/>
+<xs:attribute name="Minor" type="xs:decimal" use="required"/>
+<xs:attribute name="Revision" type="xs:decimal" use="required"/>
+<xs:attribute name="Patch" type="xs:decimal" use="required"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+<xs:complexType name="Authentication">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="UserId" type="xs:string"/>
+<xs:attribute name="Password" type="xs:string"/>
+<xs:attribute name="Config" type="xs:string"/>
+<xs:attribute name="FunctionName" type="xs:string"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+<xs:complexType name="Employee_DoGetContactList">
+<xs:sequence>
+<xs:element maxOccurs="1" minOccurs="0" name="request" type="tns:Employee_DoGetContactListRequest"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="Employee_DoGetContactListRequest">
+<xs:sequence>
+<xs:element maxOccurs="1" minOccurs="0" name="Auth" type="tns:Authentication"/>
+<xs:element maxOccurs="1" minOccurs="0" name="Version" type="tns:AppVersion"/>
+</xs:sequence>
+<xs:attribute name="IdNumber" type="xs:decimal"/>
+</xs:complexType>
+<xs:element name="Employee_DoGetContactListResponse" type="tns:Employee_DoGetContactListResponse"/>
+<xs:complexType name="Employee_DoGetContactListResponse">
+<xs:sequence>
+<xs:element maxOccurs="1" minOccurs="0" name="Employee_DoGetContactListResult" type="tns:Employee_DoGetContactListResponse"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="Timesheet_DoGetEntryList" type="tns:Timesheet_DoGetEntryList"/>
+<xs:complexType name="ArrayOfInt">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="IdNumber" type="xs:decimal"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="Timesheet_DoGetEntryList">
+<xs:sequence>
+<xs:element maxOccurs="1" minOccurs="0" name="request" type="tns:Timesheet_DoGetEntryListRequest"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="Timesheet_DoGetEntryListRequest">
+<xs:sequence>
+<xs:element maxOccurs="1" minOccurs="0" name="Auth" type="tns:Authentication"/>
+<xs:element maxOccurs="1" minOccurs="0" name="Version" type="tns:AppVersion"/>
+<xs:element maxOccurs="1" minOccurs="0" name="IdNumbers" type="tns:ArrayOfInt"/>
+</xs:sequence>
+<xs:attribute name="TimesheetsFrom" type="xs:dateTime"/>
+<xs:attribute name="TimesheetsTo" type="xs:dateTime"/>
+<xs:attribute name="ModifiedSince" type="xs:dateTime"/>
+</xs:complexType>
+<xs:element name="Timesheet_DoGetEntryListResponse" type="tns:Timesheet_DoGetEntryListResponse"/>
+<xs:complexType name="Timesheet_DoGetEntryListResponse">
+<xs:sequence>
+<xs:element maxOccurs="1" minOccurs="0" name="Timesheet_DoGetEntryListResult" type="tns:Timesheet_DoGetEntryListResponse"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
+<xs:schema xmlns:tns="WebService" elementFormDefault="qualified" targetNamespace="WebService" version="1.0">
+<xs:element name="Items" type="tns:ArrayOfWebErrorItem"/>
+<xs:complexType name="ArrayOfWebErrorItem">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="ErrorItem" type="tns:WebErrorItem"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="WebErrorItem">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="ErrorType" type="xs:string"/>
+<xs:attribute name="ErrorCode" type="xs:string"/>
+<xs:attribute name="Description" type="xs:string"/>
+<xs:attribute name="ShortDescription" type="xs:string"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+<xs:complexType name="WebErrors">
+<xs:sequence>
+<xs:element maxOccurs="1" minOccurs="0" name="Items" type="tns:ArrayOfWebErrorItem"/>
+</xs:sequence>
+<xs:attribute name="IsError" type="xs:string" use="required"/>
+<xs:attribute name="IsWarning" type="xs:string" use="required"/>
+</xs:complexType>
+<xs:complexType name="Items">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="ErrorItem" type="tns:WebErrorItem"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
+<xs:schema xmlns:ns2="WebService" elementFormDefault="qualified" targetNamespace="http://TechnologyOneCorp.com/T1.W1.Public/Services" version="1.0">
+<xs:import namespace="http://technologyonecorp.com/T1.Hr.Public/Services"/>
+<xs:import namespace="WebService"/>
+<xs:element name="Activity_DoGetList" type="tns:Activity_DoGetList"/>
+<xs:complexType name="Activity_DoGetList">
+<xs:sequence>
+<xs:element maxOccurs="1" minOccurs="0" name="Request" type="tns:Activity_DoGetListRequest"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="Activity_DoGetListRequest">
+<xs:sequence>
+<xs:element maxOccurs="1" minOccurs="0" name="Auth" type="tns:Authentication"/>
+<xs:element maxOccurs="1" minOccurs="0" name="Version" type="tns:AppVersion"/>
+<xs:element maxOccurs="1" minOccurs="0" name="Criteria" type="tns:ArrayOfCriteriaItem"/>
+</xs:sequence>
+<xs:attribute name="WorkSystemName" type="xs:string"/>
+</xs:complexType>
+<xs:complexType name="AppVersion">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="Major" type="xs:decimal" use="required"/>
+<xs:attribute name="Minor" type="xs:decimal" use="required"/>
+<xs:attribute name="Revision" type="xs:decimal" use="required"/>
+<xs:attribute name="Patch" type="xs:decimal" use="required"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+<xs:complexType name="ArrayOfCriteriaItem">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="critSpec" type="tns:CriteriaItem"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="Authentication">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="UserId" type="xs:string"/>
+<xs:attribute name="Password" type="xs:string"/>
+<xs:attribute name="Config" type="xs:string"/>
+<xs:attribute name="FunctionName" type="xs:string"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+<xs:complexType name="CriteriaItem">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="ColumnId" type="xs:string"/>
+<xs:attribute name="OperatorCode" type="xs:string"/>
+<xs:attribute name="PropertyName" type="xs:string"/>
+<xs:attribute name="Value" type="xs:string"/>
+<xs:attribute name="Value2" type="xs:string"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+<xs:element name="Activity_DoGetListResponse" type="tns:Activity_DoGetListResponse"/>
+<xs:complexType name="Activity_DoGetListResponse">
+<xs:sequence>
+<xs:element maxOccurs="1" minOccurs="0" name="Activity_DoGetListResult" type="tns:Activity_DoGetListResponse"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="Activity_DoRead" type="tns:Activity_DoRead"/>
+<xs:complexType name="Activity_DoRead">
+<xs:sequence>
+<xs:element maxOccurs="1" minOccurs="0" name="Request" type="tns:Activity_DoReadRequest"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="Activity_DoReadRequest">
+<xs:sequence>
+<xs:element maxOccurs="1" minOccurs="0" name="Auth" type="tns:Authentication"/>
+<xs:element maxOccurs="1" minOccurs="0" name="Version" type="tns:AppVersion"/>
+</xs:sequence>
+<xs:attribute name="PerformReadDescriptions" type="xs:string"/>
+<xs:attribute name="WorkSystemName" type="xs:string"/>
+<xs:attribute name="ActivityCode" type="xs:string"/>
+</xs:complexType>
+<xs:element name="Activity_DoReadResponse" type="tns:Activity_DoReadResponse"/>
+<xs:complexType name="Activity_DoReadResponse">
+<xs:sequence>
+<xs:element maxOccurs="1" minOccurs="0" name="Activity_DoReadResult" type="tns:Activity_DoReadResponse"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="Asset_DoGetListV2" type="tns:Asset_DoGetListV2"/>
+<xs:complexType name="Asset_DoGetListRequest">
+<xs:sequence>
+<xs:element maxOccurs="1" minOccurs="0" name="Auth" type="tns:Authentication"/>
+<xs:element maxOccurs="1" minOccurs="0" name="Version" type="tns:AppVersion"/>
+<xs:element maxOccurs="1" minOccurs="0" name="Criteria" type="tns:ArrayOfCriteriaItem"/>
+</xs:sequence>
+<xs:attribute name="RegName" type="xs:string"/>
+<xs:attribute name="ShowBookDetails" type="xs:string"/>
+<xs:attribute name="RetrieveAllAssetRegisters" type="xs:string"/>
+</xs:complexType>
+<xs:complexType name="Asset_DoGetListV2">
+<xs:sequence>
+<xs:element maxOccurs="1" minOccurs="0" name="Request" type="tns:Asset_DoGetListRequest"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="Asset_DoGetListV2Response" type="tns:Asset_DoGetListV2Response"/>
+<xs:complexType name="ArrayOfAssetSummaryV2">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="AssetSummary" type="tns:AssetSummaryV2"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="Asset_DoGetListResponseV2">
+<xs:sequence>
+<xs:element maxOccurs="1" minOccurs="0" name="Errors" type="ns2:WebErrors"/>
+<xs:element maxOccurs="1" minOccurs="0" name="Assets" type="tns:ArrayOfAssetSummaryV2"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="Asset_DoGetListV2Response">
+<xs:sequence>
+<xs:element maxOccurs="1" minOccurs="0" name="Asset_DoGetListV2Result" type="tns:Asset_DoGetListResponseV2"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="AssetSummaryV2">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="AssetRID" type="xs:string"/>
+<xs:attribute name="RegName" type="xs:string"/>
+<xs:attribute name="AssetNbr" type="xs:string"/>
+<xs:attribute name="AssetNbrFmt" type="xs:string"/>
+<xs:attribute name="Descr" type="xs:string"/>
+<xs:attribute name="LongDescr" type="xs:string"/>
+<xs:attribute name="ShortDescr" type="xs:string"/>
+<xs:attribute name="BookNumber" type="xs:string"/>
+<xs:attribute name="AssetType" type="xs:string"/>
+<xs:attribute name="AssetStatus" type="xs:string"/>
+<xs:attribute name="Barcode" type="xs:string"/>
+<xs:attribute name="AssetCommDate" type="xs:string"/>
+<xs:attribute name="ExpCommDate" type="xs:string"/>
+<xs:attribute name="DisposalDate" type="xs:string"/>
+<xs:attribute name="OperatingAssetStatus" type="xs:string"/>
+<xs:attribute name="Meter1ReadUnits" type="xs:string"/>
+<xs:attribute name="Meter1ReadDate" type="xs:string"/>
+<xs:attribute name="Meter1ReadTime" type="xs:string"/>
+<xs:attribute name="Meter1RunningUnits" type="xs:string"/>
+<xs:attribute name="Meter1AvgUsage" type="xs:string"/>
+<xs:attribute name="Meter2ReadUnits" type="xs:string"/>
+<xs:attribute name="Meter2ReadDate" type="xs:string"/>
+<xs:attribute name="Meter2ReadTime" type="xs:string"/>
+<xs:attribute name="Meter2RunningUnits" type="xs:string"/>
+<xs:attribute name="Meter2AvgUsage" type="xs:string"/>
+<xs:attribute name="Meter3ReadUnits" type="xs:string"/>
+<xs:attribute name="Meter3ReadDate" type="xs:string"/>
+<xs:attribute name="Meter3ReadTime" type="xs:string"/>
+<xs:attribute name="Meter3RunningUnits" type="xs:string"/>
+<xs:attribute name="Meter3AvgUsage" type="xs:string"/>
+<xs:attribute name="Meter4ReadUnits" type="xs:string"/>
+<xs:attribute name="Meter4ReadDate" type="xs:string"/>
+<xs:attribute name="Meter4ReadTime" type="xs:string"/>
+<xs:attribute name="Meter4RunningUnits" type="xs:string"/>
+<xs:attribute name="Meter4AvgUsage" type="xs:string"/>
+<xs:attribute name="DeprAssetInd" type="xs:string"/>
+<xs:attribute name="LeaseAssetInd" type="xs:string"/>
+<xs:attribute name="ConsAssetInd" type="xs:string"/>
+<xs:attribute name="StocktakeInd" type="xs:string"/>
+<xs:attribute name="InspectInd" type="xs:string"/>
+<xs:attribute name="Condition" type="xs:string"/>
+<xs:attribute name="ConditionDescription" type="xs:string"/>
+<xs:attribute name="SamAssetId" type="xs:string"/>
+<xs:attribute name="GisId" type="xs:string"/>
+<xs:attribute name="CapitalWorkLedgerCode" type="xs:string"/>
+<xs:attribute name="CapitalWorkAccount" type="xs:string"/>
+<xs:attribute name="OperatingWorkLedgerCode" type="xs:string"/>
+<xs:attribute name="OperatingWorkAccount" type="xs:string"/>
+<xs:attribute name="HireInd" type="xs:string"/>
+<xs:attribute name="HireCostLedgerCode" type="xs:string"/>
+<xs:attribute name="HireCostAccountNbr" type="xs:string"/>
+<xs:attribute name="HireRecoveryLedgerCode" type="xs:string"/>
+<xs:attribute name="HireRecoveryAccountNbr" type="xs:string"/>
+<xs:attribute name="ManufName" type="xs:string"/>
+<xs:attribute name="ManufDate" type="xs:string"/>
+<xs:attribute name="ModelNbr" type="xs:string"/>
+<xs:attribute name="Make" type="xs:string"/>
+<xs:attribute name="SerialNbr" type="xs:string"/>
+<xs:attribute name="RegistnNbr" type="xs:string"/>
+<xs:attribute name="OtherNbr" type="xs:string"/>
+<xs:attribute name="SuppMethCode" type="xs:string"/>
+<xs:attribute name="SuppName" type="xs:string"/>
+<xs:attribute name="SuppRef" type="xs:string"/>
+<xs:attribute name="ConditionInd" type="xs:string"/>
+<xs:attribute name="AcqnDate" type="xs:string"/>
+<xs:attribute name="WarrExpryDate" type="xs:string"/>
+<xs:attribute name="Comment1" type="xs:string"/>
+<xs:attribute name="Comment2" type="xs:string"/>
+<xs:attribute name="Comment3" type="xs:string"/>
+<xs:attribute name="InsurerName" type="xs:string"/>
+<xs:attribute name="PolicyNbr" type="xs:string"/>
+<xs:attribute name="RenewalDate" type="xs:string"/>
+<xs:attribute name="InsuredAmt" type="xs:string"/>
+<xs:attribute name="ReplmtAmt" type="xs:string"/>
+<xs:attribute name="AssetBookStatus" type="xs:string"/>
+<xs:attribute name="BookCommDate" type="xs:string"/>
+<xs:attribute name="RetireDate" type="xs:string"/>
+<xs:attribute name="RetireName" type="xs:string"/>
+<xs:attribute name="AcquiredUnits" type="xs:string"/>
+<xs:attribute name="UnitAmt" type="xs:string"/>
+<xs:attribute name="AssetCurrAmt" type="xs:string"/>
+<xs:attribute name="DeprCurrAmt" type="xs:string"/>
+<xs:attribute name="ImpLosCurrAmt" type="xs:string"/>
+<xs:attribute name="WritdnAmt" type="xs:string"/>
+<xs:attribute name="ResidAmt" type="xs:string"/>
+<xs:attribute name="DeprStartDate" type="xs:string"/>
+<xs:attribute name="UsefulLifeYrs" type="xs:string"/>
+<xs:attribute name="DeprCode" type="xs:string"/>
+<xs:attribute name="UsefulLifeUnits" type="xs:string"/>
+<xs:attribute name="UsageUnitsName" type="xs:string"/>
+<xs:attribute name="UsageUnitsAbbrev" type="xs:string"/>
+<xs:attribute name="ExpiryDate" type="xs:string"/>
+<xs:attribute name="TotUsedUnits" type="xs:string"/>
+<xs:attribute name="AssCtlAcctCode" type="xs:string"/>
+<xs:attribute name="ExpCtlAcctCode" type="xs:string"/>
+<xs:attribute name="OffsetAcctCode" type="xs:string"/>
+<xs:attribute name="ProvAcctCode" type="xs:string"/>
+<xs:attribute name="UseAcctCodeInd" type="xs:string"/>
+<xs:attribute name="DeprExpAcctCode" type="xs:string"/>
+<xs:attribute name="AllocCode" type="xs:string"/>
+<xs:attribute name="DispClrAcctCode" type="xs:string"/>
+<xs:attribute name="SaleAssAcctCode" type="xs:string"/>
+<xs:attribute name="CstSaleAcctCode" type="xs:string"/>
+<xs:attribute name="WoffAcctCode" type="xs:string"/>
+<xs:attribute name="OrigIdxRateInd" type="xs:string"/>
+<xs:attribute name="OrigIndexName" type="xs:string"/>
+<xs:attribute name="OrigIdxRateAmt" type="xs:string"/>
+<xs:attribute name="BookDisposalDate" type="xs:string"/>
+<xs:attribute name="TotDispUnits" type="xs:string"/>
+<xs:attribute name="TotConsidAmt" type="xs:string"/>
+<xs:attribute name="SaleType" type="xs:string"/>
+<xs:attribute name="SoldTo" type="xs:string"/>
+<xs:attribute name="DispReasonCode" type="xs:string"/>
+<xs:attribute name="WriteOffDate" type="xs:string"/>
+<xs:attribute name="TotWoffUnits" type="xs:string"/>
+<xs:attribute name="WoffReasonCode" type="xs:string"/>
+<xs:attribute name="CommitedOrders" type="xs:string"/>
+<xs:attribute name="CommitedDeliveries" type="xs:string"/>
+<xs:attribute name="CommitedInvoices" type="xs:string"/>
+<xs:attribute name="AcqnToDateAmt1" type="xs:string"/>
+<xs:attribute name="UnitAmt1" type="xs:string"/>
+<xs:attribute name="RateCode" type="xs:string"/>
+<xs:attribute name="RateAmt1" type="xs:string"/>
+<xs:attribute name="AssetOpenAmt1" type="xs:string"/>
+<xs:attribute name="AssetOpenAmt2" type="xs:string"/>
+<xs:attribute name="AssetTotalAdjAmt1" type="xs:string"/>
+<xs:attribute name="CommissionedToDateAmt1" type="xs:string"/>
+<xs:attribute name="BalanceChargeOpenAmt1" type="xs:string"/>
+<xs:attribute name="BalanceChargeTotAdjAmt1" type="xs:string"/>
+<xs:attribute name="BalanceChargeToDateAmt1" type="xs:string"/>
+<xs:attribute name="ValueForDepreciation" type="xs:string"/>
+<xs:attribute name="LastDeprDate" type="xs:string"/>
+<xs:attribute name="LastDeprUnits" type="xs:string"/>
+<xs:attribute name="LastDeptAmt1" type="xs:string"/>
+<xs:attribute name="LastPriorValuationDPAmt1" type="xs:string"/>
+<xs:attribute name="ReplacementCostAmt1" type="xs:string"/>
+<xs:attribute name="ReplacementCostDate" type="xs:string"/>
+<xs:attribute name="PresentNetAmt" type="xs:string"/>
+<xs:attribute name="PresentNetDate" type="xs:string"/>
+<xs:attribute name="TotalAssetCostDispAmt1" type="xs:string"/>
+<xs:attribute name="TotalProvisionDeprDispAmt1" type="xs:string"/>
+<xs:attribute name="TotalWrtdnDispAmt1" type="xs:string"/>
+<xs:attribute name="TotalRevGainLossAmt1" type="xs:string"/>
+<xs:attribute name="TotalCaptlGainAmt1" type="xs:string"/>
+<xs:attribute name="TotalAssetCostWoffAmt1" type="xs:string"/>
+<xs:attribute name="TotalProvisionDeprWoffAmt1" type="xs:string"/>
+<xs:attribute name="TotalWoffLossAmt1" type="xs:string"/>
+<xs:attribute name="PurReqnCommitmentAmt1" type="xs:string"/>
+<xs:attribute name="CommittedPOrderUnits" type="xs:string"/>
+<xs:attribute name="CommittedDeliveryUnits" type="xs:string"/>
+<xs:attribute name="CommittedInvoiceUnits" type="xs:string"/>
+<xs:attribute name="CommToDateUnits" type="xs:string"/>
+<xs:attribute name="TotalUnitsSplit" type="xs:string"/>
+<xs:attribute name="AcqnToDateUnits" type="xs:string"/>
+<xs:attribute name="PrchseReqnCommitmentAmt1" type="xs:string"/>
+<xs:attribute name="AccumImpAcctCode" type="xs:string"/>
+<xs:attribute name="ImpLossOpenAmt1" type="xs:string"/>
+<xs:attribute name="ImpLossTotAdjAmt1" type="xs:string"/>
+<xs:attribute name="ImpLossToDateAmt1" type="xs:string"/>
+<xs:attribute name="ImpLossAcctCode" type="xs:string"/>
+<xs:attribute name="DeprOpenAmt1" type="xs:string"/>
+<xs:attribute name="DeprTotAdjAmt1" type="xs:string"/>
+<xs:attribute name="DeprToDateAmt1" type="xs:string"/>
+<xs:attribute name="DeprMethCode" type="xs:string"/>
+<xs:attribute name="DeprRateAmt" type="xs:string"/>
+<xs:attribute name="CurrentUnits" type="xs:string"/>
+<xs:attribute name="BchrgCurrAmt" type="xs:string"/>
+<xs:attribute name="RvalResAcctCode" type="xs:string"/>
+<xs:attribute name="RevaluedInd" type="xs:string"/>
+<xs:attribute name="RvalProcType" type="xs:string"/>
+<xs:attribute name="RvalMethCode" type="xs:string"/>
+<xs:attribute name="RvalDate" type="xs:string"/>
+<xs:attribute name="RvalType" type="xs:string"/>
+<xs:attribute name="RvalAssetNbr" type="xs:string"/>
+<xs:attribute name="RvalResNetAmt" type="xs:string"/>
+<xs:attribute name="RevalAmt1" type="xs:string"/>
+<xs:attribute name="RevalDate" type="xs:string"/>
+<xs:attribute name="RevalDecrImpLossAmt1" type="xs:string"/>
+<xs:attribute name="RevalNetAcctCode" type="xs:string"/>
+<xs:attribute name="PrvalDpStDate" type="xs:string"/>
+<xs:attribute name="PrvalDpMethCode" type="xs:string"/>
+<xs:attribute name="PrvalDpRateAmt" type="xs:string"/>
+<xs:attribute name="PrvalUflifeUnits" type="xs:string"/>
+<xs:attribute name="PrvalTotUsedUnt" type="xs:string"/>
+<xs:attribute name="PrvalResidAmt" type="xs:string"/>
+<xs:attribute name="PrvalWritdnAmt" type="xs:string"/>
+<xs:attribute name="PrvalAssCurrAmt" type="xs:string"/>
+<xs:attribute name="PrvalDpOpenAmt" type="xs:string"/>
+<xs:attribute name="PrvalValDeprAmt" type="xs:string"/>
+<xs:attribute name="PriorRevalDeprCurrAmt1" type="xs:string"/>
+<xs:attribute name="PriorRevalDeprAdjAmt1" type="xs:string"/>
+<xs:attribute name="PriorRevalDeprToDateAmt1" type="xs:string"/>
+<xs:attribute name="PriorRevalImpLossOpenAmt1" type="xs:string"/>
+<xs:attribute name="PriorRevalImpLossToDateAmt1" type="xs:string"/>
+<xs:attribute name="PriorRevalImpLossTotAdjAmt1" type="xs:string"/>
+<xs:attribute name="PriorRevalImpLossCurrAmt1" type="xs:string"/>
+<xs:attribute name="PriorRevalAssetOpenCostAmt1" type="xs:string"/>
+<xs:attribute name="PriorRevalCommToDateAmt1" type="xs:string"/>
+<xs:attribute name="PriorRevalAssetAdjCostAmt1" type="xs:string"/>
+<xs:attribute name="PriorDeprImpLossStartDate" type="xs:string"/>
+<xs:attribute name="PriorDeprImpLossMethCode" type="xs:string"/>
+<xs:attribute name="PriorDeprImpLossRateAmt1" type="xs:string"/>
+<xs:attribute name="PriorDeprImpLossOpenAmt1" type="xs:string"/>
+<xs:attribute name="PriorDeprImpLossCurrAmt1" type="xs:string"/>
+<xs:attribute name="PriorDeprImpLossAdjAmt1" type="xs:string"/>
+<xs:attribute name="PriorDeprImpLossToDateAmt1" type="xs:string"/>
+<xs:attribute name="PriorImpLossUsefulLifeUnits" type="xs:string"/>
+<xs:attribute name="PriorImpLossTotUsedUnits" type="xs:string"/>
+<xs:attribute name="PriorImpLossCommToDateAmt1" type="xs:string"/>
+<xs:attribute name="PriorImpLossCurrAssetCostAmt1" type="xs:string"/>
+<xs:attribute name="PriorImpLossAssetCostOpenAmt1" type="xs:string"/>
+<xs:attribute name="PriorImpLossAssetAdjCostAmt1" type="xs:string"/>
+<xs:attribute name="PriorImpLossResidAmt1" type="xs:string"/>
+<xs:attribute name="PriorImpLossWrtndnAmt1" type="xs:string"/>
+<xs:attribute name="PriorImpLossDeprAmt1" type="xs:string"/>
+<xs:attribute name="PriorImpLossDispAmt1" type="xs:string"/>
+<xs:attribute name="LastPimplDeprAmt" type="xs:string"/>
+<xs:attribute name="LastImpLossDate" type="xs:string"/>
+<xs:attribute name="ImpLossRRAmt" type="xs:string"/>
+<xs:attribute name="ImpLostPLAmt" type="xs:string"/>
+<xs:attribute name="UsageBaseDeprAmt" type="xs:string"/>
+<xs:attribute name="AssetBookDescr" type="xs:string"/>
+<xs:attribute name="CreateUser" type="xs:string"/>
+<xs:attribute name="CreateDate" type="xs:string"/>
+<xs:attribute name="CreateTime" type="xs:string"/>
+<xs:attribute name="CreateNode" type="xs:string"/>
+<xs:attribute name="CreateWindow" type="xs:string"/>
+<xs:attribute name="LastModUser" type="xs:string"/>
+<xs:attribute name="LastModDate" type="xs:string"/>
+<xs:attribute name="LastModTime" type="xs:string"/>
+<xs:attribute name="LastModNode" type="xs:string"/>
+<xs:attribute name="LastModWindow" type="xs:string"/>
+<xs:attribute name="SelnCode1" type="xs:string"/>
+<xs:attribute name="SelnCode2" type="xs:string"/>
+<xs:attribute name="SelnCode3" type="xs:string"/>
+<xs:attribute name="SelnCode4" type="xs:string"/>
+<xs:attribute name="SelnCode5" type="xs:string"/>
+<xs:attribute name="SelnCode6" type="xs:string"/>
+<xs:attribute name="SelnCode7" type="xs:string"/>
+<xs:attribute name="SelnCode8" type="xs:string"/>
+<xs:attribute name="SelnCode9" type="xs:string"/>
+<xs:attribute name="SelnCode10" type="xs:string"/>
+<xs:attribute name="SelnCode11" type="xs:string"/>
+<xs:attribute name="SelnCode12" type="xs:string"/>
+<xs:attribute name="SelnCode13" type="xs:string"/>
+<xs:attribute name="SelnCode14" type="xs:string"/>
+<xs:attribute name="SelnCode15" type="xs:string"/>
+<xs:attribute name="SelnCode16" type="xs:string"/>
+<xs:attribute name="SelnCode17" type="xs:string"/>
+<xs:attribute name="SelnCode18" type="xs:string"/>
+<xs:attribute name="SelnCode19" type="xs:string"/>
+<xs:attribute name="SelnCode20" type="xs:string"/>
+<xs:attribute name="UserField1" type="xs:string"/>
+<xs:attribute name="UserField2" type="xs:string"/>
+<xs:attribute name="UserField3" type="xs:string"/>
+<xs:attribute name="UserField4" type="xs:string"/>
+<xs:attribute name="UserField5" type="xs:string"/>
+<xs:attribute name="UserField6" type="xs:string"/>
+<xs:attribute name="UserField7" type="xs:string"/>
+<xs:attribute name="UserField8" type="xs:string"/>
+<xs:attribute name="UserField9" type="xs:string"/>
+<xs:attribute name="UserField10" type="xs:string"/>
+<xs:attribute name="UserField11" type="xs:string"/>
+<xs:attribute name="UserField12" type="xs:string"/>
+<xs:attribute name="UserField13" type="xs:string"/>
+<xs:attribute name="UserField14" type="xs:string"/>
+<xs:attribute name="UserField15" type="xs:string"/>
+<xs:attribute name="UserField16" type="xs:string"/>
+<xs:attribute name="UserField17" type="xs:string"/>
+<xs:attribute name="UserField18" type="xs:string"/>
+<xs:attribute name="UserField19" type="xs:string"/>
+<xs:attribute name="UserField20" type="xs:string"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+<xs:element name="Asset_DoReadV2" type="tns:Asset_DoReadV2"/>
+<xs:complexType name="Asset_DoReadRequest">
+<xs:sequence>
+<xs:element maxOccurs="1" minOccurs="0" name="Auth" type="tns:Authentication"/>
+<xs:element maxOccurs="1" minOccurs="0" name="Version" type="tns:AppVersion"/>
+</xs:sequence>
+<xs:attribute name="RegName" type="xs:string"/>
+<xs:attribute name="AssetNbr" type="xs:string"/>
+</xs:complexType>
+<xs:complexType name="Asset_DoReadV2">
+<xs:sequence>
+<xs:element maxOccurs="1" minOccurs="0" name="Request" type="tns:Asset_DoReadRequest"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="Asset_DoReadV2Response" type="tns:Asset_DoReadV2Response"/>
+<xs:complexType name="ArrayOfAsset_AssetBom">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="AssetBoms" type="tns:Asset_AssetBom"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="ArrayOfAsset_Attribute">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="AssetAttribute" type="tns:Asset_Attribute"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="ArrayOfAsset_AttrLevelUserFieldDescr">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="Asset_AttrLevelUserFieldDescr" type="tns:Asset_AttrLevelUserFieldDescr"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="ArrayOfAsset_AttrLevelUserFields">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="Asset_AttrLevelUserFields" type="tns:Asset_AttrLevelUserFields"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="ArrayOfAsset_MaintenanceSchedule">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="MaintenanceSchedule" type="tns:Asset_MaintenanceSchedule"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="ArrayOfAsset_Rate">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="CostRate" type="tns:Asset_Rate"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="ArrayOfAsset_Rate1">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="RecoveryRate" type="tns:Asset_Rate"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="ArrayOfString11">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="SelectionCodes" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="ArrayOfString12">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="UserFields" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="ArrayOfString13">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="SelectionCodeDescr" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="ArrayOfString14">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="UserFieldDescr" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="Asset_AssetBom">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="WorkSystemDescr" type="xs:string"/>
+<xs:attribute name="BomCodeDescr" type="xs:string"/>
+<xs:attribute name="SequenceNumber" type="xs:string"/>
+<xs:attribute name="WorkSystemName" type="xs:string"/>
+<xs:attribute name="BomCode" type="xs:string"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+<xs:complexType name="Asset_Attribute">
+<xs:sequence>
+<xs:element maxOccurs="1" minOccurs="0" name="AttrLevelUserFields" type="tns:ArrayOfAsset_AttrLevelUserFields"/>
+<xs:element maxOccurs="1" minOccurs="0" name="AttrLevelUserFieldDescr" type="tns:ArrayOfAsset_AttrLevelUserFieldDescr"/>
+</xs:sequence>
+<xs:attribute name="AttrCode" type="xs:string"/>
+<xs:attribute name="SearchPath" type="xs:string"/>
+</xs:complexType>
+<xs:complexType name="Asset_AttrLevelUserFieldDescr">
+<xs:sequence>
+<xs:element maxOccurs="1" minOccurs="0" name="SelectionCodeDescr" type="tns:ArrayOfString13"/>
+<xs:element maxOccurs="1" minOccurs="0" name="UserFieldDescr" type="tns:ArrayOfString14"/>
+</xs:sequence>
+<xs:attribute name="LevelNbr" type="xs:decimal" use="required"/>
+</xs:complexType>
+<xs:complexType name="Asset_AttrLevelUserFields">
+<xs:sequence>
+<xs:element maxOccurs="1" minOccurs="0" name="SelectionCodes" type="tns:ArrayOfString11"/>
+<xs:element maxOccurs="1" minOccurs="0" name="UserFields" type="tns:ArrayOfString12"/>
+</xs:sequence>
+<xs:attribute name="LevelNbr" type="xs:decimal" use="required"/>
+</xs:complexType>
+<xs:complexType name="Asset_DoReadResponseV2">
+<xs:sequence>
+<xs:element maxOccurs="1" minOccurs="0" name="Errors" type="ns2:WebErrors"/>
+<xs:element maxOccurs="1" minOccurs="0" name="Asset" type="tns:AssetV2"/>
+<xs:element maxOccurs="1" minOccurs="0" name="AssetAttributes" type="tns:ArrayOfAsset_Attribute"/>
+<xs:element maxOccurs="1" minOccurs="0" name="MaintenanceSchedules" type="tns:ArrayOfAsset_MaintenanceSchedule"/>
+<xs:element maxOccurs="1" minOccurs="0" name="CostRates" type="tns:ArrayOfAsset_Rate"/>
+<xs:element maxOccurs="1" minOccurs="0" name="RecoveryRates" type="tns:ArrayOfAsset_Rate1"/>
+<xs:element maxOccurs="1" minOccurs="0" name="AssetBoms" type="tns:ArrayOfAsset_AssetBom"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="Asset_DoReadV2Response">
+<xs:sequence>
+<xs:element maxOccurs="1" minOccurs="0" name="Asset_DoReadV2Result" type="tns:Asset_DoReadResponseV2"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="Asset_MaintenanceSchedule">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="Operating_x0020_Asset_x0020_Status" type="xs:string"/>
+<xs:attribute name="LastMaintenanceHistoryStatus" type="xs:string"/>
+<xs:attribute name="LastMaintenanceDate" type="xs:string"/>
+<xs:attribute name="NextMaintenanceDate" type="xs:string"/>
+<xs:attribute name="MaintWrkshtInd" type="xs:string"/>
+<xs:attribute name="MaintWrkshtName" type="xs:string"/>
+<xs:attribute name="MaintWrkshtUser" type="xs:string"/>
+<xs:attribute name="MaintenanceScheduleCode" type="xs:string"/>
+<xs:attribute name="MaintenanceStartDate" type="xs:string"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+<xs:complexType name="Asset_Rate">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="WorkSystemName" type="xs:string"/>
+<xs:attribute name="WorkCode" type="xs:string"/>
+<xs:attribute name="ActivityCode" type="xs:string"/>
+<xs:attribute name="HireUnitOfMeasure" type="xs:string"/>
+<xs:attribute name="RateCode" type="xs:string"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+<xs:complexType name="AssetV2">
+<xs:sequence>
+<xs:element maxOccurs="1" minOccurs="0" name="SelectionCodes" type="tns:ArrayOfString11"/>
+<xs:element maxOccurs="1" minOccurs="0" name="UserFields" type="tns:ArrayOfString12"/>
+<xs:element maxOccurs="1" minOccurs="0" name="SelectionCodeDescr" type="tns:ArrayOfString13"/>
+<xs:element maxOccurs="1" minOccurs="0" name="UserFieldDescr" type="tns:ArrayOfString14"/>
+</xs:sequence>
+<xs:attribute name="AssetRID" type="xs:string"/>
+<xs:attribute name="AssetNbrFmt" type="xs:string"/>
+<xs:attribute name="AssetSystem" type="xs:string"/>
+<xs:attribute name="AssetCommDate" type="xs:string"/>
+<xs:attribute name="RegNameDescr" type="xs:string"/>
+<xs:attribute name="ConditionDescription" type="xs:string"/>
+<xs:attribute name="SuppMethCodeDescr" type="xs:string"/>
+<xs:attribute name="CapitalWorkLedgerCodeDescr" type="xs:string"/>
+<xs:attribute name="CapitalWorkAccountDescr" type="xs:string"/>
+<xs:attribute name="OperatingWorkLedgerCodeDescr" type="xs:string"/>
+<xs:attribute name="OperatingWorkAccountDescr" type="xs:string"/>
+<xs:attribute name="HireCostAccountNbrDescr" type="xs:string"/>
+<xs:attribute name="HireRecoveryAccountNbrDescr" type="xs:string"/>
+<xs:attribute name="FinancialRegisterNameDescr" type="xs:string"/>
+<xs:attribute name="FinancialAssetNumberFmt" type="xs:string"/>
+<xs:attribute name="FinancialAssetNumberDescr" type="xs:string"/>
+<xs:attribute name="ClassComponentUniqueId" type="xs:string"/>
+<xs:attribute name="CreateUser" type="xs:string"/>
+<xs:attribute name="CreateDate" type="xs:string"/>
+<xs:attribute name="CreateTime" type="xs:string"/>
+<xs:attribute name="CreateNode" type="xs:string"/>
+<xs:attribute name="CreateWindow" type="xs:string"/>
+<xs:attribute name="LastModUser" type="xs:string"/>
+<xs:attribute name="LastModDate" type="xs:string"/>
+<xs:attribute name="LastModTime" type="xs:string"/>
+<xs:attribute name="LastModNode" type="xs:string"/>
+<xs:attribute name="LastModWindow" type="xs:string"/>
+<xs:attribute name="Vers" type="xs:decimal" use="required"/>
+<xs:attribute name="RegName" type="xs:string"/>
+<xs:attribute name="AssetNbr" type="xs:string"/>
+<xs:attribute name="UserEnteredAssetNbr" type="xs:string"/>
+<xs:attribute name="TemplateAssetNbr" type="xs:string"/>
+<xs:attribute name="Descr" type="xs:string"/>
+<xs:attribute name="LongDescr" type="xs:string"/>
+<xs:attribute name="ShortDescr" type="xs:string"/>
+<xs:attribute name="AssetType" type="xs:string"/>
+<xs:attribute name="AssetStatus" type="xs:string"/>
+<xs:attribute name="Barcode" type="xs:string"/>
+<xs:attribute name="ExpCommDate" type="xs:string"/>
+<xs:attribute name="DisposalDate" type="xs:string"/>
+<xs:attribute name="DeprAssetInd" type="xs:string"/>
+<xs:attribute name="LeaseAssetInd" type="xs:string"/>
+<xs:attribute name="ConsAssetInd" type="xs:string"/>
+<xs:attribute name="StocktakeInd" type="xs:string"/>
+<xs:attribute name="InspectInd" type="xs:string"/>
+<xs:attribute name="Condition" type="xs:string"/>
+<xs:attribute name="SamAssetId" type="xs:string"/>
+<xs:attribute name="GisId" type="xs:string"/>
+<xs:attribute name="CapitalWorkLedgerCode" type="xs:string"/>
+<xs:attribute name="CapitalWorkAccount" type="xs:string"/>
+<xs:attribute name="OperatingWorkLedgerCode" type="xs:string"/>
+<xs:attribute name="OperatingWorkAccount" type="xs:string"/>
+<xs:attribute name="ManufName" type="xs:string"/>
+<xs:attribute name="ManufDate" type="xs:string"/>
+<xs:attribute name="ModelNbr" type="xs:string"/>
+<xs:attribute name="Make" type="xs:string"/>
+<xs:attribute name="SerialNbr" type="xs:string"/>
+<xs:attribute name="RegistnNbr" type="xs:string"/>
+<xs:attribute name="OtherNbr" type="xs:string"/>
+<xs:attribute name="SuppMethCode" type="xs:string"/>
+<xs:attribute name="SuppName" type="xs:string"/>
+<xs:attribute name="SuppRef" type="xs:string"/>
+<xs:attribute name="ConditionInd" type="xs:string"/>
+<xs:attribute name="AcqnDate" type="xs:string"/>
+<xs:attribute name="WarrExpryDate" type="xs:string"/>
+<xs:attribute name="Comment1" type="xs:string"/>
+<xs:attribute name="Comment2" type="xs:string"/>
+<xs:attribute name="Comment3" type="xs:string"/>
+<xs:attribute name="InsurerName" type="xs:string"/>
+<xs:attribute name="PolicyNbr" type="xs:string"/>
+<xs:attribute name="RenewalDate" type="xs:string"/>
+<xs:attribute name="InsuredAmt" type="xs:string"/>
+<xs:attribute name="ReplmtAmt" type="xs:string"/>
+<xs:attribute name="PrimaryAttachmentSeqNbr" type="xs:decimal" use="required"/>
+<xs:attribute name="OperatingAssetStatus" type="xs:string"/>
+<xs:attribute name="Meter1ReadUnits" type="xs:string"/>
+<xs:attribute name="Meter1ReadDate" type="xs:string"/>
+<xs:attribute name="Meter1ReadTime" type="xs:string"/>
+<xs:attribute name="Meter1RunningUnits" type="xs:string"/>
+<xs:attribute name="Meter1AvgUsage" type="xs:string"/>
+<xs:attribute name="Meter2ReadUnits" type="xs:string"/>
+<xs:attribute name="Meter2ReadDate" type="xs:string"/>
+<xs:attribute name="Meter2ReadTime" type="xs:string"/>
+<xs:attribute name="Meter2RunningUnits" type="xs:string"/>
+<xs:attribute name="Meter2AvgUsage" type="xs:string"/>
+<xs:attribute name="Meter3ReadUnits" type="xs:string"/>
+<xs:attribute name="Meter3ReadDate" type="xs:string"/>
+<xs:attribute name="Meter3ReadTime" type="xs:string"/>
+<xs:attribute name="Meter3RunningUnits" type="xs:string"/>
+<xs:attribute name="Meter3AvgUsage" type="xs:string"/>
+<xs:attribute name="Meter4ReadUnits" type="xs:string"/>
+<xs:attribute name="Meter4ReadDate" type="xs:string"/>
+<xs:attribute name="Meter4ReadTime" type="xs:string"/>
+<xs:attribute name="Meter4RunningUnits" type="xs:string"/>
+<xs:attribute name="Meter4AvgUsage" type="xs:string"/>
+<xs:attribute name="HireInd" type="xs:string"/>
+<xs:attribute name="HireCostLedgerCode" type="xs:string"/>
+<xs:attribute name="HireCostAccountNbr" type="xs:string"/>
+<xs:attribute name="HireRecoveryLedgerCode" type="xs:string"/>
+<xs:attribute name="HireRecoveryAccountNbr" type="xs:string"/>
+<xs:attribute name="FinancialRegisterName" type="xs:string"/>
+<xs:attribute name="FinancialAssetNumber" type="xs:string"/>
+<xs:attribute name="ClassCode" type="xs:string"/>
+<xs:attribute name="ComplexAssetType" type="xs:string"/>
+<xs:attribute name="ParentAssetNbrInternal" type="xs:string"/>
+<xs:attribute name="ClassComponentDescr" type="xs:string"/>
+</xs:complexType>
+<xs:element name="Task_DoGetListV2" type="tns:Task_DoGetListV2"/>
+<xs:complexType name="Task_DoGetListRequest">
+<xs:sequence>
+<xs:element maxOccurs="1" minOccurs="0" name="Auth" type="tns:Authentication"/>
+<xs:element maxOccurs="1" minOccurs="0" name="Version" type="tns:AppVersion"/>
+<xs:element maxOccurs="1" minOccurs="0" name="Criteria" type="tns:ArrayOfCriteriaItem"/>
+</xs:sequence>
+<xs:attribute name="WorkSystemName" type="xs:string"/>
+<xs:attribute name="RetrieveAllWorkSystems" type="xs:string"/>
+<xs:attribute name="RetrieveTaskAssetDtls" type="xs:string"/>
+<xs:attribute name="PickListMode" type="xs:string"/>
+<xs:attribute name="DataEntryMode" type="xs:string"/>
+<xs:attribute name="TemplateMode" type="xs:string"/>
+</xs:complexType>
+<xs:complexType name="Task_DoGetListV2">
+<xs:sequence>
+<xs:element maxOccurs="1" minOccurs="0" name="Request" type="tns:Task_DoGetListRequest"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="Task_DoGetListV2Response" type="tns:Task_DoGetListV2Response"/>
+<xs:complexType name="ArrayOfTaskSummaryV2">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="TaskSummary" type="tns:TaskSummaryV2"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="Task_DoGetListResponseV2">
+<xs:sequence>
+<xs:element maxOccurs="1" minOccurs="0" name="Errors" type="ns2:WebErrors"/>
+<xs:element maxOccurs="1" minOccurs="0" name="Tasks" type="tns:ArrayOfTaskSummaryV2"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="Task_DoGetListV2Response">
+<xs:sequence>
+<xs:element maxOccurs="1" minOccurs="0" name="Task_DoGetListV2Result" type="tns:Task_DoGetListResponseV2"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="TaskSummaryV2">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="TaskVarnApprovalStatus" type="xs:string"/>
+<xs:attribute name="TaskApprovalUser" type="xs:string"/>
+<xs:attribute name="TaskApprovalDate" type="xs:string"/>
+<xs:attribute name="WorkCompletionStatus" type="xs:string"/>
+<xs:attribute name="WorkCompletionUser" type="xs:string"/>
+<xs:attribute name="FinalCompletionStatus" type="xs:string"/>
+<xs:attribute name="FinalCompletionUser" type="xs:string"/>
+<xs:attribute name="FinalCompletionDate" type="xs:string"/>
+<xs:attribute name="TaskStage" type="xs:string"/>
+<xs:attribute name="EstimatedStartTime" type="xs:string"/>
+<xs:attribute name="EstimatedFinishTime" type="xs:string"/>
+<xs:attribute name="TaskStartTime" type="xs:string"/>
+<xs:attribute name="TaskFinishTime" type="xs:string"/>
+<xs:attribute name="Location" type="xs:string"/>
+<xs:attribute name="LocationDescr" type="xs:string"/>
+<xs:attribute name="WorkSystemName" type="xs:string"/>
+<xs:attribute name="TaskNumber" type="xs:string"/>
+<xs:attribute name="TaskRID" type="xs:decimal" use="required"/>
+<xs:attribute name="TaskNumberi" type="xs:string"/>
+<xs:attribute name="Description" type="xs:string"/>
+<xs:attribute name="Narration" type="xs:string"/>
+<xs:attribute name="BudgetTaskInd" type="xs:string"/>
+<xs:attribute name="TaskStatus" type="xs:string"/>
+<xs:attribute name="TaskApprovalStatus" type="xs:string"/>
+<xs:attribute name="TaskType" type="xs:string"/>
+<xs:attribute name="HeaderTaskNbr" type="xs:string"/>
+<xs:attribute name="TaskLevel" type="xs:string"/>
+<xs:attribute name="TemplateInd" type="xs:string"/>
+<xs:attribute name="EstimatedStartDate" type="xs:string"/>
+<xs:attribute name="EstimatedFinishDate" type="xs:string"/>
+<xs:attribute name="TaskStartDate" type="xs:string"/>
+<xs:attribute name="TaskFinishDate" type="xs:string"/>
+<xs:attribute name="PercentComplete" type="xs:string"/>
+<xs:attribute name="Proclaim1UniqueId" type="xs:string"/>
+<xs:attribute name="Proclaim1EventCtr" type="xs:string"/>
+<xs:attribute name="PRSourceEventID" type="xs:string"/>
+<xs:attribute name="ExternalReference" type="xs:string"/>
+<xs:attribute name="ThirdPartyEntityKey1" type="xs:string"/>
+<xs:attribute name="ThirdPartyEntityKey2" type="xs:string"/>
+<xs:attribute name="ThirdPartyEntityKey3" type="xs:string"/>
+<xs:attribute name="ThirdPartyEntityKey4" type="xs:string"/>
+<xs:attribute name="ThirdPartyEntityKey5" type="xs:string"/>
+<xs:attribute name="TransmissionPrintInd" type="xs:string"/>
+<xs:attribute name="TransmissionFaxInd" type="xs:string"/>
+<xs:attribute name="TransmissionEmailInd" type="xs:string"/>
+<xs:attribute name="TransmissionEmailAttachmentType" type="xs:string"/>
+<xs:attribute name="TransmissionEmailSeparatorCharacter" type="xs:string"/>
+<xs:attribute name="TransmissionEmailQuoteCharacter" type="xs:string"/>
+<xs:attribute name="TransmissionExportInd" type="xs:string"/>
+<xs:attribute name="TransmissionSuppressPrintTransmitInd" type="xs:string"/>
+<xs:attribute name="ResponsiblePerson" type="xs:string"/>
+<xs:attribute name="ResponsiblePersonDescr" type="xs:string"/>
+<xs:attribute name="ProjectCode" type="xs:string"/>
+<xs:attribute name="ProjectCodeDescr" type="xs:string"/>
+<xs:attribute name="ActivityCode" type="xs:string"/>
+<xs:attribute name="ActivityCodeDescr" type="xs:string"/>
+<xs:attribute name="PriorityCode" type="xs:string"/>
+<xs:attribute name="PriorityCodeDescr" type="xs:string"/>
+<xs:attribute name="TaskSource" type="xs:string"/>
+<xs:attribute name="WorkTypeCode" type="xs:string"/>
+<xs:attribute name="WorkTypeCodeDescr" type="xs:string"/>
+<xs:attribute name="GISLayer" type="xs:string"/>
+<xs:attribute name="ForecastWsInd" type="xs:string"/>
+<xs:attribute name="ForecastWsName" type="xs:string"/>
+<xs:attribute name="BillingWsInd" type="xs:string"/>
+<xs:attribute name="BillingWsName" type="xs:string"/>
+<xs:attribute name="AssetCapitalWsInd" type="xs:string"/>
+<xs:attribute name="AssetCapitalWsName" type="xs:string"/>
+<xs:attribute name="ShdRunInd" type="xs:string"/>
+<xs:attribute name="ShdDefnName" type="xs:string"/>
+<xs:attribute name="ShdRunNbr" type="xs:string"/>
+<xs:attribute name="ShdRunUser" type="xs:string"/>
+<xs:attribute name="BillingProjectTaskInd" type="xs:string"/>
+<xs:attribute name="BillingGenerateSeparateBillInd" type="xs:string"/>
+<xs:attribute name="BillingType" type="xs:string"/>
+<xs:attribute name="BillingMethod" type="xs:string"/>
+<xs:attribute name="BillingLdgCode" type="xs:string"/>
+<xs:attribute name="BillingAccnbri" type="xs:string"/>
+<xs:attribute name="BillingAccnbriDescr" type="xs:string"/>
+<xs:attribute name="BillingRechResGroup" type="xs:string"/>
+<xs:attribute name="BillingRechResCode" type="xs:string"/>
+<xs:attribute name="BillingDocDefnName" type="xs:string"/>
+<xs:attribute name="BillingVatType" type="xs:string"/>
+<xs:attribute name="BillingVatRateType" type="xs:string"/>
+<xs:attribute name="BillingVatRateCode" type="xs:string"/>
+<xs:attribute name="BillingAccRevItemTypeInd" type="xs:string"/>
+<xs:attribute name="BillingAccRevLdgCode" type="xs:string"/>
+<xs:attribute name="BillingAccRevAccnbri" type="xs:string"/>
+<xs:attribute name="BillingItemType" type="xs:string"/>
+<xs:attribute name="BillingItemCode" type="xs:string"/>
+<xs:attribute name="BillingLimitInd" type="xs:string"/>
+<xs:attribute name="BillingLimitAmt" type="xs:string"/>
+<xs:attribute name="BillingLimitRevEstInd" type="xs:string"/>
+<xs:attribute name="BillingComment" type="xs:string"/>
+<xs:attribute name="BillingTermsDays" type="xs:string"/>
+<xs:attribute name="BillAddressCode" type="xs:string"/>
+<xs:attribute name="BillPrintInd" type="xs:string"/>
+<xs:attribute name="BillFaxInd" type="xs:string"/>
+<xs:attribute name="BillEmailInd" type="xs:string"/>
+<xs:attribute name="BillSuppressInd" type="xs:string"/>
+<xs:attribute name="MilestoneBasis" type="xs:string"/>
+<xs:attribute name="RevisedEstTotAmt1" type="xs:string"/>
+<xs:attribute name="ForecastAmt" type="xs:string"/>
+<xs:attribute name="ForecastVsRevisedEstVar" type="xs:string"/>
+<xs:attribute name="ForecastVsRevisedEstVarPer" type="xs:string"/>
+<xs:attribute name="CommitmentsAmt" type="xs:string"/>
+<xs:attribute name="ActualAmt" type="xs:string"/>
+<xs:attribute name="ActualTotalAmt" type="xs:string"/>
+<xs:attribute name="ActualTotalVsRevisedEstVar" type="xs:string"/>
+<xs:attribute name="ActualTotalVsRevisedEstVarPer" type="xs:string"/>
+<xs:attribute name="ActualTotalVsForecastVar" type="xs:string"/>
+<xs:attribute name="ActualTotalVsForecastVarPer" type="xs:string"/>
+<xs:attribute name="ActualTotal_ForecastVsRevisedEstVar" type="xs:string"/>
+<xs:attribute name="ActualTotal_ForecastVsRevisedEstVarPer" type="xs:string"/>
+<xs:attribute name="TaskSelnCode1" type="xs:string"/>
+<xs:attribute name="TaskSelnCode2" type="xs:string"/>
+<xs:attribute name="TaskSelnCode3" type="xs:string"/>
+<xs:attribute name="TaskSelnCode4" type="xs:string"/>
+<xs:attribute name="TaskSelnCode5" type="xs:string"/>
+<xs:attribute name="TaskSelnCode6" type="xs:string"/>
+<xs:attribute name="TaskSelnCode7" type="xs:string"/>
+<xs:attribute name="TaskSelnCode8" type="xs:string"/>
+<xs:attribute name="TaskSelnCode9" type="xs:string"/>
+<xs:attribute name="TaskSelnCode10" type="xs:string"/>
+<xs:attribute name="TaskSelnCode11" type="xs:string"/>
+<xs:attribute name="TaskSelnCode12" type="xs:string"/>
+<xs:attribute name="TaskSelnCode13" type="xs:string"/>
+<xs:attribute name="TaskSelnCode14" type="xs:string"/>
+<xs:attribute name="TaskSelnCode15" type="xs:string"/>
+<xs:attribute name="TaskSelnCode16" type="xs:string"/>
+<xs:attribute name="TaskSelnCode17" type="xs:string"/>
+<xs:attribute name="TaskSelnCode18" type="xs:string"/>
+<xs:attribute name="TaskSelnCode19" type="xs:string"/>
+<xs:attribute name="TaskSelnCode20" type="xs:string"/>
+<xs:attribute name="TaskUserFld1" type="xs:string"/>
+<xs:attribute name="TaskUserFld2" type="xs:string"/>
+<xs:attribute name="TaskUserFld3" type="xs:string"/>
+<xs:attribute name="TaskUserFld4" type="xs:string"/>
+<xs:attribute name="TaskUserFld5" type="xs:string"/>
+<xs:attribute name="TaskUserFld6" type="xs:string"/>
+<xs:attribute name="TaskUserFld7" type="xs:string"/>
+<xs:attribute name="TaskUserFld8" type="xs:string"/>
+<xs:attribute name="TaskUserFld9" type="xs:string"/>
+<xs:attribute name="TaskUserFld10" type="xs:string"/>
+<xs:attribute name="TaskUserFld11" type="xs:string"/>
+<xs:attribute name="TaskUserFld12" type="xs:string"/>
+<xs:attribute name="TaskUserFld13" type="xs:string"/>
+<xs:attribute name="TaskUserFld14" type="xs:string"/>
+<xs:attribute name="TaskUserFld15" type="xs:string"/>
+<xs:attribute name="TaskUserFld16" type="xs:string"/>
+<xs:attribute name="TaskUserFld17" type="xs:string"/>
+<xs:attribute name="TaskUserFld18" type="xs:string"/>
+<xs:attribute name="TaskUserFld19" type="xs:string"/>
+<xs:attribute name="TaskUserFld20" type="xs:string"/>
+<xs:attribute name="CwComp1" type="xs:string"/>
+<xs:attribute name="CwComp2" type="xs:string"/>
+<xs:attribute name="CwComp3" type="xs:string"/>
+<xs:attribute name="CwComp4" type="xs:string"/>
+<xs:attribute name="CwComp5" type="xs:string"/>
+<xs:attribute name="CwComp6" type="xs:string"/>
+<xs:attribute name="CwComp7" type="xs:string"/>
+<xs:attribute name="CwComp8" type="xs:string"/>
+<xs:attribute name="CwComp9" type="xs:string"/>
+<xs:attribute name="CwComp10" type="xs:string"/>
+<xs:attribute name="CwComp11" type="xs:string"/>
+<xs:attribute name="CwComp12" type="xs:string"/>
+<xs:attribute name="OwComp1" type="xs:string"/>
+<xs:attribute name="OwComp2" type="xs:string"/>
+<xs:attribute name="OwComp3" type="xs:string"/>
+<xs:attribute name="OwComp4" type="xs:string"/>
+<xs:attribute name="OwComp5" type="xs:string"/>
+<xs:attribute name="OwComp6" type="xs:string"/>
+<xs:attribute name="OwComp7" type="xs:string"/>
+<xs:attribute name="OwComp8" type="xs:string"/>
+<xs:attribute name="OwComp9" type="xs:string"/>
+<xs:attribute name="OwComp10" type="xs:string"/>
+<xs:attribute name="OwComp11" type="xs:string"/>
+<xs:attribute name="OwComp12" type="xs:string"/>
+<xs:attribute name="GwComp1" type="xs:string"/>
+<xs:attribute name="GwComp2" type="xs:string"/>
+<xs:attribute name="GwComp3" type="xs:string"/>
+<xs:attribute name="GwComp4" type="xs:string"/>
+<xs:attribute name="GwComp5" type="xs:string"/>
+<xs:attribute name="GwComp6" type="xs:string"/>
+<xs:attribute name="GwComp7" type="xs:string"/>
+<xs:attribute name="GwComp8" type="xs:string"/>
+<xs:attribute name="GwComp9" type="xs:string"/>
+<xs:attribute name="GwComp10" type="xs:string"/>
+<xs:attribute name="GwComp11" type="xs:string"/>
+<xs:attribute name="GwComp12" type="xs:string"/>
+<xs:attribute name="RegisterName" type="xs:string"/>
+<xs:attribute name="Assnbri" type="xs:string"/>
+<xs:attribute name="Bknbr" type="xs:string"/>
+<xs:attribute name="PercentAllocation" type="xs:string"/>
+<xs:attribute name="CapitalisedAmount" type="xs:string"/>
+<xs:attribute name="ProjBillGenerateSeparateBillInd" type="xs:string"/>
+<xs:attribute name="ProjBillType" type="xs:string"/>
+<xs:attribute name="ProjBillMethod" type="xs:string"/>
+<xs:attribute name="ProjBillLdgCode" type="xs:string"/>
+<xs:attribute name="ProjBillAccnbri" type="xs:string"/>
+<xs:attribute name="ProjBillAcctDescr" type="xs:string"/>
+<xs:attribute name="ProjBillDocDefnName" type="xs:string"/>
+<xs:attribute name="ProjBillVatRateCode" type="xs:string"/>
+<xs:attribute name="ProjBillAccRevItemTypeInd" type="xs:string"/>
+<xs:attribute name="ProjBillAccRevLdgCode" type="xs:string"/>
+<xs:attribute name="ProjBillAccRevAccnbri" type="xs:string"/>
+<xs:attribute name="ProjBillItemCode" type="xs:string"/>
+<xs:attribute name="ProjBillLimitInd" type="xs:string"/>
+<xs:attribute name="ProjBillLimitAmt" type="xs:string"/>
+<xs:attribute name="ProjBillLimitRevEstInd" type="xs:string"/>
+<xs:attribute name="ProjBillComment" type="xs:string"/>
+<xs:attribute name="ProjBillTermsDays" type="xs:string"/>
+<xs:attribute name="ProjBillAddressCode" type="xs:string"/>
+<xs:attribute name="ProjBillPrint" type="xs:string"/>
+<xs:attribute name="ProjBillFax" type="xs:string"/>
+<xs:attribute name="ProjBillEmail" type="xs:string"/>
+<xs:attribute name="ProjBillSuppressBill" type="xs:string"/>
+<xs:attribute name="ProjMilestoneBasis" type="xs:string"/>
+<xs:attribute name="ProjNarration" type="xs:string"/>
+<xs:attribute name="ProjStatus" type="xs:string"/>
+<xs:attribute name="ProjManager" type="xs:string"/>
+<xs:attribute name="ParentProjectCode" type="xs:string"/>
+<xs:attribute name="EstimatedProjStartDate" type="xs:string"/>
+<xs:attribute name="EstimatedProjFinishDate" type="xs:string"/>
+<xs:attribute name="ProjectStartDate" type="xs:string"/>
+<xs:attribute name="ProjectFinishDate" type="xs:string"/>
+<xs:attribute name="ProjectLimitInd" type="xs:string"/>
+<xs:attribute name="ProjectLimitOpt" type="xs:string"/>
+<xs:attribute name="ProjectSelnCode1" type="xs:string"/>
+<xs:attribute name="ProjectSelnCode2" type="xs:string"/>
+<xs:attribute name="ProjectSelnCode3" type="xs:string"/>
+<xs:attribute name="ProjectSelnCode4" type="xs:string"/>
+<xs:attribute name="ProjectSelnCode5" type="xs:string"/>
+<xs:attribute name="ProjectSelnCode6" type="xs:string"/>
+<xs:attribute name="ProjectSelnCode7" type="xs:string"/>
+<xs:attribute name="ProjectSelnCode8" type="xs:string"/>
+<xs:attribute name="ProjectSelnCode9" type="xs:string"/>
+<xs:attribute name="ProjectSelnCode10" type="xs:string"/>
+<xs:attribute name="ProjectSelnCode11" type="xs:string"/>
+<xs:attribute name="ProjectSelnCode12" type="xs:string"/>
+<xs:attribute name="ProjectSelnCode13" type="xs:string"/>
+<xs:attribute name="ProjectSelnCode14" type="xs:string"/>
+<xs:attribute name="ProjectSelnCode15" type="xs:string"/>
+<xs:attribute name="ProjectSelnCode16" type="xs:string"/>
+<xs:attribute name="ProjectSelnCode17" type="xs:string"/>
+<xs:attribute name="ProjectSelnCode18" type="xs:string"/>
+<xs:attribute name="ProjectSelnCode19" type="xs:string"/>
+<xs:attribute name="ProjectSelnCode20" type="xs:string"/>
+<xs:attribute name="ProjectUserFld1" type="xs:string"/>
+<xs:attribute name="ProjectUserFld2" type="xs:string"/>
+<xs:attribute name="ProjectUserFld3" type="xs:string"/>
+<xs:attribute name="ProjectUserFld4" type="xs:string"/>
+<xs:attribute name="ProjectUserFld5" type="xs:string"/>
+<xs:attribute name="ProjectUserFld6" type="xs:string"/>
+<xs:attribute name="ProjectUserFld7" type="xs:string"/>
+<xs:attribute name="ProjectUserFld8" type="xs:string"/>
+<xs:attribute name="ProjectUserFld9" type="xs:string"/>
+<xs:attribute name="ProjectUserFld10" type="xs:string"/>
+<xs:attribute name="ProjectUserFld11" type="xs:string"/>
+<xs:attribute name="ProjectUserFld12" type="xs:string"/>
+<xs:attribute name="ProjectUserFld13" type="xs:string"/>
+<xs:attribute name="ProjectUserFld14" type="xs:string"/>
+<xs:attribute name="ProjectUserFld15" type="xs:string"/>
+<xs:attribute name="ProjectUserFld16" type="xs:string"/>
+<xs:attribute name="ProjectUserFld17" type="xs:string"/>
+<xs:attribute name="ProjectUserFld18" type="xs:string"/>
+<xs:attribute name="ProjectUserFld19" type="xs:string"/>
+<xs:attribute name="ProjectUserFld20" type="xs:string"/>
+<xs:attribute name="WorkTypeSelnCode1" type="xs:string"/>
+<xs:attribute name="WorkTypeSelnCode2" type="xs:string"/>
+<xs:attribute name="WorkTypeSelnCode3" type="xs:string"/>
+<xs:attribute name="WorkTypeSelnCode4" type="xs:string"/>
+<xs:attribute name="WorkTypeSelnCode5" type="xs:string"/>
+<xs:attribute name="WorkTypeSelnCode6" type="xs:string"/>
+<xs:attribute name="WorkTypeSelnCode7" type="xs:string"/>
+<xs:attribute name="WorkTypeSelnCode8" type="xs:string"/>
+<xs:attribute name="WorkTypeSelnCode9" type="xs:string"/>
+<xs:attribute name="WorkTypeSelnCode10" type="xs:string"/>
+<xs:attribute name="WorkTypeSelnCode11" type="xs:string"/>
+<xs:attribute name="WorkTypeSelnCode12" type="xs:string"/>
+<xs:attribute name="WorkTypeSelnCode13" type="xs:string"/>
+<xs:attribute name="WorkTypeSelnCode14" type="xs:string"/>
+<xs:attribute name="WorkTypeSelnCode15" type="xs:string"/>
+<xs:attribute name="WorkTypeSelnCode16" type="xs:string"/>
+<xs:attribute name="WorkTypeSelnCode17" type="xs:string"/>
+<xs:attribute name="WorkTypeSelnCode18" type="xs:string"/>
+<xs:attribute name="WorkTypeSelnCode19" type="xs:string"/>
+<xs:attribute name="WorkTypeSelnCode20" type="xs:string"/>
+<xs:attribute name="WorkTypeUserFldAlpha1" type="xs:string"/>
+<xs:attribute name="WorkTypeUserFldAlpha2" type="xs:string"/>
+<xs:attribute name="WorkTypeUserFldAlpha3" type="xs:string"/>
+<xs:attribute name="WorkTypeUserFldAlpha4" type="xs:string"/>
+<xs:attribute name="WorkTypeUserFldAlpha5" type="xs:string"/>
+<xs:attribute name="WorkTypeUserFldAlpha6" type="xs:string"/>
+<xs:attribute name="WorkTypeUserFldAlpha7" type="xs:string"/>
+<xs:attribute name="WorkTypeUserFldAlpha8" type="xs:string"/>
+<xs:attribute name="WorkTypeUserFldAlpha9" type="xs:string"/>
+<xs:attribute name="WorkTypeUserFldAlpha10" type="xs:string"/>
+<xs:attribute name="WorkTypeUserFldAlpha11" type="xs:string"/>
+<xs:attribute name="WorkTypeUserFldAlpha12" type="xs:string"/>
+<xs:attribute name="WorkTypeUserFldAlpha13" type="xs:string"/>
+<xs:attribute name="WorkTypeUserFldAlpha14" type="xs:string"/>
+<xs:attribute name="WorkTypeUserFldAlpha15" type="xs:string"/>
+<xs:attribute name="WorkTypeUserFldAlpha16" type="xs:string"/>
+<xs:attribute name="WorkTypeUserFldAlpha17" type="xs:string"/>
+<xs:attribute name="WorkTypeUserFldAlpha18" type="xs:string"/>
+<xs:attribute name="WorkTypeUserFldAlpha19" type="xs:string"/>
+<xs:attribute name="WorkTypeUserFldAlpha20" type="xs:string"/>
+<xs:attribute name="WorkTypeUserFldNumeric1" type="xs:string"/>
+<xs:attribute name="WorkTypeUserFldNumeric2" type="xs:string"/>
+<xs:attribute name="WorkTypeUserFldNumeric3" type="xs:string"/>
+<xs:attribute name="WorkTypeUserFldNumeric4" type="xs:string"/>
+<xs:attribute name="WorkTypeUserFldNumeric5" type="xs:string"/>
+<xs:attribute name="WorkTypeUserFldNumeric6" type="xs:string"/>
+<xs:attribute name="WorkTypeUserFldNumeric7" type="xs:string"/>
+<xs:attribute name="WorkTypeUserFldNumeric8" type="xs:string"/>
+<xs:attribute name="WorkTypeUserFldNumeric9" type="xs:string"/>
+<xs:attribute name="WorkTypeUserFldNumeric10" type="xs:string"/>
+<xs:attribute name="WorkTypeUserFldNumeric11" type="xs:string"/>
+<xs:attribute name="WorkTypeUserFldNumeric12" type="xs:string"/>
+<xs:attribute name="WorkTypeUserFldNumeric13" type="xs:string"/>
+<xs:attribute name="WorkTypeUserFldNumeric14" type="xs:string"/>
+<xs:attribute name="WorkTypeUserFldNumeric15" type="xs:string"/>
+<xs:attribute name="WorkTypeUserFldNumeric16" type="xs:string"/>
+<xs:attribute name="WorkTypeUserFldNumeric17" type="xs:string"/>
+<xs:attribute name="WorkTypeUserFldNumeric18" type="xs:string"/>
+<xs:attribute name="WorkTypeUserFldNumeric19" type="xs:string"/>
+<xs:attribute name="WorkTypeUserFldNumeric20" type="xs:string"/>
+<xs:attribute name="WorkTypeUserFldDate1" type="xs:string"/>
+<xs:attribute name="WorkTypeUserFldDate2" type="xs:string"/>
+<xs:attribute name="WorkTypeUserFldDate3" type="xs:string"/>
+<xs:attribute name="WorkTypeUserFldDate4" type="xs:string"/>
+<xs:attribute name="WorkTypeUserFldDate5" type="xs:string"/>
+<xs:attribute name="WorkTypeUserFldDate6" type="xs:string"/>
+<xs:attribute name="WorkTypeUserFldDate7" type="xs:string"/>
+<xs:attribute name="WorkTypeUserFldDate8" type="xs:string"/>
+<xs:attribute name="WorkTypeUserFldDate9" type="xs:string"/>
+<xs:attribute name="WorkTypeUserFldDate10" type="xs:string"/>
+<xs:attribute name="WorkTypeUserFldDate11" type="xs:string"/>
+<xs:attribute name="WorkTypeUserFldDate12" type="xs:string"/>
+<xs:attribute name="WorkTypeUserFldDate13" type="xs:string"/>
+<xs:attribute name="WorkTypeUserFldDate14" type="xs:string"/>
+<xs:attribute name="WorkTypeUserFldDate15" type="xs:string"/>
+<xs:attribute name="WorkTypeUserFldDate16" type="xs:string"/>
+<xs:attribute name="WorkTypeUserFldDate17" type="xs:string"/>
+<xs:attribute name="WorkTypeUserFldDate18" type="xs:string"/>
+<xs:attribute name="WorkTypeUserFldDate19" type="xs:string"/>
+<xs:attribute name="WorkTypeUserFldDate20" type="xs:string"/>
+<xs:attribute name="CreateUser" type="xs:string"/>
+<xs:attribute name="CreateDate" type="xs:string"/>
+<xs:attribute name="CreateTime" type="xs:string"/>
+<xs:attribute name="CreateDateTime" type="xs:string"/>
+<xs:attribute name="CreateNode" type="xs:string"/>
+<xs:attribute name="LastModUser" type="xs:string"/>
+<xs:attribute name="LastModDate" type="xs:string"/>
+<xs:attribute name="LastModTime" type="xs:string"/>
+<xs:attribute name="LastModDateTime" type="xs:string"/>
+<xs:attribute name="LastModNode" type="xs:string"/>
+<xs:attribute name="Vers" type="xs:string"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+</xs:schema>
+</wsdl:types>
+<wsdl:message name="Activity_DoGetList">
+<wsdl:part element="tns:Activity_DoGetList" name="parameters"/>
+</wsdl:message>
+<wsdl:message name="Activity_DoGetListResponse">
+<wsdl:part element="tns:Activity_DoGetListResponse" name="parameters"/>
+</wsdl:message>
+<wsdl:message name="Activity_DoRead">
+<wsdl:part element="tns:Activity_DoRead" name="parameters"/>
+</wsdl:message>
+<wsdl:message name="Activity_DoReadResponse">
+<wsdl:part element="tns:Activity_DoReadResponse" name="parameters"/>
+</wsdl:message>
+<wsdl:message name="Asset_DoGetListV2">
+<wsdl:part element="tns:Asset_DoGetListV2" name="parameters"/>
+</wsdl:message>
+<wsdl:message name="Asset_DoGetListV2Response">
+<wsdl:part element="tns:Asset_DoGetListV2Response" name="parameters"/>
+</wsdl:message>
+<wsdl:message name="Asset_DoReadV2">
+<wsdl:part element="tns:Asset_DoReadV2" name="parameters"/>
+</wsdl:message>
+<wsdl:message name="Asset_DoReadV2Response">
+<wsdl:part element="tns:Asset_DoReadV2Response" name="parameters"/>
+</wsdl:message>
+<wsdl:message name="Employee_DoGetContactList">
+<wsdl:part element="ns3:Employee_DoGetContactList" name="parameters"/>
+</wsdl:message>
+<wsdl:message name="Employee_DoGetContactListResponse">
+<wsdl:part element="ns3:Employee_DoGetContactListResponse" name="parameters"/>
+</wsdl:message>
+<wsdl:message name="Task_DoGetListV2">
+<wsdl:part element="tns:Task_DoGetListV2" name="parameters"/>
+</wsdl:message>
+<wsdl:message name="Task_DoGetListV2Response">
+<wsdl:part element="tns:Task_DoGetListV2Response" name="parameters"/>
+</wsdl:message>
+<wsdl:message name="Timesheet_DoGetEntryList">
+<wsdl:part element="ns3:Timesheet_DoGetEntryList" name="parameters"/>
+</wsdl:message>
+<wsdl:message name="Timesheet_DoGetEntryListResponse">
+<wsdl:part element="ns3:Timesheet_DoGetEntryListResponse" name="parameters"/>
+</wsdl:message>
+<wsdl:portType name="WebServiceProviderPortType">
+<wsdl:operation name="Activity_DoGetList">
+<wsdl:input message="tns:Activity_DoGetList"/>
+<wsdl:output message="tns:Activity_DoGetListResponse"/>
+</wsdl:operation>
+<wsdl:operation name="Activity_DoRead">
+<wsdl:input message="tns:Activity_DoRead"/>
+<wsdl:output message="tns:Activity_DoReadResponse"/>
+</wsdl:operation>
+<wsdl:operation name="Asset_DoGetListV2">
+<wsdl:input message="tns:Asset_DoGetListV2"/>
+<wsdl:output message="tns:Asset_DoGetListV2Response"/>
+</wsdl:operation>
+<wsdl:operation name="Asset_DoReadV2">
+<wsdl:input message="tns:Asset_DoReadV2"/>
+<wsdl:output message="tns:Asset_DoReadV2Response"/>
+</wsdl:operation>
+<wsdl:operation name="Employee_DoGetContactList">
+<wsdl:input message="tns:Employee_DoGetContactList"/>
+<wsdl:output message="tns:Employee_DoGetContactListResponse"/>
+</wsdl:operation>
+<wsdl:operation name="Task_DoGetListV2">
+<wsdl:input message="tns:Task_DoGetListV2"/>
+<wsdl:output message="tns:Task_DoGetListV2Response"/>
+</wsdl:operation>
+<wsdl:operation name="Timesheet_DoGetEntryList">
+<wsdl:input message="tns:Timesheet_DoGetEntryList"/>
+<wsdl:output message="tns:Timesheet_DoGetEntryListResponse"/>
+</wsdl:operation>
+</wsdl:portType>
+<wsdl:binding name="WebServiceProviderPortBinding" type="tns:WebServiceProviderPortType">
+<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+<wsdl:operation name="Activity_DoGetList">
+<soap:operation soapAction="Activity_DoGetList"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="Activity_DoRead">
+<soap:operation soapAction="Activity_DoRead"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="Asset_DoGetListV2">
+<soap:operation soapAction="Asset_DoGetListV2"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="Asset_DoReadV2">
+<soap:operation soapAction="Asset_DoReadV2"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="Employee_DoGetContactList">
+<soap:operation soapAction="Employee_DoGetContactList"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="Task_DoGetListV2">
+<soap:operation soapAction="Task_DoGetListV2"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="Timesheet_DoGetEntryList">
+<soap:operation soapAction="Timesheet_DoGetEntryList"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:binding name="WebServiceProvider12PortBinding" type="tns:WebServiceProviderPortType">
+<soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+<wsdl:operation name="Activity_DoGetList">
+<soap12:operation soapAction="Activity_DoGetList"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="Activity_DoRead">
+<soap12:operation soapAction="Activity_DoRead"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="Asset_DoGetListV2">
+<soap12:operation soapAction="Asset_DoGetListV2"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="Asset_DoReadV2">
+<soap12:operation soapAction="Asset_DoReadV2"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="Employee_DoGetContactList">
+<soap12:operation soapAction="Employee_DoGetContactList"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="Task_DoGetListV2">
+<soap12:operation soapAction="Task_DoGetListV2"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="Timesheet_DoGetEntryList">
+<soap12:operation soapAction="Timesheet_DoGetEntryList"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:service name="WebServiceProvider">
+<wsdl:port binding="tns:WebServiceProviderPortBinding" name="WebServiceProviderPort">
+<soap:address location="http://intapp01-dev.corporate.townsville.qld.gov.au:9090/ws/soap/timesheets"/>
+</wsdl:port>
+</wsdl:service>
+<wsdl:service name="WebServiceProvider12">
+<wsdl:port binding="tns:WebServiceProvider12PortBinding" name="WebServiceProvider12Port">
+<soap12:address location="http://intapp01-dev.corporate.townsville.qld.gov.au:9090/ws/soap12/timesheets"/>
+</wsdl:port>
+</wsdl:service>
+</wsdl:definitions>]]></wsdl_xml>
+    </sys_soap_message>
+</record_update>

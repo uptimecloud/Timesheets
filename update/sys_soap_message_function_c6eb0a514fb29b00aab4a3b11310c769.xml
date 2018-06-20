@@ -1,0 +1,570 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_soap_message_function">
+    <sys_soap_message_function action="INSERT_OR_UPDATE">
+        <authentication_type/>
+        <basic_auth_password/>
+        <basic_auth_profile/>
+        <basic_auth_user/>
+        <certificate/>
+        <enable_mutual_auth>false</enable_mutual_auth>
+        <envelope><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:ser="http://TechnologyOneCorp.com/T1.W1.Public/Services">
+   <soap:Header/>
+   <soap:Body>
+      <ser:Contract_DoUpdate>
+         <!--Optional:-->
+         <ser:Request PerformCommit="true">
+            <!--Optional:-->
+            <ser:Auth UserId="${Request.Auth}" Password="${Request.Auth}" Config="${Request.Auth}" FunctionName="${Request.Auth}"/>
+            <!--Optional:-->
+            <ser:Version Major="${Request.Version}" Minor="${Request.Version}" Revision="${Request.Version}" Patch="${Request.Version}"/>
+            <!--Optional:-->
+            <ser:Contract Loaded="false" HasVariations="" Attachments="">
+               <!--Optional:-->
+               <ser:ContractProfile IsReferenced="false" Loaded="false">
+                  <!--Optional:-->
+                  <ser:Header ContractProfileName="" ContractProfileNameDescr="" Description="" Narration="" Status="" ContractType="" CalendarName="" CalendarNameDescr="" AutoGenerateNbrInd="" ChartName="" ChartNameDescr="" ProcessingGroupName="" MandateContractNarration="" IntegrateWithPurchasing="" PurchasingVariationMethod="" EnableScheduleItemReference="" CreateUser="${ContractProfile.Header}" CreateDate="${ContractProfile.Header}" CreateTime="${ContractProfile.Header}" CreateDateTime="${ContractProfile.Header}" CreateNode="${ContractProfile.Header}" CreateWindow="" LastModUser="${ContractProfile.Header}" LastModDate="${ContractProfile.Header}" LastModTime="${ContractProfile.Header}" LastModDateTime="${ContractProfile.Header}" LastModNode="${ContractProfile.Header}" LastModWindow="" Vers="${ContractProfile.Header}" Loaded="false">
+                     <!--Optional:-->
+                     <ser:UserStatus AttributeName="" AttributeNameDescription="" Enable="" Level="" List="" ListDescription="" DefaultValue="" DefaultValueDescription="">
+                        <!--Optional:-->
+                        <ser:SysKey>${UserStatus.SysKey}</ser:SysKey>
+                     </ser:UserStatus>
+                     <!--Optional:-->
+                     <ser:Category AttributeName="" AttributeNameDescription="" Enable="" Level="" List="" ListDescription="" DefaultValue="" DefaultValueDescription="">
+                        <!--Optional:-->
+                        <ser:SysKey>${Category.SysKey}</ser:SysKey>
+                     </ser:Category>
+                     <!--Optional:-->
+                     <ser:BusinessUnit AttributeName="" AttributeNameDescription="" Enable="" Level="" List="" ListDescription="" DefaultValue="" DefaultValueDescription="">
+                        <!--Optional:-->
+                        <ser:SysKey>${BusinessUnit.SysKey}</ser:SysKey>
+                     </ser:BusinessUnit>
+                     <!--Optional:-->
+                     <ser:PracticalCompletion AttributeName="" AttributeNameDescription="" Enable="" Level="" SubjectToVariation="">
+                        <!--Optional:-->
+                        <ser:SysKey>${PracticalCompletion.SysKey}</ser:SysKey>
+                     </ser:PracticalCompletion>
+                     <!--Optional:-->
+                     <ser:FinalCompletion AttributeName="" AttributeNameDescription="" Enable="" Level="" SubjectToVariation="">
+                        <!--Optional:-->
+                        <ser:SysKey>${FinalCompletion.SysKey}</ser:SysKey>
+                     </ser:FinalCompletion>
+                     <!--Optional:-->
+                     <ser:WarrantyDetails AttributeName="" AttributeNameDescription="" Enable="" Level="" SubjectToVariation="">
+                        <!--Optional:-->
+                        <ser:SysKey>${WarrantyDetails.SysKey}</ser:SysKey>
+                     </ser:WarrantyDetails>
+                     <!--Optional:-->
+                     <ser:Reference AttributeName="" AttributeNameDescription="" Enable="" Level="" SubjectToVariation="">
+                        <!--Optional:-->
+                        <ser:SysKey>${Reference.SysKey}</ser:SysKey>
+                     </ser:Reference>
+                     <!--Optional:-->
+                     <ser:MaxContractValue AttributeName="" AttributeNameDescription="" Enable="" Level="" SubjectToVariation="">
+                        <!--Optional:-->
+                        <ser:SysKey>${MaxContractValue.SysKey}</ser:SysKey>
+                     </ser:MaxContractValue>
+                     <!--Optional:-->
+                     <ser:Comments AttributeName="" AttributeNameDescription="" Enable="" Level="" SubjectToVariation="">
+                        <!--Optional:-->
+                        <ser:SysKey>${Comments.SysKey}</ser:SysKey>
+                     </ser:Comments>
+                     <!--Optional:-->
+                     <ser:Qualifications AttributeName="" AttributeNameDescription="" Enable="" Level="" SubjectToVariation="">
+                        <!--Optional:-->
+                        <ser:SysKey>${Qualifications.SysKey}</ser:SysKey>
+                     </ser:Qualifications>
+                     <!--Optional:-->
+                     <ser:Review AttributeName="" AttributeNameDescription="" Enable="" Level="" SubjectToVariation="">
+                        <!--Optional:-->
+                        <ser:SysKey>${Review.SysKey}</ser:SysKey>
+                     </ser:Review>
+                     <!--Optional:-->
+                     <ser:ExpectedDates AttributeName="" AttributeNameDescription="" Enable="" Level="" EnableRenewDate="" EnableExpiryDate="">
+                        <!--Optional:-->
+                        <ser:SysKey>${ExpectedDates.SysKey}</ser:SysKey>
+                     </ser:ExpectedDates>
+                     <!--Optional:-->
+                     <ser:ActualDates AttributeName="" AttributeNameDescription="" Enable="" Level="" EnableRenewDate="" EnableExpiryDate="">
+                        <!--Optional:-->
+                        <ser:SysKey>${ActualDates.SysKey}</ser:SysKey>
+                     </ser:ActualDates>
+                     <!--Optional:-->
+                     <ser:ScheduleOptions DefaultScheduleType="">
+                        <!--Optional:-->
+                        <ser:CatalogueGenerating ScheduleType="" Enabled="true" DefaultPaymentOption=""/>
+                        <!--Optional:-->
+                        <ser:CataloguePriceBook ScheduleType="" Enabled="true" DefaultPaymentOption=""/>
+                        <!--Optional:-->
+                        <ser:ContractRates ScheduleType="" Enabled="true" DefaultPaymentOption=""/>
+                        <!--Optional:-->
+                        <ser:ItemType ScheduleType="" Enabled="true" DefaultPaymentOption=""/>
+                        <!--Optional:-->
+                        <ser:PurchaseFixedPrice ScheduleType="" Enabled="true" DefaultPaymentOption=""/>
+                        <!--Optional:-->
+                        <ser:PurchaseService ScheduleType="" Enabled="true" DefaultPaymentOption=""/>
+                        <!--Optional:-->
+                        <ser:SalesFixedPrice ScheduleType="" Enabled="true" DefaultPaymentOption=""/>
+                        <!--Optional:-->
+                        <ser:SalesService ScheduleType="" Enabled="true" DefaultPaymentOption=""/>
+                        <!--Optional:-->
+                        <ser:TimesheetEmployee ScheduleType="" Enabled="true" DefaultPaymentOption=""/>
+                     </ser:ScheduleOptions>
+                     <!--Optional:-->
+                     <ser:InvoicingOptions IntegrateWithInvoicing="" SuspendInvoicesInDocumentFile="" ExternalSystemsPostingFunction="" ExternalSystemsPostingFunctionDescription="" ExternalSystemsPostingFormat="" ExternalSystemsPostingFormatDescription="" ExternalSystemsPostingDocument="" ExternalSystemsPostingDocumentDescription="" SuspendInvoicesDocumentFileImportFunction="" SuspendInvoicesDocumentFileImportFunctionDescription="" CancelClaimFormat="" CancelClaimFormatDescription="" DocumentRegisterName="" DocumentRegisterNameDescription="" DocumentRegisterLocation="" DocumentRegisterLocationDescription="" InvoiceConsolidateOption="" Narration1Option="" Narration1Value="" Narration2Option="" Narration2Value="" Narration3Option="" Narration3Value="" DocumentReference1Option="" DocumentReference1Value="" DocumentReference2Option="" DocumentReference2Value="" DocumentReference3Option="" DocumentReference3Value="" DocumentDate1Option="" DocumentDate1Value="" DocumentDate2Option="" DocumentDate2Value="" Userfield1Option="" Userfield1Value="" Userfield2Option="" Userfield2Value="" Userfield3Option="" Userfield3Value="" Userfield4Option="" Userfield4Value="" Userfield5Option="" Userfield5Value="" Userfield6Option="" Userfield6Value="" Userfield7Option="" Userfield7Value="" Userfield8Option="" Userfield8Value="" Userfield9Option="" Userfield9Value="" Userfield10Option="" Userfield10Value="" RetentionExternalSystemsFunction="" RetentionExternalSystemsFunctionDescription="" RetentionFormatName="" RetentionFormatNameDescription="" RetentionCancelClaimFormatName="" RetentionCancelClaimFormatNameDescription="" RetentionDocumentType="" RetentionDocumentTypeDescription="" RetentionInvoiceDocumentType="" RetentionInvoiceDocumentTypeDescription="" RetentionDocumentRegisterName="" RetentionDocumentRegisterNameDescription="" RetentionDocumentRegisterLocation="" RetentionDocumentRegisterLocationDescription="" RetentionInvoiceConsolidateOption="" RetentionSuspendInvoicesInDocumentFile="" RetentionSuspendInvoicesDocumentFileImportFunction="" RetentionSuspendInvoicesDocumentFileImportFunctionDescription="" RetentionNarration1Option="" RetentionNarration1Value="" RetentionNarration2Option="" RetentionNarration2Value="" RetentionNarration3Option="" RetentionNarration3Value="" RetentionDocumentReference1Option="" RetentionDocumentReference1Value="" RetentionDocumentReference2Option="" RetentionDocumentReference2Value="" RetentionDocumentReference3Option="" RetentionDocumentReference3Value="" RetentionDocumentDate1Option="" RetentionDocumentDate1Value="" RetentionDocumentDate2Option="" RetentionDocumentDate2Value="" RetentionUserfield1Option="" RetentionUserfield1Value="" RetentionUserfield2Option="" RetentionUserfield2Value="" RetentionUserfield3Option="" RetentionUserfield3Value="" RetentionUserfield4Option="" RetentionUserfield4Value="" RetentionUserfield5Option="" RetentionUserfield5Value="" RetentionUserfield6Option="" RetentionUserfield6Value="" RetentionUserfield7Option="" RetentionUserfield7Value="" RetentionUserfield8Option="" RetentionUserfield8Value="" RetentionUserfield9Option="" RetentionUserfield9Value="" RetentionUserfield10Option="" RetentionUserfield10Value="" EnableSeparateInvoiceRetentionProcessing=""/>
+                  </ser:Header>
+                  <!--Optional:-->
+                  <ser:ChartData ChartName="" ChartDescr="" AutoGenerateInd="" AccountStructureMask="" TransformationMask="" InputMask=""/>
+                  <!--Optional:-->
+                  <ser:TemplateContracts>
+                     <!--Zero or more repetitions:-->
+                     <ser:TemplateContract ContractNumber="" ContractNumberDescr=""/>
+                  </ser:TemplateContracts>
+                  <!--Optional:-->
+                  <ser:ContractUserfields>
+                     <!--Zero or more repetitions:-->
+                     <ser:ContractProfileUserField ContractProfileName="" UniqueNbr="0" SequenceNumber="0" Caption="" SubjectToVariationInd="" FieldType="" FieldSize="0" NbrDecimals="0" DefaultValue="" Mandatory="" ValidationType="" ValidateAgainst="" Description="" UserfieldType=""/>
+                  </ser:ContractUserfields>
+                  <!--Optional:-->
+                  <ser:ContractPartyUserfields>
+                     <!--Zero or more repetitions:-->
+                     <ser:ContractProfileUserField ContractProfileName="" UniqueNbr="0" SequenceNumber="0" Caption="" SubjectToVariationInd="" FieldType="" FieldSize="0" NbrDecimals="0" DefaultValue="" Mandatory="" ValidationType="" ValidateAgainst="" Description="" UserfieldType=""/>
+                  </ser:ContractPartyUserfields>
+                  <!--Optional:-->
+                  <ser:ScheduleUserfields>
+                     <!--Zero or more repetitions:-->
+                     <ser:ContractProfileUserField ContractProfileName="" UniqueNbr="0" SequenceNumber="0" Caption="" SubjectToVariationInd="" FieldType="" FieldSize="0" NbrDecimals="0" DefaultValue="" Mandatory="" ValidationType="" ValidateAgainst="" Description="" UserfieldType=""/>
+                  </ser:ScheduleUserfields>
+                  <!--Optional:-->
+                  <ser:ScheduleItemUserfields>
+                     <!--Zero or more repetitions:-->
+                     <ser:ContractProfileUserField ContractProfileName="" UniqueNbr="0" SequenceNumber="0" Caption="" SubjectToVariationInd="" FieldType="" FieldSize="0" NbrDecimals="0" DefaultValue="" Mandatory="" ValidationType="" ValidateAgainst="" Description="" UserfieldType=""/>
+                  </ser:ScheduleItemUserfields>
+                  <!--Optional:-->
+                  <ser:ClaimUserfields>
+                     <!--Zero or more repetitions:-->
+                     <ser:ContractProfileUserField ContractProfileName="" UniqueNbr="0" SequenceNumber="0" Caption="" SubjectToVariationInd="" FieldType="" FieldSize="0" NbrDecimals="0" DefaultValue="" Mandatory="" ValidationType="" ValidateAgainst="" Description="" UserfieldType=""/>
+                  </ser:ClaimUserfields>
+                  <!--Optional:-->
+                  <ser:DocumentDefns>
+                     <!--Zero or more repetitions:-->
+                     <ser:ContractProfileDocumentDefn ContractProfileName="" ProfileCodeType="" DocumentCode="" DocumentCodeDescr="" TransmissionType="" DefaultCollectionDocumentDefinitionName="" DefaultCollectionDocumentDefinitionNameDescr="" DefaultResultsDocumentDefinitionName="" DefaultResultsDocumentDefinitionNameDescr=""/>
+                  </ser:DocumentDefns>
+               </ser:ContractProfile>
+               <!--Optional:-->
+               <ser:Header ContractProfileName="" ContractNumberi="" ContractNumber="" Description="" Narration="" ApprovalStatus="" ApprovalDate="" ApprovalUser="" EffectiveDate="" CompletionDate="${Contract.Header}" TemplateInd="" Comments="" ApprovedContractValue="" ParentContractNumber="" ContractLevel="" HeaderContractNumber="" CompletionStage="" Reference="" MaximumValue="0" Status="I" ContractType="" ContractCreateUser="" ContractCreateDate="" ContractCreateTime="" ContractCreateNode="" ContractCreateWindow="" ContractLastModUser="" ContractLastModDate="" ContractLastModTime="" ContractLastModNode="" ContractLastModWindow="" VariationCreateUser="" VariationCreateDate="" VariationCreateTime="" VariationCreateNode="" VariationCreateWindow="" VariationLastModUser="" VariationLastModDate="" VariationLastModTime="" VariationLastModNode="" VariationLastModWindow="" Vers="${Contract.Header}" Loaded="false">
+                  <!--Optional:-->
+                  <ser:Sponsor Value="" Description=""/>
+                  <!--Optional:-->
+                  <ser:UserStatus Value="" Description=""/>
+                  <!--Optional:-->
+                  <ser:Category Value="" Description=""/>
+                  <!--Optional:-->
+                  <ser:BusinessUnit Value="" Description=""/>
+                  <!--Optional:-->
+                  <ser:PracticalCompletion Status="" Date="1900-01-01T00:00:00"/>
+                  <!--Optional:-->
+                  <ser:FinalCompletion Status="" Date="1900-01-01T00:00:00"/>
+                  <!--Optional:-->
+                  <ser:WarrantyDetails Status="" Date="1900-01-01T00:00:00"/>
+                  <!--Optional:-->
+                  <ser:ExpectedDates Start="1900-01-01T00:00:00" Finish="1900-01-01T00:00:00" Renew="1900-01-01T00:00:00" Expiry="1900-01-01T00:00:00"/>
+                  <!--Optional:-->
+                  <ser:ActualDates Start="1900-01-01T00:00:00" Finish="1900-01-01T00:00:00" Renew="1900-01-01T00:00:00" Expiry="1900-01-01T00:00:00"/>
+               </ser:Header>
+               <!--Optional:-->
+               <ser:CurrentVariation Loaded="false" Template="false" SkipValidation="false">
+                  <!--Optional:-->
+                  <ser:Header ContractProfileName="" ContractNumber="" Description="" EffectiveDate="${CurrentVariation.Header}" Comments="" Reference="" MaximumValue="0" CompletionStage="" ContractNumberInternal="" ContractNumberDescr="" VariationNumber="" CreateUser="${CurrentVariation.Header}" CreateDate="${CurrentVariation.Header}" CreateTime="${CurrentVariation.Header}" CreateDateTime="${CurrentVariation.Header}" CreateNode="${CurrentVariation.Header}" CreateWindow="" LastModUser="${CurrentVariation.Header}" LastModDate="${CurrentVariation.Header}" LastModTime="${CurrentVariation.Header}" LastModDateTime="${CurrentVariation.Header}" LastModNode="${CurrentVariation.Header}" LastModWindow="" Vers="${CurrentVariation.Header}" Loaded="false">
+                     <!--Optional:-->
+                     <ser:VariationType Value="" Description=""/>
+                     <!--Optional:-->
+                     <ser:PracticalCompletion Status="" Date="1900-01-01T00:00:00"/>
+                     <!--Optional:-->
+                     <ser:FinalCompletion Status="" Date="1900-01-01T00:00:00"/>
+                     <!--Optional:-->
+                     <ser:WarrantyDetails Status="" Date="1900-01-01T00:00:00"/>
+                     <!--Optional:-->
+                     <ser:ApprovalUser Value="" Description=""/>
+                     <!--Optional:-->
+                     <ser:Approval Status="" Date="1900-01-01T00:00:00"/>
+                  </ser:Header>
+                  <!--Optional:-->
+                  <ser:UserField ContractProfileName="" ContractNumberi="" VariationNumber="" Userfield01Alpha="" Userfield01Numeric="0" Userfield01Date="1900-01-01T00:00:00" Userfield01Descr="" Userfield02Alpha="" Userfield02Numeric="0" Userfield02Date="1900-01-01T00:00:00" Userfield02Descr="" Userfield03Alpha="" Userfield03Numeric="0" Userfield03Date="1900-01-01T00:00:00" Userfield03Descr="" Userfield04Alpha="" Userfield04Numeric="0" Userfield04Date="1900-01-01T00:00:00" Userfield04Descr="" Userfield05Alpha="" Userfield05Numeric="0" Userfield05Date="1900-01-01T00:00:00" Userfield05Descr="" Userfield06Alpha="" Userfield06Numeric="0" Userfield06Date="1900-01-01T00:00:00" Userfield06Descr="" Userfield07Alpha="" Userfield07Numeric="0" Userfield07Date="1900-01-01T00:00:00" Userfield07Descr="" Userfield08Alpha="" Userfield08Numeric="0" Userfield08Date="1900-01-01T00:00:00" Userfield08Descr="" Userfield09Alpha="" Userfield09Numeric="0" Userfield09Date="1900-01-01T00:00:00" Userfield09Descr="" Userfield10Alpha="" Userfield10Numeric="0" Userfield10Date="1900-01-01T00:00:00" Userfield10Descr="" Userfield11Alpha="" Userfield11Numeric="0" Userfield11Date="1900-01-01T00:00:00" Userfield11Descr="" Userfield12Alpha="" Userfield12Numeric="0" Userfield12Date="1900-01-01T00:00:00" Userfield12Descr="" Userfield13Alpha="" Userfield13Numeric="0" Userfield13Date="1900-01-01T00:00:00" Userfield13Descr="" Userfield14Alpha="" Userfield14Numeric="0" Userfield14Date="1900-01-01T00:00:00" Userfield14Descr="" Userfield15Alpha="" Userfield15Numeric="0" Userfield15Date="1900-01-01T00:00:00" Userfield15Descr="" Userfield16Alpha="" Userfield16Numeric="0" Userfield16Date="1900-01-01T00:00:00" Userfield16Descr="" Userfield17Alpha="" Userfield17Numeric="0" Userfield17Date="1900-01-01T00:00:00" Userfield17Descr="" Userfield18Alpha="" Userfield18Numeric="0" Userfield18Date="1900-01-01T00:00:00" Userfield18Descr="" Userfield19Alpha="" Userfield19Numeric="0" Userfield19Date="1900-01-01T00:00:00" Userfield19Descr="" Userfield20Alpha="" Userfield20Numeric="0" Userfield20Date="1900-01-01T00:00:00" Userfield20Descr="" Userfield21Alpha="" Userfield21Numeric="0" Userfield21Date="1900-01-01T00:00:00" Userfield21Descr="" Userfield22Alpha="" Userfield22Numeric="0" Userfield22Date="1900-01-01T00:00:00" Userfield22Descr="" Userfield23Alpha="" Userfield23Numeric="0" Userfield23Date="1900-01-01T00:00:00" Userfield23Descr="" Userfield24Alpha="" Userfield24Numeric="0" Userfield24Date="1900-01-01T00:00:00" Userfield24Descr="" Userfield25Alpha="" Userfield25Numeric="0" Userfield25Date="1900-01-01T00:00:00" Userfield25Descr="" Userfield26Alpha="" Userfield26Numeric="0" Userfield26Date="1900-01-01T00:00:00" Userfield26Descr="" Userfield27Alpha="" Userfield27Numeric="0" Userfield27Date="1900-01-01T00:00:00" Userfield27Descr="" Userfield28Alpha="" Userfield28Numeric="0" Userfield28Date="1900-01-01T00:00:00" Userfield28Descr="" Userfield29Alpha="" Userfield29Numeric="0" Userfield29Date="1900-01-01T00:00:00" Userfield29Descr="" Userfield30Alpha="" Userfield30Numeric="0" Userfield30Date="1900-01-01T00:00:00" Userfield30Descr="" Userfield31Alpha="" Userfield31Numeric="0" Userfield31Date="1900-01-01T00:00:00" Userfield31Descr="" Userfield32Alpha="" Userfield32Numeric="0" Userfield32Date="1900-01-01T00:00:00" Userfield32Descr="" Userfield33Alpha="" Userfield33Numeric="0" Userfield33Date="1900-01-01T00:00:00" Userfield33Descr="" Userfield34Alpha="" Userfield34Numeric="0" Userfield34Date="1900-01-01T00:00:00" Userfield34Descr="" Userfield35Alpha="" Userfield35Numeric="0" Userfield35Date="1900-01-01T00:00:00" Userfield35Descr="" Userfield36Alpha="" Userfield36Numeric="0" Userfield36Date="1900-01-01T00:00:00" Userfield36Descr="" Userfield37Alpha="" Userfield37Numeric="0" Userfield37Date="1900-01-01T00:00:00" Userfield37Descr="" Userfield38Alpha="" Userfield38Numeric="0" Userfield38Date="1900-01-01T00:00:00" Userfield38Descr="" Userfield39Alpha="" Userfield39Numeric="0" Userfield39Date="1900-01-01T00:00:00" Userfield39Descr="" Userfield40Alpha="" Userfield40Numeric="0" Userfield40Date="1900-01-01T00:00:00" Userfield40Descr=""/>
+                  <!--Optional:-->
+                  <ser:ContractProfile IsReferenced="false" Loaded="false">
+                     <!--Optional:-->
+                     <ser:Header ContractProfileName="" ContractProfileNameDescr="" Description="" Narration="" Status="" ContractType="" CalendarName="" CalendarNameDescr="" AutoGenerateNbrInd="" ChartName="" ChartNameDescr="" ProcessingGroupName="" MandateContractNarration="" IntegrateWithPurchasing="" PurchasingVariationMethod="" EnableScheduleItemReference="" CreateUser="${ContractProfile.Header}" CreateDate="${ContractProfile.Header}" CreateTime="${ContractProfile.Header}" CreateDateTime="${ContractProfile.Header}" CreateNode="${ContractProfile.Header}" CreateWindow="" LastModUser="${ContractProfile.Header}" LastModDate="${ContractProfile.Header}" LastModTime="${ContractProfile.Header}" LastModDateTime="${ContractProfile.Header}" LastModNode="${ContractProfile.Header}" LastModWindow="" Vers="${ContractProfile.Header}" Loaded="false">
+                        <!--Optional:-->
+                        <ser:UserStatus AttributeName="" AttributeNameDescription="" Enable="" Level="" List="" ListDescription="" DefaultValue="" DefaultValueDescription="">
+                           <!--Optional:-->
+                           <ser:SysKey>${UserStatus.SysKey}</ser:SysKey>
+                        </ser:UserStatus>
+                        <!--Optional:-->
+                        <ser:Category AttributeName="" AttributeNameDescription="" Enable="" Level="" List="" ListDescription="" DefaultValue="" DefaultValueDescription="">
+                           <!--Optional:-->
+                           <ser:SysKey>${Category.SysKey}</ser:SysKey>
+                        </ser:Category>
+                        <!--Optional:-->
+                        <ser:BusinessUnit AttributeName="" AttributeNameDescription="" Enable="" Level="" List="" ListDescription="" DefaultValue="" DefaultValueDescription="">
+                           <!--Optional:-->
+                           <ser:SysKey>${BusinessUnit.SysKey}</ser:SysKey>
+                        </ser:BusinessUnit>
+                        <!--Optional:-->
+                        <ser:PracticalCompletion AttributeName="" AttributeNameDescription="" Enable="" Level="" SubjectToVariation="">
+                           <!--Optional:-->
+                           <ser:SysKey>${PracticalCompletion.SysKey}</ser:SysKey>
+                        </ser:PracticalCompletion>
+                        <!--Optional:-->
+                        <ser:FinalCompletion AttributeName="" AttributeNameDescription="" Enable="" Level="" SubjectToVariation="">
+                           <!--Optional:-->
+                           <ser:SysKey>${FinalCompletion.SysKey}</ser:SysKey>
+                        </ser:FinalCompletion>
+                        <!--Optional:-->
+                        <ser:WarrantyDetails AttributeName="" AttributeNameDescription="" Enable="" Level="" SubjectToVariation="">
+                           <!--Optional:-->
+                           <ser:SysKey>${WarrantyDetails.SysKey}</ser:SysKey>
+                        </ser:WarrantyDetails>
+                        <!--Optional:-->
+                        <ser:Reference AttributeName="" AttributeNameDescription="" Enable="" Level="" SubjectToVariation="">
+                           <!--Optional:-->
+                           <ser:SysKey>${Reference.SysKey}</ser:SysKey>
+                        </ser:Reference>
+                        <!--Optional:-->
+                        <ser:MaxContractValue AttributeName="" AttributeNameDescription="" Enable="" Level="" SubjectToVariation="">
+                           <!--Optional:-->
+                           <ser:SysKey>${MaxContractValue.SysKey}</ser:SysKey>
+                        </ser:MaxContractValue>
+                        <!--Optional:-->
+                        <ser:Comments AttributeName="" AttributeNameDescription="" Enable="" Level="" SubjectToVariation="">
+                           <!--Optional:-->
+                           <ser:SysKey>${Comments.SysKey}</ser:SysKey>
+                        </ser:Comments>
+                        <!--Optional:-->
+                        <ser:Qualifications AttributeName="" AttributeNameDescription="" Enable="" Level="" SubjectToVariation="">
+                           <!--Optional:-->
+                           <ser:SysKey>${Qualifications.SysKey}</ser:SysKey>
+                        </ser:Qualifications>
+                        <!--Optional:-->
+                        <ser:Review AttributeName="" AttributeNameDescription="" Enable="" Level="" SubjectToVariation="">
+                           <!--Optional:-->
+                           <ser:SysKey>${Review.SysKey}</ser:SysKey>
+                        </ser:Review>
+                        <!--Optional:-->
+                        <ser:ExpectedDates AttributeName="" AttributeNameDescription="" Enable="" Level="" EnableRenewDate="" EnableExpiryDate="">
+                           <!--Optional:-->
+                           <ser:SysKey>${ExpectedDates.SysKey}</ser:SysKey>
+                        </ser:ExpectedDates>
+                        <!--Optional:-->
+                        <ser:ActualDates AttributeName="" AttributeNameDescription="" Enable="" Level="" EnableRenewDate="" EnableExpiryDate="">
+                           <!--Optional:-->
+                           <ser:SysKey>${ActualDates.SysKey}</ser:SysKey>
+                        </ser:ActualDates>
+                        <!--Optional:-->
+                        <ser:ScheduleOptions DefaultScheduleType="">
+                           <!--Optional:-->
+                           <ser:CatalogueGenerating ScheduleType="" Enabled="true" DefaultPaymentOption=""/>
+                           <!--Optional:-->
+                           <ser:CataloguePriceBook ScheduleType="" Enabled="true" DefaultPaymentOption=""/>
+                           <!--Optional:-->
+                           <ser:ContractRates ScheduleType="" Enabled="true" DefaultPaymentOption=""/>
+                           <!--Optional:-->
+                           <ser:ItemType ScheduleType="" Enabled="true" DefaultPaymentOption=""/>
+                           <!--Optional:-->
+                           <ser:PurchaseFixedPrice ScheduleType="" Enabled="true" DefaultPaymentOption=""/>
+                           <!--Optional:-->
+                           <ser:PurchaseService ScheduleType="" Enabled="true" DefaultPaymentOption=""/>
+                           <!--Optional:-->
+                           <ser:SalesFixedPrice ScheduleType="" Enabled="true" DefaultPaymentOption=""/>
+                           <!--Optional:-->
+                           <ser:SalesService ScheduleType="" Enabled="true" DefaultPaymentOption=""/>
+                           <!--Optional:-->
+                           <ser:TimesheetEmployee ScheduleType="" Enabled="true" DefaultPaymentOption=""/>
+                        </ser:ScheduleOptions>
+                        <!--Optional:-->
+                        <ser:InvoicingOptions IntegrateWithInvoicing="" SuspendInvoicesInDocumentFile="" ExternalSystemsPostingFunction="" ExternalSystemsPostingFunctionDescription="" ExternalSystemsPostingFormat="" ExternalSystemsPostingFormatDescription="" ExternalSystemsPostingDocument="" ExternalSystemsPostingDocumentDescription="" SuspendInvoicesDocumentFileImportFunction="" SuspendInvoicesDocumentFileImportFunctionDescription="" CancelClaimFormat="" CancelClaimFormatDescription="" DocumentRegisterName="" DocumentRegisterNameDescription="" DocumentRegisterLocation="" DocumentRegisterLocationDescription="" InvoiceConsolidateOption="" Narration1Option="" Narration1Value="" Narration2Option="" Narration2Value="" Narration3Option="" Narration3Value="" DocumentReference1Option="" DocumentReference1Value="" DocumentReference2Option="" DocumentReference2Value="" DocumentReference3Option="" DocumentReference3Value="" DocumentDate1Option="" DocumentDate1Value="" DocumentDate2Option="" DocumentDate2Value="" Userfield1Option="" Userfield1Value="" Userfield2Option="" Userfield2Value="" Userfield3Option="" Userfield3Value="" Userfield4Option="" Userfield4Value="" Userfield5Option="" Userfield5Value="" Userfield6Option="" Userfield6Value="" Userfield7Option="" Userfield7Value="" Userfield8Option="" Userfield8Value="" Userfield9Option="" Userfield9Value="" Userfield10Option="" Userfield10Value="" RetentionExternalSystemsFunction="" RetentionExternalSystemsFunctionDescription="" RetentionFormatName="" RetentionFormatNameDescription="" RetentionCancelClaimFormatName="" RetentionCancelClaimFormatNameDescription="" RetentionDocumentType="" RetentionDocumentTypeDescription="" RetentionInvoiceDocumentType="" RetentionInvoiceDocumentTypeDescription="" RetentionDocumentRegisterName="" RetentionDocumentRegisterNameDescription="" RetentionDocumentRegisterLocation="" RetentionDocumentRegisterLocationDescription="" RetentionInvoiceConsolidateOption="" RetentionSuspendInvoicesInDocumentFile="" RetentionSuspendInvoicesDocumentFileImportFunction="" RetentionSuspendInvoicesDocumentFileImportFunctionDescription="" RetentionNarration1Option="" RetentionNarration1Value="" RetentionNarration2Option="" RetentionNarration2Value="" RetentionNarration3Option="" RetentionNarration3Value="" RetentionDocumentReference1Option="" RetentionDocumentReference1Value="" RetentionDocumentReference2Option="" RetentionDocumentReference2Value="" RetentionDocumentReference3Option="" RetentionDocumentReference3Value="" RetentionDocumentDate1Option="" RetentionDocumentDate1Value="" RetentionDocumentDate2Option="" RetentionDocumentDate2Value="" RetentionUserfield1Option="" RetentionUserfield1Value="" RetentionUserfield2Option="" RetentionUserfield2Value="" RetentionUserfield3Option="" RetentionUserfield3Value="" RetentionUserfield4Option="" RetentionUserfield4Value="" RetentionUserfield5Option="" RetentionUserfield5Value="" RetentionUserfield6Option="" RetentionUserfield6Value="" RetentionUserfield7Option="" RetentionUserfield7Value="" RetentionUserfield8Option="" RetentionUserfield8Value="" RetentionUserfield9Option="" RetentionUserfield9Value="" RetentionUserfield10Option="" RetentionUserfield10Value="" EnableSeparateInvoiceRetentionProcessing=""/>
+                     </ser:Header>
+                     <!--Optional:-->
+                     <ser:ChartData ChartName="" ChartDescr="" AutoGenerateInd="" AccountStructureMask="" TransformationMask="" InputMask=""/>
+                     <!--Optional:-->
+                     <ser:TemplateContracts>
+                        <!--Zero or more repetitions:-->
+                        <ser:TemplateContract ContractNumber="" ContractNumberDescr=""/>
+                     </ser:TemplateContracts>
+                     <!--Optional:-->
+                     <ser:ContractUserfields>
+                        <!--Zero or more repetitions:-->
+                        <ser:ContractProfileUserField ContractProfileName="" UniqueNbr="0" SequenceNumber="0" Caption="" SubjectToVariationInd="" FieldType="" FieldSize="0" NbrDecimals="0" DefaultValue="" Mandatory="" ValidationType="" ValidateAgainst="" Description="" UserfieldType=""/>
+                     </ser:ContractUserfields>
+                     <!--Optional:-->
+                     <ser:ContractPartyUserfields>
+                        <!--Zero or more repetitions:-->
+                        <ser:ContractProfileUserField ContractProfileName="" UniqueNbr="0" SequenceNumber="0" Caption="" SubjectToVariationInd="" FieldType="" FieldSize="0" NbrDecimals="0" DefaultValue="" Mandatory="" ValidationType="" ValidateAgainst="" Description="" UserfieldType=""/>
+                     </ser:ContractPartyUserfields>
+                     <!--Optional:-->
+                     <ser:ScheduleUserfields>
+                        <!--Zero or more repetitions:-->
+                        <ser:ContractProfileUserField ContractProfileName="" UniqueNbr="0" SequenceNumber="0" Caption="" SubjectToVariationInd="" FieldType="" FieldSize="0" NbrDecimals="0" DefaultValue="" Mandatory="" ValidationType="" ValidateAgainst="" Description="" UserfieldType=""/>
+                     </ser:ScheduleUserfields>
+                     <!--Optional:-->
+                     <ser:ScheduleItemUserfields>
+                        <!--Zero or more repetitions:-->
+                        <ser:ContractProfileUserField ContractProfileName="" UniqueNbr="0" SequenceNumber="0" Caption="" SubjectToVariationInd="" FieldType="" FieldSize="0" NbrDecimals="0" DefaultValue="" Mandatory="" ValidationType="" ValidateAgainst="" Description="" UserfieldType=""/>
+                     </ser:ScheduleItemUserfields>
+                     <!--Optional:-->
+                     <ser:ClaimUserfields>
+                        <!--Zero or more repetitions:-->
+                        <ser:ContractProfileUserField ContractProfileName="" UniqueNbr="0" SequenceNumber="0" Caption="" SubjectToVariationInd="" FieldType="" FieldSize="0" NbrDecimals="0" DefaultValue="" Mandatory="" ValidationType="" ValidateAgainst="" Description="" UserfieldType=""/>
+                     </ser:ClaimUserfields>
+                     <!--Optional:-->
+                     <ser:DocumentDefns>
+                        <!--Zero or more repetitions:-->
+                        <ser:ContractProfileDocumentDefn ContractProfileName="" ProfileCodeType="" DocumentCode="" DocumentCodeDescr="" TransmissionType="" DefaultCollectionDocumentDefinitionName="" DefaultCollectionDocumentDefinitionNameDescr="" DefaultResultsDocumentDefinitionName="" DefaultResultsDocumentDefinitionNameDescr=""/>
+                     </ser:DocumentDefns>
+                  </ser:ContractProfile>
+                  <!--Optional:-->
+                  <ser:Schedules>
+                     <!--Zero or more repetitions:-->
+                     <ser:ScheduleHeader ContractProfileName="" ContractNumberInternal="" ContractNumber="" VariationNumber="" Description="" Type="" PaymentOption="" Status="" TemplateInd="" WorkSystemName="" ItemType="" Company="" Catalogue="" PartyProfileName="" PartyNumber="" EnforceSupplierInd="" EnforceRateInd="" UnitsRequired="" BillingProcess="" RevenueRecognitionInd="" LimitTotalAmtInd="" LimitTotalAmt="0" LimitAmtOnRESTInd="" DfltBillableInd="" GenerateSeperateBillInd="" DfltRevenueItemTypeInd="" DfltRevenueItemType="" DfltRevenueItemCode="" DfltRevenueLdgCode="" DfltRevenueAccount="" AccruedRevenueRecogLdgCode="" AccruedRevenueRecogAccount="" AccruedRevenueInvLdgCode="" AccruedRevenueInvAccount="" DfltMilestoneBasisOptn="" GoodsAndServicesTaxEntryOption="" DefaultCostLedger="" DefaultCostAccount="" DefaultCostResourceCompMask="" RetntInd="" LimitRetentionsInd="N" LimitRetentionsAmount="0" RetntPercent="0" RetntReleaseDate="${Schedules.ScheduleHeader}" RetntHeldLdgCode="" RetntHeldAccount="" RetntReleaseLdgCode="" RetntReleaseAccount="" ApprovedScheduleValue="0" DefaultCostResourceGroup="" DefaultCostResourceCode="" SplitRetentionInd="N" RetntReleaseDate2="${Schedules.ScheduleHeader}" RetntReleasePercentage1="0" RetntReleasePercentage2="0" RetntTerminology1="" RetntTerminology2="" ContractNumberDescription="" ScheduleNumber="" WorkSystemDescr="" ItemTypeDescr="" CompanyDescr="" CatalogueDescr="" PartyProfileDescr="" PartyDescr="" DfltRevenueItemTypeDescr="" DfltRevenueItemCodeDescr="" DfltRevenueLdgCodeDescr="" DfltRevenueAccountDescr="" DfltRevenueLdgName="" AccruedRevenueRecogChartName="" AccruedRevenueRecogLdgCodeDescr="" AccruedRevenueRecogLdgName="" AccruedRevenueRecogAccountDescr="" AccruedRevenueInvChartName="" AccruedRevenueInvLdgCodeDescr="" AccruedRevenueInvLdgName="" AccruedRevenueInvAccountDescr="" DefaultCostChartName="" DefaultCostLedgerName="" DefaultCostChartIsWOInterface="false" DefaultCostLedgerDescription="" DefaultCostAccountDescription="" DefaultCostResourceGroupDescription="" DefaultCostResourceDescription="" RetntHeldLdgCodeDescr="" RetntHeldAccountDescr="" RetntReleaseLdgCodeDescr="" RetntReleaseAccountDescr="" BillingWrkshtInd="" BillingWrkshtName="" BillingWrkshtUser="" RetntReleaseLdgName="" RetntReleaseChartName="" DfltRevenueChartName="" RetntHeldChartName="" RetntHeldLdgName="" CreateUser="${Schedules.ScheduleHeader}" CreateDate="${Schedules.ScheduleHeader}" CreateTime="${Schedules.ScheduleHeader}" CreateDateTime="${Schedules.ScheduleHeader}" CreateNode="${Schedules.ScheduleHeader}" CreateWindow="" LastModUser="${Schedules.ScheduleHeader}" LastModDate="${Schedules.ScheduleHeader}" LastModTime="${Schedules.ScheduleHeader}" LastModDateTime="${Schedules.ScheduleHeader}" LastModNode="${Schedules.ScheduleHeader}" LastModWindow="" Vers="${Schedules.ScheduleHeader}" Loaded="false">
+                        <!--Optional:-->
+                        <ser:PracticalCompletion Status="" Date="1900-01-01T00:00:00"/>
+                        <!--Optional:-->
+                        <ser:FinalCompletion Status="" Date="1900-01-01T00:00:00"/>
+                        <!--Optional:-->
+                        <ser:WarrantyDetails Status="" Date="1900-01-01T00:00:00"/>
+                     </ser:ScheduleHeader>
+                  </ser:Schedules>
+               </ser:CurrentVariation>
+               <!--Optional:-->
+               <ser:Variations>
+                  <!--Zero or more repetitions:-->
+                  <ser:ContractVariation Loaded="false" Template="false" SkipValidation="false">
+                     <!--Optional:-->
+                     <ser:Header ContractProfileName="" ContractNumber="" Description="" EffectiveDate="${ContractVariation.Header}" Comments="" Reference="" MaximumValue="0" CompletionStage="" ContractNumberInternal="" ContractNumberDescr="" VariationNumber="" CreateUser="${ContractVariation.Header}" CreateDate="${ContractVariation.Header}" CreateTime="${ContractVariation.Header}" CreateDateTime="${ContractVariation.Header}" CreateNode="${ContractVariation.Header}" CreateWindow="" LastModUser="${ContractVariation.Header}" LastModDate="${ContractVariation.Header}" LastModTime="${ContractVariation.Header}" LastModDateTime="${ContractVariation.Header}" LastModNode="${ContractVariation.Header}" LastModWindow="" Vers="${ContractVariation.Header}" Loaded="false">
+                        <!--Optional:-->
+                        <ser:VariationType Value="" Description=""/>
+                        <!--Optional:-->
+                        <ser:PracticalCompletion Status="" Date="1900-01-01T00:00:00"/>
+                        <!--Optional:-->
+                        <ser:FinalCompletion Status="" Date="1900-01-01T00:00:00"/>
+                        <!--Optional:-->
+                        <ser:WarrantyDetails Status="" Date="1900-01-01T00:00:00"/>
+                        <!--Optional:-->
+                        <ser:ApprovalUser Value="" Description=""/>
+                        <!--Optional:-->
+                        <ser:Approval Status="" Date="1900-01-01T00:00:00"/>
+                     </ser:Header>
+                     <!--Optional:-->
+                     <ser:UserField ContractProfileName="" ContractNumberi="" VariationNumber="" Userfield01Alpha="" Userfield01Numeric="0" Userfield01Date="1900-01-01T00:00:00" Userfield01Descr="" Userfield02Alpha="" Userfield02Numeric="0" Userfield02Date="1900-01-01T00:00:00" Userfield02Descr="" Userfield03Alpha="" Userfield03Numeric="0" Userfield03Date="1900-01-01T00:00:00" Userfield03Descr="" Userfield04Alpha="" Userfield04Numeric="0" Userfield04Date="1900-01-01T00:00:00" Userfield04Descr="" Userfield05Alpha="" Userfield05Numeric="0" Userfield05Date="1900-01-01T00:00:00" Userfield05Descr="" Userfield06Alpha="" Userfield06Numeric="0" Userfield06Date="1900-01-01T00:00:00" Userfield06Descr="" Userfield07Alpha="" Userfield07Numeric="0" Userfield07Date="1900-01-01T00:00:00" Userfield07Descr="" Userfield08Alpha="" Userfield08Numeric="0" Userfield08Date="1900-01-01T00:00:00" Userfield08Descr="" Userfield09Alpha="" Userfield09Numeric="0" Userfield09Date="1900-01-01T00:00:00" Userfield09Descr="" Userfield10Alpha="" Userfield10Numeric="0" Userfield10Date="1900-01-01T00:00:00" Userfield10Descr="" Userfield11Alpha="" Userfield11Numeric="0" Userfield11Date="1900-01-01T00:00:00" Userfield11Descr="" Userfield12Alpha="" Userfield12Numeric="0" Userfield12Date="1900-01-01T00:00:00" Userfield12Descr="" Userfield13Alpha="" Userfield13Numeric="0" Userfield13Date="1900-01-01T00:00:00" Userfield13Descr="" Userfield14Alpha="" Userfield14Numeric="0" Userfield14Date="1900-01-01T00:00:00" Userfield14Descr="" Userfield15Alpha="" Userfield15Numeric="0" Userfield15Date="1900-01-01T00:00:00" Userfield15Descr="" Userfield16Alpha="" Userfield16Numeric="0" Userfield16Date="1900-01-01T00:00:00" Userfield16Descr="" Userfield17Alpha="" Userfield17Numeric="0" Userfield17Date="1900-01-01T00:00:00" Userfield17Descr="" Userfield18Alpha="" Userfield18Numeric="0" Userfield18Date="1900-01-01T00:00:00" Userfield18Descr="" Userfield19Alpha="" Userfield19Numeric="0" Userfield19Date="1900-01-01T00:00:00" Userfield19Descr="" Userfield20Alpha="" Userfield20Numeric="0" Userfield20Date="1900-01-01T00:00:00" Userfield20Descr="" Userfield21Alpha="" Userfield21Numeric="0" Userfield21Date="1900-01-01T00:00:00" Userfield21Descr="" Userfield22Alpha="" Userfield22Numeric="0" Userfield22Date="1900-01-01T00:00:00" Userfield22Descr="" Userfield23Alpha="" Userfield23Numeric="0" Userfield23Date="1900-01-01T00:00:00" Userfield23Descr="" Userfield24Alpha="" Userfield24Numeric="0" Userfield24Date="1900-01-01T00:00:00" Userfield24Descr="" Userfield25Alpha="" Userfield25Numeric="0" Userfield25Date="1900-01-01T00:00:00" Userfield25Descr="" Userfield26Alpha="" Userfield26Numeric="0" Userfield26Date="1900-01-01T00:00:00" Userfield26Descr="" Userfield27Alpha="" Userfield27Numeric="0" Userfield27Date="1900-01-01T00:00:00" Userfield27Descr="" Userfield28Alpha="" Userfield28Numeric="0" Userfield28Date="1900-01-01T00:00:00" Userfield28Descr="" Userfield29Alpha="" Userfield29Numeric="0" Userfield29Date="1900-01-01T00:00:00" Userfield29Descr="" Userfield30Alpha="" Userfield30Numeric="0" Userfield30Date="1900-01-01T00:00:00" Userfield30Descr="" Userfield31Alpha="" Userfield31Numeric="0" Userfield31Date="1900-01-01T00:00:00" Userfield31Descr="" Userfield32Alpha="" Userfield32Numeric="0" Userfield32Date="1900-01-01T00:00:00" Userfield32Descr="" Userfield33Alpha="" Userfield33Numeric="0" Userfield33Date="1900-01-01T00:00:00" Userfield33Descr="" Userfield34Alpha="" Userfield34Numeric="0" Userfield34Date="1900-01-01T00:00:00" Userfield34Descr="" Userfield35Alpha="" Userfield35Numeric="0" Userfield35Date="1900-01-01T00:00:00" Userfield35Descr="" Userfield36Alpha="" Userfield36Numeric="0" Userfield36Date="1900-01-01T00:00:00" Userfield36Descr="" Userfield37Alpha="" Userfield37Numeric="0" Userfield37Date="1900-01-01T00:00:00" Userfield37Descr="" Userfield38Alpha="" Userfield38Numeric="0" Userfield38Date="1900-01-01T00:00:00" Userfield38Descr="" Userfield39Alpha="" Userfield39Numeric="0" Userfield39Date="1900-01-01T00:00:00" Userfield39Descr="" Userfield40Alpha="" Userfield40Numeric="0" Userfield40Date="1900-01-01T00:00:00" Userfield40Descr=""/>
+                     <!--Optional:-->
+                     <ser:ContractProfile IsReferenced="false" Loaded="false">
+                        <!--Optional:-->
+                        <ser:Header ContractProfileName="" ContractProfileNameDescr="" Description="" Narration="" Status="" ContractType="" CalendarName="" CalendarNameDescr="" AutoGenerateNbrInd="" ChartName="" ChartNameDescr="" ProcessingGroupName="" MandateContractNarration="" IntegrateWithPurchasing="" PurchasingVariationMethod="" EnableScheduleItemReference="" CreateUser="${ContractProfile.Header}" CreateDate="${ContractProfile.Header}" CreateTime="${ContractProfile.Header}" CreateDateTime="${ContractProfile.Header}" CreateNode="${ContractProfile.Header}" CreateWindow="" LastModUser="${ContractProfile.Header}" LastModDate="${ContractProfile.Header}" LastModTime="${ContractProfile.Header}" LastModDateTime="${ContractProfile.Header}" LastModNode="${ContractProfile.Header}" LastModWindow="" Vers="${ContractProfile.Header}" Loaded="false">
+                           <!--Optional:-->
+                           <ser:UserStatus AttributeName="" AttributeNameDescription="" Enable="" Level="" List="" ListDescription="" DefaultValue="" DefaultValueDescription="">
+                              <!--Optional:-->
+                              <ser:SysKey>${UserStatus.SysKey}</ser:SysKey>
+                           </ser:UserStatus>
+                           <!--Optional:-->
+                           <ser:Category AttributeName="" AttributeNameDescription="" Enable="" Level="" List="" ListDescription="" DefaultValue="" DefaultValueDescription="">
+                              <!--Optional:-->
+                              <ser:SysKey>${Category.SysKey}</ser:SysKey>
+                           </ser:Category>
+                           <!--Optional:-->
+                           <ser:BusinessUnit AttributeName="" AttributeNameDescription="" Enable="" Level="" List="" ListDescription="" DefaultValue="" DefaultValueDescription="">
+                              <!--Optional:-->
+                              <ser:SysKey>${BusinessUnit.SysKey}</ser:SysKey>
+                           </ser:BusinessUnit>
+                           <!--Optional:-->
+                           <ser:PracticalCompletion AttributeName="" AttributeNameDescription="" Enable="" Level="" SubjectToVariation="">
+                              <!--Optional:-->
+                              <ser:SysKey>${PracticalCompletion.SysKey}</ser:SysKey>
+                           </ser:PracticalCompletion>
+                           <!--Optional:-->
+                           <ser:FinalCompletion AttributeName="" AttributeNameDescription="" Enable="" Level="" SubjectToVariation="">
+                              <!--Optional:-->
+                              <ser:SysKey>${FinalCompletion.SysKey}</ser:SysKey>
+                           </ser:FinalCompletion>
+                           <!--Optional:-->
+                           <ser:WarrantyDetails AttributeName="" AttributeNameDescription="" Enable="" Level="" SubjectToVariation="">
+                              <!--Optional:-->
+                              <ser:SysKey>${WarrantyDetails.SysKey}</ser:SysKey>
+                           </ser:WarrantyDetails>
+                           <!--Optional:-->
+                           <ser:Reference AttributeName="" AttributeNameDescription="" Enable="" Level="" SubjectToVariation="">
+                              <!--Optional:-->
+                              <ser:SysKey>${Reference.SysKey}</ser:SysKey>
+                           </ser:Reference>
+                           <!--Optional:-->
+                           <ser:MaxContractValue AttributeName="" AttributeNameDescription="" Enable="" Level="" SubjectToVariation="">
+                              <!--Optional:-->
+                              <ser:SysKey>${MaxContractValue.SysKey}</ser:SysKey>
+                           </ser:MaxContractValue>
+                           <!--Optional:-->
+                           <ser:Comments AttributeName="" AttributeNameDescription="" Enable="" Level="" SubjectToVariation="">
+                              <!--Optional:-->
+                              <ser:SysKey>${Comments.SysKey}</ser:SysKey>
+                           </ser:Comments>
+                           <!--Optional:-->
+                           <ser:Qualifications AttributeName="" AttributeNameDescription="" Enable="" Level="" SubjectToVariation="">
+                              <!--Optional:-->
+                              <ser:SysKey>${Qualifications.SysKey}</ser:SysKey>
+                           </ser:Qualifications>
+                           <!--Optional:-->
+                           <ser:Review AttributeName="" AttributeNameDescription="" Enable="" Level="" SubjectToVariation="">
+                              <!--Optional:-->
+                              <ser:SysKey>${Review.SysKey}</ser:SysKey>
+                           </ser:Review>
+                           <!--Optional:-->
+                           <ser:ExpectedDates AttributeName="" AttributeNameDescription="" Enable="" Level="" EnableRenewDate="" EnableExpiryDate="">
+                              <!--Optional:-->
+                              <ser:SysKey>${ExpectedDates.SysKey}</ser:SysKey>
+                           </ser:ExpectedDates>
+                           <!--Optional:-->
+                           <ser:ActualDates AttributeName="" AttributeNameDescription="" Enable="" Level="" EnableRenewDate="" EnableExpiryDate="">
+                              <!--Optional:-->
+                              <ser:SysKey>${ActualDates.SysKey}</ser:SysKey>
+                           </ser:ActualDates>
+                           <!--Optional:-->
+                           <ser:ScheduleOptions DefaultScheduleType="">
+                              <!--Optional:-->
+                              <ser:CatalogueGenerating ScheduleType="" Enabled="true" DefaultPaymentOption=""/>
+                              <!--Optional:-->
+                              <ser:CataloguePriceBook ScheduleType="" Enabled="true" DefaultPaymentOption=""/>
+                              <!--Optional:-->
+                              <ser:ContractRates ScheduleType="" Enabled="true" DefaultPaymentOption=""/>
+                              <!--Optional:-->
+                              <ser:ItemType ScheduleType="" Enabled="true" DefaultPaymentOption=""/>
+                              <!--Optional:-->
+                              <ser:PurchaseFixedPrice ScheduleType="" Enabled="true" DefaultPaymentOption=""/>
+                              <!--Optional:-->
+                              <ser:PurchaseService ScheduleType="" Enabled="true" DefaultPaymentOption=""/>
+                              <!--Optional:-->
+                              <ser:SalesFixedPrice ScheduleType="" Enabled="true" DefaultPaymentOption=""/>
+                              <!--Optional:-->
+                              <ser:SalesService ScheduleType="" Enabled="true" DefaultPaymentOption=""/>
+                              <!--Optional:-->
+                              <ser:TimesheetEmployee ScheduleType="" Enabled="true" DefaultPaymentOption=""/>
+                           </ser:ScheduleOptions>
+                           <!--Optional:-->
+                           <ser:InvoicingOptions IntegrateWithInvoicing="" SuspendInvoicesInDocumentFile="" ExternalSystemsPostingFunction="" ExternalSystemsPostingFunctionDescription="" ExternalSystemsPostingFormat="" ExternalSystemsPostingFormatDescription="" ExternalSystemsPostingDocument="" ExternalSystemsPostingDocumentDescription="" SuspendInvoicesDocumentFileImportFunction="" SuspendInvoicesDocumentFileImportFunctionDescription="" CancelClaimFormat="" CancelClaimFormatDescription="" DocumentRegisterName="" DocumentRegisterNameDescription="" DocumentRegisterLocation="" DocumentRegisterLocationDescription="" InvoiceConsolidateOption="" Narration1Option="" Narration1Value="" Narration2Option="" Narration2Value="" Narration3Option="" Narration3Value="" DocumentReference1Option="" DocumentReference1Value="" DocumentReference2Option="" DocumentReference2Value="" DocumentReference3Option="" DocumentReference3Value="" DocumentDate1Option="" DocumentDate1Value="" DocumentDate2Option="" DocumentDate2Value="" Userfield1Option="" Userfield1Value="" Userfield2Option="" Userfield2Value="" Userfield3Option="" Userfield3Value="" Userfield4Option="" Userfield4Value="" Userfield5Option="" Userfield5Value="" Userfield6Option="" Userfield6Value="" Userfield7Option="" Userfield7Value="" Userfield8Option="" Userfield8Value="" Userfield9Option="" Userfield9Value="" Userfield10Option="" Userfield10Value="" RetentionExternalSystemsFunction="" RetentionExternalSystemsFunctionDescription="" RetentionFormatName="" RetentionFormatNameDescription="" RetentionCancelClaimFormatName="" RetentionCancelClaimFormatNameDescription="" RetentionDocumentType="" RetentionDocumentTypeDescription="" RetentionInvoiceDocumentType="" RetentionInvoiceDocumentTypeDescription="" RetentionDocumentRegisterName="" RetentionDocumentRegisterNameDescription="" RetentionDocumentRegisterLocation="" RetentionDocumentRegisterLocationDescription="" RetentionInvoiceConsolidateOption="" RetentionSuspendInvoicesInDocumentFile="" RetentionSuspendInvoicesDocumentFileImportFunction="" RetentionSuspendInvoicesDocumentFileImportFunctionDescription="" RetentionNarration1Option="" RetentionNarration1Value="" RetentionNarration2Option="" RetentionNarration2Value="" RetentionNarration3Option="" RetentionNarration3Value="" RetentionDocumentReference1Option="" RetentionDocumentReference1Value="" RetentionDocumentReference2Option="" RetentionDocumentReference2Value="" RetentionDocumentReference3Option="" RetentionDocumentReference3Value="" RetentionDocumentDate1Option="" RetentionDocumentDate1Value="" RetentionDocumentDate2Option="" RetentionDocumentDate2Value="" RetentionUserfield1Option="" RetentionUserfield1Value="" RetentionUserfield2Option="" RetentionUserfield2Value="" RetentionUserfield3Option="" RetentionUserfield3Value="" RetentionUserfield4Option="" RetentionUserfield4Value="" RetentionUserfield5Option="" RetentionUserfield5Value="" RetentionUserfield6Option="" RetentionUserfield6Value="" RetentionUserfield7Option="" RetentionUserfield7Value="" RetentionUserfield8Option="" RetentionUserfield8Value="" RetentionUserfield9Option="" RetentionUserfield9Value="" RetentionUserfield10Option="" RetentionUserfield10Value="" EnableSeparateInvoiceRetentionProcessing=""/>
+                        </ser:Header>
+                        <!--Optional:-->
+                        <ser:ChartData ChartName="" ChartDescr="" AutoGenerateInd="" AccountStructureMask="" TransformationMask="" InputMask=""/>
+                        <!--Optional:-->
+                        <ser:TemplateContracts>
+                           <!--Zero or more repetitions:-->
+                           <ser:TemplateContract ContractNumber="" ContractNumberDescr=""/>
+                        </ser:TemplateContracts>
+                        <!--Optional:-->
+                        <ser:ContractUserfields>
+                           <!--Zero or more repetitions:-->
+                           <ser:ContractProfileUserField ContractProfileName="" UniqueNbr="0" SequenceNumber="0" Caption="" SubjectToVariationInd="" FieldType="" FieldSize="0" NbrDecimals="0" DefaultValue="" Mandatory="" ValidationType="" ValidateAgainst="" Description="" UserfieldType=""/>
+                        </ser:ContractUserfields>
+                        <!--Optional:-->
+                        <ser:ContractPartyUserfields>
+                           <!--Zero or more repetitions:-->
+                           <ser:ContractProfileUserField ContractProfileName="" UniqueNbr="0" SequenceNumber="0" Caption="" SubjectToVariationInd="" FieldType="" FieldSize="0" NbrDecimals="0" DefaultValue="" Mandatory="" ValidationType="" ValidateAgainst="" Description="" UserfieldType=""/>
+                        </ser:ContractPartyUserfields>
+                        <!--Optional:-->
+                        <ser:ScheduleUserfields>
+                           <!--Zero or more repetitions:-->
+                           <ser:ContractProfileUserField ContractProfileName="" UniqueNbr="0" SequenceNumber="0" Caption="" SubjectToVariationInd="" FieldType="" FieldSize="0" NbrDecimals="0" DefaultValue="" Mandatory="" ValidationType="" ValidateAgainst="" Description="" UserfieldType=""/>
+                        </ser:ScheduleUserfields>
+                        <!--Optional:-->
+                        <ser:ScheduleItemUserfields>
+                           <!--Zero or more repetitions:-->
+                           <ser:ContractProfileUserField ContractProfileName="" UniqueNbr="0" SequenceNumber="0" Caption="" SubjectToVariationInd="" FieldType="" FieldSize="0" NbrDecimals="0" DefaultValue="" Mandatory="" ValidationType="" ValidateAgainst="" Description="" UserfieldType=""/>
+                        </ser:ScheduleItemUserfields>
+                        <!--Optional:-->
+                        <ser:ClaimUserfields>
+                           <!--Zero or more repetitions:-->
+                           <ser:ContractProfileUserField ContractProfileName="" UniqueNbr="0" SequenceNumber="0" Caption="" SubjectToVariationInd="" FieldType="" FieldSize="0" NbrDecimals="0" DefaultValue="" Mandatory="" ValidationType="" ValidateAgainst="" Description="" UserfieldType=""/>
+                        </ser:ClaimUserfields>
+                        <!--Optional:-->
+                        <ser:DocumentDefns>
+                           <!--Zero or more repetitions:-->
+                           <ser:ContractProfileDocumentDefn ContractProfileName="" ProfileCodeType="" DocumentCode="" DocumentCodeDescr="" TransmissionType="" DefaultCollectionDocumentDefinitionName="" DefaultCollectionDocumentDefinitionNameDescr="" DefaultResultsDocumentDefinitionName="" DefaultResultsDocumentDefinitionNameDescr=""/>
+                        </ser:DocumentDefns>
+                     </ser:ContractProfile>
+                     <!--Optional:-->
+                     <ser:Schedules>
+                        <!--Zero or more repetitions:-->
+                        <ser:ScheduleHeader ContractProfileName="" ContractNumberInternal="" ContractNumber="" VariationNumber="" Description="" Type="" PaymentOption="" Status="" TemplateInd="" WorkSystemName="" ItemType="" Company="" Catalogue="" PartyProfileName="" PartyNumber="" EnforceSupplierInd="" EnforceRateInd="" UnitsRequired="" BillingProcess="" RevenueRecognitionInd="" LimitTotalAmtInd="" LimitTotalAmt="0" LimitAmtOnRESTInd="" DfltBillableInd="" GenerateSeperateBillInd="" DfltRevenueItemTypeInd="" DfltRevenueItemType="" DfltRevenueItemCode="" DfltRevenueLdgCode="" DfltRevenueAccount="" AccruedRevenueRecogLdgCode="" AccruedRevenueRecogAccount="" AccruedRevenueInvLdgCode="" AccruedRevenueInvAccount="" DfltMilestoneBasisOptn="" GoodsAndServicesTaxEntryOption="" DefaultCostLedger="" DefaultCostAccount="" DefaultCostResourceCompMask="" RetntInd="" LimitRetentionsInd="N" LimitRetentionsAmount="0" RetntPercent="0" RetntReleaseDate="${Schedules.ScheduleHeader}" RetntHeldLdgCode="" RetntHeldAccount="" RetntReleaseLdgCode="" RetntReleaseAccount="" ApprovedScheduleValue="0" DefaultCostResourceGroup="" DefaultCostResourceCode="" SplitRetentionInd="N" RetntReleaseDate2="${Schedules.ScheduleHeader}" RetntReleasePercentage1="0" RetntReleasePercentage2="0" RetntTerminology1="" RetntTerminology2="" ContractNumberDescription="" ScheduleNumber="" WorkSystemDescr="" ItemTypeDescr="" CompanyDescr="" CatalogueDescr="" PartyProfileDescr="" PartyDescr="" DfltRevenueItemTypeDescr="" DfltRevenueItemCodeDescr="" DfltRevenueLdgCodeDescr="" DfltRevenueAccountDescr="" DfltRevenueLdgName="" AccruedRevenueRecogChartName="" AccruedRevenueRecogLdgCodeDescr="" AccruedRevenueRecogLdgName="" AccruedRevenueRecogAccountDescr="" AccruedRevenueInvChartName="" AccruedRevenueInvLdgCodeDescr="" AccruedRevenueInvLdgName="" AccruedRevenueInvAccountDescr="" DefaultCostChartName="" DefaultCostLedgerName="" DefaultCostChartIsWOInterface="false" DefaultCostLedgerDescription="" DefaultCostAccountDescription="" DefaultCostResourceGroupDescription="" DefaultCostResourceDescription="" RetntHeldLdgCodeDescr="" RetntHeldAccountDescr="" RetntReleaseLdgCodeDescr="" RetntReleaseAccountDescr="" BillingWrkshtInd="" BillingWrkshtName="" BillingWrkshtUser="" RetntReleaseLdgName="" RetntReleaseChartName="" DfltRevenueChartName="" RetntHeldChartName="" RetntHeldLdgName="" CreateUser="${Schedules.ScheduleHeader}" CreateDate="${Schedules.ScheduleHeader}" CreateTime="${Schedules.ScheduleHeader}" CreateDateTime="${Schedules.ScheduleHeader}" CreateNode="${Schedules.ScheduleHeader}" CreateWindow="" LastModUser="${Schedules.ScheduleHeader}" LastModDate="${Schedules.ScheduleHeader}" LastModTime="${Schedules.ScheduleHeader}" LastModDateTime="${Schedules.ScheduleHeader}" LastModNode="${Schedules.ScheduleHeader}" LastModWindow="" Vers="${Schedules.ScheduleHeader}" Loaded="false">
+                           <!--Optional:-->
+                           <ser:PracticalCompletion Status="" Date="1900-01-01T00:00:00"/>
+                           <!--Optional:-->
+                           <ser:FinalCompletion Status="" Date="1900-01-01T00:00:00"/>
+                           <!--Optional:-->
+                           <ser:WarrantyDetails Status="" Date="1900-01-01T00:00:00"/>
+                        </ser:ScheduleHeader>
+                     </ser:Schedules>
+                  </ser:ContractVariation>
+               </ser:Variations>
+               <!--Optional:-->
+               <ser:Qualifications>
+                  <!--Zero or more repetitions:-->
+                  <ser:ContractQualification SequenceNbr="0" ContractProfileName="" ContractNumberInternal="" QualificationTypeCode="" QualificationTypeDescr="" QualificationName="" ContractQualificationComments="" QualificationAmt="" QualificationMandatoryInd="" QualificationDescr="" QualificationNarr="" QualificationStatus="" QualificationEnableAmtInd="">
+                     <!--Optional:-->
+                     <ser:UserFields ContractProfileName="" ContractNumberi="" SequenceNbr="0" Userfield01Alpha="" Userfield01Numeric="0" Userfield01Date="1900-01-01T00:00:00" Userfield01Descr="" Userfield02Alpha="" Userfield02Numeric="0" Userfield02Date="1900-01-01T00:00:00" Userfield02Descr="" Userfield03Alpha="" Userfield03Numeric="0" Userfield03Date="1900-01-01T00:00:00" Userfield03Descr="" Userfield04Alpha="" Userfield04Numeric="0" Userfield04Date="1900-01-01T00:00:00" Userfield04Descr="" Userfield05Alpha="" Userfield05Numeric="0" Userfield05Date="1900-01-01T00:00:00" Userfield05Descr="" Userfield06Alpha="" Userfield06Numeric="0" Userfield06Date="1900-01-01T00:00:00" Userfield06Descr="" Userfield07Alpha="" Userfield07Numeric="0" Userfield07Date="1900-01-01T00:00:00" Userfield07Descr="" Userfield08Alpha="" Userfield08Numeric="0" Userfield08Date="1900-01-01T00:00:00" Userfield08Descr="" Userfield09Alpha="" Userfield09Numeric="0" Userfield09Date="1900-01-01T00:00:00" Userfield09Descr="" Userfield10Alpha="" Userfield10Numeric="0" Userfield10Date="1900-01-01T00:00:00" Userfield10Descr=""/>
+                     <!--Optional:-->
+                     <ser:QualificationUserfield>
+                        <!--Zero or more repetitions:-->
+                        <ser:QualificationUserField QualificationTypeCode="" QualificationName="" UniqueNbr="0" SequenceNumber="0" Caption="" UserfieldType="" FieldType="" FieldSize="0" NbrDecimals="0" DefaultValue="" Mandatory="" ValidationType="" ValidateAgainst=""/>
+                     </ser:QualificationUserfield>
+                  </ser:ContractQualification>
+               </ser:Qualifications>
+               <!--Optional:-->
+               <ser:Schedules>
+                  <!--Zero or more repetitions:-->
+                  <ser:ScheduleHeader ContractProfileName="" ContractNumberInternal="" ContractNumber="" VariationNumber="" Description="" Type="" PaymentOption="" Status="" TemplateInd="" WorkSystemName="" ItemType="" Company="" Catalogue="" PartyProfileName="" PartyNumber="" EnforceSupplierInd="" EnforceRateInd="" UnitsRequired="" BillingProcess="" RevenueRecognitionInd="" LimitTotalAmtInd="" LimitTotalAmt="0" LimitAmtOnRESTInd="" DfltBillableInd="" GenerateSeperateBillInd="" DfltRevenueItemTypeInd="" DfltRevenueItemType="" DfltRevenueItemCode="" DfltRevenueLdgCode="" DfltRevenueAccount="" AccruedRevenueRecogLdgCode="" AccruedRevenueRecogAccount="" AccruedRevenueInvLdgCode="" AccruedRevenueInvAccount="" DfltMilestoneBasisOptn="" GoodsAndServicesTaxEntryOption="" DefaultCostLedger="" DefaultCostAccount="" DefaultCostResourceCompMask="" RetntInd="" LimitRetentionsInd="N" LimitRetentionsAmount="0" RetntPercent="0" RetntReleaseDate="${Schedules.ScheduleHeader}" RetntHeldLdgCode="" RetntHeldAccount="" RetntReleaseLdgCode="" RetntReleaseAccount="" ApprovedScheduleValue="0" DefaultCostResourceGroup="" DefaultCostResourceCode="" SplitRetentionInd="N" RetntReleaseDate2="${Schedules.ScheduleHeader}" RetntReleasePercentage1="0" RetntReleasePercentage2="0" RetntTerminology1="" RetntTerminology2="" ContractNumberDescription="" ScheduleNumber="" WorkSystemDescr="" ItemTypeDescr="" CompanyDescr="" CatalogueDescr="" PartyProfileDescr="" PartyDescr="" DfltRevenueItemTypeDescr="" DfltRevenueItemCodeDescr="" DfltRevenueLdgCodeDescr="" DfltRevenueAccountDescr="" DfltRevenueLdgName="" AccruedRevenueRecogChartName="" AccruedRevenueRecogLdgCodeDescr="" AccruedRevenueRecogLdgName="" AccruedRevenueRecogAccountDescr="" AccruedRevenueInvChartName="" AccruedRevenueInvLdgCodeDescr="" AccruedRevenueInvLdgName="" AccruedRevenueInvAccountDescr="" DefaultCostChartName="" DefaultCostLedgerName="" DefaultCostChartIsWOInterface="false" DefaultCostLedgerDescription="" DefaultCostAccountDescription="" DefaultCostResourceGroupDescription="" DefaultCostResourceDescription="" RetntHeldLdgCodeDescr="" RetntHeldAccountDescr="" RetntReleaseLdgCodeDescr="" RetntReleaseAccountDescr="" BillingWrkshtInd="" BillingWrkshtName="" BillingWrkshtUser="" RetntReleaseLdgName="" RetntReleaseChartName="" DfltRevenueChartName="" RetntHeldChartName="" RetntHeldLdgName="" CreateUser="${Schedules.ScheduleHeader}" CreateDate="${Schedules.ScheduleHeader}" CreateTime="${Schedules.ScheduleHeader}" CreateDateTime="${Schedules.ScheduleHeader}" CreateNode="${Schedules.ScheduleHeader}" CreateWindow="" LastModUser="${Schedules.ScheduleHeader}" LastModDate="${Schedules.ScheduleHeader}" LastModTime="${Schedules.ScheduleHeader}" LastModDateTime="${Schedules.ScheduleHeader}" LastModNode="${Schedules.ScheduleHeader}" LastModWindow="" Vers="${Schedules.ScheduleHeader}" Loaded="false">
+                     <!--Optional:-->
+                     <ser:PracticalCompletion Status="" Date="1900-01-01T00:00:00"/>
+                     <!--Optional:-->
+                     <ser:FinalCompletion Status="" Date="1900-01-01T00:00:00"/>
+                     <!--Optional:-->
+                     <ser:WarrantyDetails Status="" Date="1900-01-01T00:00:00"/>
+                  </ser:ScheduleHeader>
+               </ser:Schedules>
+               <!--Optional:-->
+               <ser:Parties>
+                  <!--Zero or more repetitions:-->
+                  <ser:ContractPartyHeader ContractProfileName="" ContractNumber="" ContractNumberInternal="" PartyProfileName="" PartyNumber="" ContractPartyDescr="" ContractPartyComments="" ContractPartyStatus="" ContractPartyStageCode="" SellerPurchaser="" BillDocumentDefinition="" BillTermsMethod="" BillVatRateCode="" BillAddressCode="" ContractProfileDescr="" ContractDescr="" PartyProfileDescr="" PartyDescr="" ContractPartyStageCodeDescr="" AccruedRevRecLedgerCode="" AccruedRevRecLedgerDescr="" AccruedRevRecChartName="" AccruedRevRecAccountInt="" AccruedRevRecAccountExt="" AccruedRevRecAccountDescr="" AccruedRevInvLedgerCode="" AccruedRevInvLedgerDescr="" AccruedRevInvChartName="" AccruedRevInvAccountInt="" AccruedRevInvAccountExt="" AccruedRevInvAccountDescr="" RetentionHeldLedgerCode="" RetentionHeldLedgerDescr="" RetentionHeldChartName="" RetentionHeldAccountInt="" RetentionHeldAccountExt="" RetentionHeldAccountDescr="" RetentionRelLedgerCode="" RetentionRelLedgerDescr="" RetentionRelChartName="" RetentionRelAccountInt="" RetentionRelAccountExt="" RetentionRelAccountDescr="" BillVatType="" BillVatRateType="" BillVatRateCodeDescr="" BillDocumentDefinitionDescr="" BillTermsDays="0" BillStatementDay="0" BillComment="" BillAddressCodeDescr="" BillPrintInd="" BillFaxInd="" BillEmailInd="" BillEmailAttachment="" BillEmailSeparatorChar="" BillEmailQuoteChar="" BillExportInd="" BillSuppressInd="" ForeignCurrencyInd="" ExchangeRateTableName="" BillCurrencyCode="" LastRetentionTransNbr="0" ReleasedRetentions="0" UnreleasedRetentions="0" TotalRetentions="0" BillWorksheetInd="" BillWorksheetName="" BillWorksheetUser="" IsTransmissionApplicable="false" CreateUser="${Parties.ContractPartyHeader}" CreateDate="${Parties.ContractPartyHeader}" CreateTime="${Parties.ContractPartyHeader}" CreateDateTime="${Parties.ContractPartyHeader}" CreateNode="${Parties.ContractPartyHeader}" CreateWindow="" LastModUser="${Parties.ContractPartyHeader}" LastModDate="${Parties.ContractPartyHeader}" LastModTime="${Parties.ContractPartyHeader}" LastModDateTime="${Parties.ContractPartyHeader}" LastModNode="${Parties.ContractPartyHeader}" LastModWindow="" Vers="${Parties.ContractPartyHeader}" Loaded="false"/>
+               </ser:Parties>
+            </ser:Contract>
+         </ser:Request>
+      </ser:Contract_DoUpdate>
+   </soap:Body>
+</soap:Envelope>]]></envelope>
+        <function_name>W1_ServicesSoap12.Contract_DoUpdate</function_name>
+        <key_store/>
+        <key_store_alias/>
+        <key_store_password/>
+        <lock>false</lock>
+        <protocol_profile/>
+        <qualified_name>CES-DEV [ W1_ServicesSoap12.Contract_DoUpdate ]</qualified_name>
+        <soap_action>http://TechnologyOneCorp.com/T1.W1.Public/Services/Contract_DoUpdate</soap_action>
+        <soap_endpoint>http://cestier01-dev/T1CSUSER/app/w1_services.asmx</soap_endpoint>
+        <soap_message display_value="CES-DEV">c3edce07dbee570073ab787dbf9619eb</soap_message>
+        <strip_whitespace>false</strip_whitespace>
+        <sys_class_name>sys_soap_message_function</sys_class_name>
+        <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+        <sys_created_on>2018-06-18 22:41:21</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>c6eb0a514fb29b00aab4a3b11310c769</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>W1_ServicesSoap12.Contract_DoUpdate</sys_name>
+        <sys_package display_value="Timesheets" source="x_cio19_timesheets">f4afbb85dbaa530073ab787dbf9619ce</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Timesheets">f4afbb85dbaa530073ab787dbf9619ce</sys_scope>
+        <sys_update_name>sys_soap_message_function_c6eb0a514fb29b00aab4a3b11310c769</sys_update_name>
+        <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+        <sys_updated_on>2018-06-18 22:41:21</sys_updated_on>
+        <use_basic_auth>false</use_basic_auth>
+        <use_mid_server/>
+        <use_ws_security>false</use_ws_security>
+        <ws_security_type/>
+        <ws_security_username_profile/>
+        <ws_security_x509_profile/>
+    </sys_soap_message_function>
+</record_update>

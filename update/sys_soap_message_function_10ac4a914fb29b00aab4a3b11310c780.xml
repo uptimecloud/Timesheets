@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_soap_message_function">
+    <sys_soap_message_function action="INSERT_OR_UPDATE">
+        <authentication_type/>
+        <basic_auth_password/>
+        <basic_auth_profile/>
+        <basic_auth_user/>
+        <certificate/>
+        <enable_mutual_auth>false</enable_mutual_auth>
+        <envelope><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://TechnologyOneCorp.com/T1.W1.Public/Services">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ser:DefectInstance_DoCreate>
+         <!--Optional:-->
+         <ser:Request PerformSaveAttachments="true">
+            <!--Optional:-->
+            <ser:Auth UserId="${Request.Auth}" Password="${Request.Auth}" Config="${Request.Auth}" FunctionName="${Request.Auth}"/>
+            <!--Optional:-->
+            <ser:Version Major="${Request.Version}" Minor="${Request.Version}" Revision="${Request.Version}" Patch="${Request.Version}"/>
+            <!--Optional:-->
+            <ser:DefectInstances>
+               <!--Zero or more repetitions:-->
+               <ser:DefectInstances RegisterName="${DefectInstances.DefectInstances}" AssetNumber="${DefectInstances.DefectInstances}" DefectCode="${DefectInstances.DefectInstances}" DefectUniqueId="${DefectInstances.DefectInstances}" State="${DefectInstances.DefectInstances}" Status="${DefectInstances.DefectInstances}" Stage="${DefectInstances.DefectInstances}" Source="${DefectInstances.DefectInstances}" DefectDate="${DefectInstances.DefectInstances}" DefectTime="${DefectInstances.DefectInstances}" ReqByDate="${DefectInstances.DefectInstances}" ReqByTime="${DefectInstances.DefectInstances}" ComplDate="${DefectInstances.DefectInstances}" ComplTime="${DefectInstances.DefectInstances}" OrigWorkSystemName="${DefectInstances.DefectInstances}" OrigTaskNbr="${DefectInstances.DefectInstances}">
+                  <!--Optional:-->
+                  <ser:Attachments>
+                     <!--Zero or more repetitions:-->
+                     <ser:Attachments SysKey="" SequenceNbr="${Attachments.Attachments}" AttachmentType="" AttLabel="" AttFileName="" AttFileExt="" AttTypeInd="" NotesData="" AttachmentUploadGuid="${Attachments.Attachments}" CanEditServerFile="false" SSDocSetId="0" SSDocumentId="0" UniqueNbr="" EntityType="" Action="U"/>
+                  </ser:Attachments>
+                  <!--Optional:-->
+                  <ser:Geographies>
+                     <!--Zero or more repetitions:-->
+                     <ser:Geographies ElementType="${Geographies.Geographies}" Description="" Layer="" State="${Geographies.Geographies}">
+                        <!--Zero or more repetitions:-->
+                        <ser:Points Latitude="${Geographies.Points}" Longitude="${Geographies.Points}"/>
+                     </ser:Geographies>
+                  </ser:Geographies>
+                  <!--Optional:-->
+                  <ser:CustomFieldValues>
+                     <!--Zero or more repetitions:-->
+                     <ser:CustomFieldValues ValAlpha="${CustomFieldValues.CustomFieldValues}" ValNum="${CustomFieldValues.CustomFieldValues}" ValDate="${CustomFieldValues.CustomFieldValues}" ValDateTime="${CustomFieldValues.CustomFieldValues}"/>
+                  </ser:CustomFieldValues>
+                  <!--Optional:-->
+                  <ser:DefectCodeCustomFieldValues>
+                     <!--Zero or more repetitions:-->
+                     <ser:DefectCodeCustomFieldValues ValAlpha="${DefectCodeCustomFieldValues.DefectCodeCustomFieldValues}" ValNum="${DefectCodeCustomFieldValues.DefectCodeCustomFieldValues}" ValDate="${DefectCodeCustomFieldValues.DefectCodeCustomFieldValues}" ValDateTime="${DefectCodeCustomFieldValues.DefectCodeCustomFieldValues}"/>
+                  </ser:DefectCodeCustomFieldValues>
+               </ser:DefectInstances>
+            </ser:DefectInstances>
+         </ser:Request>
+      </ser:DefectInstance_DoCreate>
+   </soapenv:Body>
+</soapenv:Envelope>]]></envelope>
+        <function_name>W1_ServicesSoap.DefectInstance_DoCreate</function_name>
+        <key_store/>
+        <key_store_alias/>
+        <key_store_password/>
+        <lock>false</lock>
+        <protocol_profile/>
+        <qualified_name>CES-DEV [ W1_ServicesSoap.DefectInstance_DoCreate ]</qualified_name>
+        <soap_action>http://TechnologyOneCorp.com/T1.W1.Public/Services/DefectInstance_DoCreate</soap_action>
+        <soap_endpoint>http://cestier01-dev/T1CSUSER/app/w1_services.asmx</soap_endpoint>
+        <soap_message display_value="CES-DEV">c3edce07dbee570073ab787dbf9619eb</soap_message>
+        <strip_whitespace>false</strip_whitespace>
+        <sys_class_name>sys_soap_message_function</sys_class_name>
+        <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+        <sys_created_on>2018-06-18 22:44:30</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>10ac4a914fb29b00aab4a3b11310c780</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>W1_ServicesSoap.DefectInstance_DoCreate</sys_name>
+        <sys_package display_value="Timesheets" source="x_cio19_timesheets">f4afbb85dbaa530073ab787dbf9619ce</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Timesheets">f4afbb85dbaa530073ab787dbf9619ce</sys_scope>
+        <sys_update_name>sys_soap_message_function_10ac4a914fb29b00aab4a3b11310c780</sys_update_name>
+        <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+        <sys_updated_on>2018-06-18 22:44:30</sys_updated_on>
+        <use_basic_auth>false</use_basic_auth>
+        <use_mid_server/>
+        <use_ws_security>false</use_ws_security>
+        <ws_security_type/>
+        <ws_security_username_profile/>
+        <ws_security_x509_profile/>
+    </sys_soap_message_function>
+</record_update>
