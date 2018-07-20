@@ -10,22 +10,20 @@
         <sys_class_name>sys_ui_macro</sys_class_name>
         <sys_created_by>rwb@townsville.qld.gov.au</sys_created_by>
         <sys_created_on>2018-06-19 05:55:09</sys_created_on>
-        <sys_customer_update>false</sys_customer_update>
         <sys_id>870f27954f3a17009b33cf401310c70a</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>31</sys_mod_count>
         <sys_name>TCC_Timesheets_pg001_template</sys_name>
         <sys_package display_value="Timesheets" source="x_cio19_timesheets">f4afbb85dbaa530073ab787dbf9619ce</sys_package>
         <sys_policy/>
-        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="Timesheets">f4afbb85dbaa530073ab787dbf9619ce</sys_scope>
         <sys_update_name>sys_ui_macro_870f27954f3a17009b33cf401310c70a</sys_update_name>
-        <sys_updated_by>rwb@townsville.qld.gov.au</sys_updated_by>
-        <sys_updated_on>2018-06-19 05:55:09</sys_updated_on>
+        <sys_updated_by>dvl@townsville.qld.gov.au</sys_updated_by>
+        <sys_updated_on>2018-06-24 23:51:02</sys_updated_on>
         <xml><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
 <j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
   
 <!-- bootstrap-datetimepicker.css -->
-<link href="cd762b5b4f329640aab4a3b11310c7a4.cssdbx" rel="stylesheet" type="text/css"></link>
+<link href="a6ec9c064f7a1300eb11eb118110c7d7.cssdbx" rel="stylesheet" type="text/css"></link>
 
 	<g:requires name="moment.jsdbx" />
 	<g:requires name="transition.jsdbx" />
@@ -34,7 +32,7 @@
 	<g:requires name="tcc_javascript.jsdbx" />
 
 	
-<div class="container-fluid driveway_container" ng-app="drivewayApp" ng-controller="drivewayController">
+<div class="container-fluid Timesheet_container" ng-app="TimesheetApp" ng-controller="TimesheetController">
 	
 	<!-- dirPagination -->
 	<script type="text/ng-template" id="dirPagination.tpl.html">
@@ -73,25 +71,25 @@
 			</div>
 		</div>
 <!--	</div>  -->
-	
+<form>	
 	<div class="row">
         <div class="col-md-3 col-sm-2 col-xs-2"></div>
         <div class="col-md-6 col-sm-8 col-xs-8">
             <div class="center-block">
                 <p>$[SP]</p>
-				<h2 class="text-left margin-bottom-20">APPLICATION FOR ROAD WORK PERMIT</h2>
-					<h3 class="page-header">SELF ASSESSABLE</h3>
+				<h2 class="text-left margin-bottom-20">TIMESTEET WORKORDER ENTRY</h2>
+					<h3 class="page-header"></h3>
                 <p>$[SP]</p>
 				<p></p>
 				<h4 class="text-left margin-bottom-20">Introduction</h4>
 				<p></p>
-				Council approval is required before carrying out any work within the road reserve, under Subordinate Local Law 1.15.  Work must not commence prior to payment of fees and the granting of a permit.
+
 				<p></p>
-				This self-assessable road work permit application is for residential driveways that meet certain criteria.  These criteria are described in the$[SP]<a href="http://www.townsville.qld.gov.au">information sheet</a>$[SP]on council's website.  If your application meets these criteria, you will receive a road work permit by email shortly after submitting this form. Council inspections will not be required, although random audits will be carried out by Asset Inspectors from time to time.
+				<a href="http://www.townsville.qld.gov.au">information sheet</a>
 				<p></p>
-				If your driveway plan does not meet these criteria, you will need to apply for a road work permit with full council assessment, via$[SP]<a href="http://www.townsville.qld.gov.au">this form</a>$[SP]instead.
+				<a href="http://www.townsville.qld.gov.au">this form</a>
 				<p></p>
-				Refer to council's$[SP]<a href="http://www.townsville.qld.gov.au">information sheet</a>$[SP]for general information on driveways and other works in the road reserve.
+				<a href="http://www.townsville.qld.gov.au">information sheet</a>
 				<p></p>
 				<i>(Note that all fields are mandatory.)</i>		
                 <p>$[SP]</p>
@@ -103,15 +101,25 @@
 				</div>
 				
 				<h3 class="page-header"></h3>
-				<h4 class="text-left margin-bottom-20">Road corridor permit (Department of Transport and Main Roads)</h4>
+				<h4 class="text-left margin-bottom-20"></h4>
 				<p></p>
-				A road corridor permit from the Department of Transport and Main Roads is required if:
-				<ul>
-					<li>the works are on a state-controlled road;</li>
-					<li>within 150 metres of a state-controlled road; or</li>
-					<li>if the works will affect traffic associated with a state-controlled road.</li>
-				</ul>
+				
+<div class="form-group margin-bottom-20">
+						<label for="supervisor">Supervisor: {{supervisor}}</label>
+<!-- 						<input name="supervisor" type="text" ng-model="supervisor" class="form-control" uib-typeahead="s for s in incidentNumberList | filter:$viewValue:startsWith | limitTo:8" placeholder="Enter the suburb where the incident occurred" /> -->
+					</div>
 				<p></p>
+               <table>
+
+               <th>Select User:</th>       
+				
+	<j:set var="jvar_user_query" value="QUERY:active=true^locked_out=false" />
+
+<input id="user_query" type="hidden" value="${jvar_user_query}" />
+
+<g:ui_reference name="${jvar_user_query}" table="sys_user" />			   
+
+               </table>
 				If a road corridor permit is required, this application will not be processed until a copy of the road corridor permit (or acknowledgement letter) is given to council.
                 <p>$[SP]</p>
 				<div class="form-group margin-bottom-20">
@@ -229,7 +237,7 @@
 					</div>
 					</div>
 				</div>
-				
+			
 <!-- ***************************************************************************************************************************  -->				
  				<p>$[SP]</p>
  				<p>$[SP]</p>
@@ -240,9 +248,9 @@
 					<p>$[SP]</p>
 					<p>$[SP]</p>
 				</div>
-			</div>
+			</div>	
         </div>
-    </div>
+    </div></form>
 	
 
 	

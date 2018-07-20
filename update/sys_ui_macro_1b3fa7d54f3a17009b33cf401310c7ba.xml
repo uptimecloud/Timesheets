@@ -10,23 +10,21 @@
         <sys_class_name>sys_ui_macro</sys_class_name>
         <sys_created_by>rwb@townsville.qld.gov.au</sys_created_by>
         <sys_created_on>2018-06-19 05:55:52</sys_created_on>
-        <sys_customer_update>false</sys_customer_update>
         <sys_id>1b3fa7d54f3a17009b33cf401310c7ba</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>53</sys_mod_count>
         <sys_name>TCC_Timesheets_pg001_controller</sys_name>
         <sys_package display_value="Timesheets" source="x_cio19_timesheets">f4afbb85dbaa530073ab787dbf9619ce</sys_package>
         <sys_policy/>
-        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="Timesheets">f4afbb85dbaa530073ab787dbf9619ce</sys_scope>
         <sys_update_name>sys_ui_macro_1b3fa7d54f3a17009b33cf401310c7ba</sys_update_name>
-        <sys_updated_by>rwb@townsville.qld.gov.au</sys_updated_by>
-        <sys_updated_on>2018-06-19 05:55:52</sys_updated_on>
+        <sys_updated_by>dvl@townsville.qld.gov.au</sys_updated_by>
+        <sys_updated_on>2018-06-24 23:24:02</sys_updated_on>
         <xml><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
 <j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
 	 
 	<script>
-		var drivewayApp = angular.module('drivewayApp', ['angularUtils.directives.dirPagination', 'ui.bootstrap']);	
-		drivewayApp.config(['$httpProvider', function($httpProvider) {
+		var TimesheetApp = angular.module('TimesheetApp', ['angularUtils.directives.dirPagination', 'ui.bootstrap']);	
+		TimesheetApp.config(['$httpProvider', function($httpProvider) {
 			//initialize get if not there
 			if (!$httpProvider.defaults.headers.get) {
 				$httpProvider.defaults.headers.get = {};    
@@ -46,7 +44,7 @@
 		
 	
 		
-		drivewayApp.controller('drivewayController', function($scope, $http) {
+		TimesheetApp.controller('TimesheetController', function($scope, $http) {
 		
 			$scope.formStatusError = false;
 			$scope.formSelfAssessmentOK = true;
@@ -61,6 +59,22 @@
 			$scope.drivewayFirst = '0';
 			$scope.blockCorner = '0';
 			$scope.drivewayCorner = '0';
+
+var ga = new GlideAjax('x_cio19_timesheets.TCC_Timesheets_Helper_Functions')
+ga.addParam('sysparm_name','getLoggedIn'); // we are calling getLoggedIn function
+ ga.getXMLWait();
+ $scope.supervisor=ga.getAnswer();
+		
+<!-- var team = new GlideAjax('x_cio19_timesheets.TCC_Timesheets_Helper_Functions');
+	team.addParam('sysparam_name','getTeam');
+	team.addParam('sysparm__payrollNum','');
+	team.getXMLWait();
+	$scope.team=team.getAnswer(); -->
+		
+		
+		
+		
+		
 
 		
 		
@@ -94,6 +108,8 @@
 				$scope.blockCornerErrorMsg = '';
 				$scope.drivewayCornerErrorMsg = '';
 
+		
+		
 				var errorCount = 0;
 				
 				// use normal jquery and javascript to get value of Calendar input field, because Angular scope is NOT

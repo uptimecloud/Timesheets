@@ -7,7 +7,7 @@
         <flush_cache>false</flush_cache>
         <name>Test Functions Querys</name>
         <run_once>true</run_once>
-        <script><![CDATA[var hr_person=new GlideRecord('u_hr_person');
+        <script><![CDATA[var hr_person=new GlideRecord('x_cio19_timesheets_u_hr_person');
 hr_person.addQuery('u_pay_number','502554');
 var gdt=new GlideDateTime();
 hr_person.addQuery('u_end','').addOrCondition('u_end','>',gdt.getDate());
@@ -57,17 +57,15 @@ hr_posass.query();
         <sys_class_name>sys_script_fix</sys_class_name>
         <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
         <sys_created_on>2018-06-18 23:43:20</sys_created_on>
-        <sys_customer_update>false</sys_customer_update>
         <sys_id>abb81ad94fb29b00aab4a3b11310c700</sys_id>
-        <sys_mod_count>56</sys_mod_count>
+        <sys_mod_count>62</sys_mod_count>
         <sys_name>Test Functions Querys</sys_name>
         <sys_package display_value="Timesheets" source="x_cio19_timesheets">f4afbb85dbaa530073ab787dbf9619ce</sys_package>
         <sys_policy/>
-        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="Timesheets">f4afbb85dbaa530073ab787dbf9619ce</sys_scope>
         <sys_update_name>sys_script_fix_abb81ad94fb29b00aab4a3b11310c700</sys_update_name>
-        <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-        <sys_updated_on>2018-06-19 05:24:29</sys_updated_on>
+        <sys_updated_by>dvl@townsville.qld.gov.au</sys_updated_by>
+        <sys_updated_on>2018-06-21 06:21:44</sys_updated_on>
         <unloadable>false</unloadable>
     </sys_script_fix>
 </record_update>

@@ -38,19 +38,17 @@
         <sys_class_name>sys_soap_message_function</sys_class_name>
         <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
         <sys_created_on>2018-06-18 22:41:17</sys_created_on>
-        <sys_customer_update>false</sys_customer_update>
         <sys_id>9deb0a514fb29b00aab4a3b11310c713</sys_id>
         <sys_mod_count>2</sys_mod_count>
         <sys_name>W1_ServicesSoap.Asset_DoGetList</sys_name>
         <sys_package display_value="Timesheets" source="x_cio19_timesheets">f4afbb85dbaa530073ab787dbf9619ce</sys_package>
         <sys_policy/>
-        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="Timesheets">f4afbb85dbaa530073ab787dbf9619ce</sys_scope>
         <sys_update_name>sys_soap_message_function_9deb0a514fb29b00aab4a3b11310c713</sys_update_name>
         <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
         <sys_updated_on>2018-06-18 23:19:21</sys_updated_on>
         <use_basic_auth>false</use_basic_auth>
-        <use_mid_server display_value="ORC_DEV">8412a8f54f2932405596c61f0310c71b</use_mid_server>
+        <use_mid_server display_value="">8412a8f54f2932405596c61f0310c71b</use_mid_server>
         <use_ws_security>false</use_ws_security>
         <ws_security_type/>
         <ws_security_username_profile/>

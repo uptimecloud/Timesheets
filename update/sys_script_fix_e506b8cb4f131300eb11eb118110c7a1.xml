@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_script_fix">
+    <sys_script_fix action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <before>false</before>
+        <description/>
+        <flush_cache>false</flush_cache>
+        <name>play</name>
+        <run_once>true</run_once>
+        <script><![CDATA[var person = new GlideRecord('x_cio19_timesheets_u_hr_person');
+	person.query();
+	while(person.next()){
+	var json1=global.JSON().encode(person);
+//return json1;
+	}
+	gs.info('PERSON SOAP: '+json1);]]></script>
+        <sys_class_name>sys_script_fix</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2018-07-18 23:30:56</sys_created_on>
+        <sys_id>e506b8cb4f131300eb11eb118110c7a1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>play</sys_name>
+        <sys_package display_value="Timesheets" source="x_cio19_timesheets">f4afbb85dbaa530073ab787dbf9619ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Timesheets">f4afbb85dbaa530073ab787dbf9619ce</sys_scope>
+        <sys_update_name>sys_script_fix_e506b8cb4f131300eb11eb118110c7a1</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2018-07-18 23:30:56</sys_updated_on>
+        <unloadable>false</unloadable>
+    </sys_script_fix>
+</record_update>

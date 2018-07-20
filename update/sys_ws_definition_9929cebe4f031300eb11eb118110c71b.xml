@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_ws_definition">
+    <sys_ws_definition action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <base_uri>/api/x_cio19_timesheets/timesheets</base_uri>
+        <consumes>application/json,application/xml,text/xml</consumes>
+        <consumes_customized>false</consumes_customized>
+        <default_version>No active default version</default_version>
+        <doc_link/>
+        <enforce_acl/>
+        <is_versioned>false</is_versioned>
+        <name>Timesheets</name>
+        <namespace>x_cio19_timesheets</namespace>
+        <produces>application/json,application/xml,text/xml</produces>
+        <produces_customized>false</produces_customized>
+        <service_id>timesheets</service_id>
+        <short_description/>
+        <sys_class_name>sys_ws_definition</sys_class_name>
+        <sys_created_by>dvl@townsville.qld.gov.au</sys_created_by>
+        <sys_created_on>2018-07-06 00:36:12</sys_created_on>
+        <sys_id>9929cebe4f031300eb11eb118110c71b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Timesheets</sys_name>
+        <sys_package display_value="Timesheets" source="x_cio19_timesheets">f4afbb85dbaa530073ab787dbf9619ce</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Timesheets">f4afbb85dbaa530073ab787dbf9619ce</sys_scope>
+        <sys_update_name>sys_ws_definition_9929cebe4f031300eb11eb118110c71b</sys_update_name>
+        <sys_updated_by>dvl@townsville.qld.gov.au</sys_updated_by>
+        <sys_updated_on>2018-07-06 00:36:12</sys_updated_on>
+    </sys_ws_definition>
+</record_update>

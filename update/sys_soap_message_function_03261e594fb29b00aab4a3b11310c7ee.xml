@@ -42,13 +42,11 @@
         <sys_class_name>sys_soap_message_function</sys_class_name>
         <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
         <sys_created_on>2018-06-18 23:26:12</sys_created_on>
-        <sys_customer_update>false</sys_customer_update>
         <sys_id>03261e594fb29b00aab4a3b11310c7ee</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>HR_ServicesSoap.Employee_DoUpdateAddress</sys_name>
         <sys_package display_value="Timesheets" source="x_cio19_timesheets">f4afbb85dbaa530073ab787dbf9619ce</sys_package>
         <sys_policy/>
-        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="Timesheets">f4afbb85dbaa530073ab787dbf9619ce</sys_scope>
         <sys_update_name>sys_soap_message_function_03261e594fb29b00aab4a3b11310c7ee</sys_update_name>
         <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element extends="sys_import_set_row" label="Timesheets U HR Position Assignment" max_length="40" name="x_cio19_timesheets_u_hr_position_assignment" type="collection">
+        <element attributes="import_attribute_name=Employment status,edge_encryption_enabled=true" label="Employment status" max_length="40" name="u_employment_status" type="string"/>
+        <element attributes="import_attribute_name=End" label="End" max_length="40" name="u_end" type="glide_date"/>
+        <element attributes="import_attribute_name=Kronos User,edge_encryption_enabled=true" label="Kronos User" max_length="40" name="u_kronos_user" type="string"/>
+        <element attributes="import_attribute_name=Nominal Position,edge_encryption_enabled=true" label="Nominal Position" max_length="40" name="u_nominal_position" type="string"/>
+        <element attributes="import_attribute_name=Occupancy,edge_encryption_enabled=true" label="Occupancy" max_length="40" name="u_occupancy" type="string"/>
+        <element attributes="import_attribute_name=Person,edge_encryption_enabled=true" label="Person" max_length="40" name="u_person" type="string"/>
+        <element attributes="import_attribute_name=Position,edge_encryption_enabled=true" label="Position" max_length="40" name="u_position" type="string"/>
+        <element attributes="import_attribute_name=Start" label="Start" max_length="40" name="u_start" type="glide_date"/>
+    </element>
+</database>

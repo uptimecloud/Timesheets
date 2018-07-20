@@ -10,13 +10,11 @@
         <sys_class_name>sys_ui_macro</sys_class_name>
         <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
         <sys_created_on>2018-06-06 04:56:55</sys_created_on>
-        <sys_customer_update>false</sys_customer_update>
         <sys_id>19e4e4d9dbea530073ab787dbf9619c1</sys_id>
         <sys_mod_count>4</sys_mod_count>
         <sys_name>TCC_Timesheets_home_template</sys_name>
         <sys_package display_value="Timesheets" source="x_cio19_timesheets">f4afbb85dbaa530073ab787dbf9619ce</sys_package>
         <sys_policy/>
-        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="Timesheets">f4afbb85dbaa530073ab787dbf9619ce</sys_scope>
         <sys_update_name>sys_ui_macro_19e4e4d9dbea530073ab787dbf9619c1</sys_update_name>
         <sys_updated_by>rwb@townsville.qld.gov.au</sys_updated_by>

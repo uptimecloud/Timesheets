@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_scope_privilege">
+    <sys_scope_privilege action="INSERT_OR_UPDATE">
+        <operation>read</operation>
+        <source_scope display_value="Timesheets">f4afbb85dbaa530073ab787dbf9619ce</source_scope>
+        <status>allowed</status>
+        <sys_class_name>sys_scope_privilege</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2018-06-21 01:00:15</sys_created_on>
+        <sys_id>20ee344a4fba1300eb11eb118110c798</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>u_hr_position_assignment</sys_name>
+        <sys_package display_value="Timesheets" source="x_cio19_timesheets">f4afbb85dbaa530073ab787dbf9619ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Timesheets">f4afbb85dbaa530073ab787dbf9619ce</sys_scope>
+        <sys_update_name>sys_scope_privilege_20ee344a4fba1300eb11eb118110c798</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2018-06-21 01:00:15</sys_updated_on>
+        <target_name>u_hr_position_assignment</target_name>
+        <target_scope display_value="WorkOrders">8b517b214f321300eb11eb118110c7d5</target_scope>
+        <target_type>sys_db_object</target_type>
+    </sys_scope_privilege>
+</record_update>

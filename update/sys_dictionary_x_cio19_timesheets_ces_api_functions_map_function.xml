@@ -31,6 +31,8 @@
         <element>function</element>
         <element_reference>false</element_reference>
         <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
         <internal_type display_value="String">string</internal_type>
         <mandatory>false</mandatory>
         <max_length>100</max_length>
@@ -52,17 +54,15 @@
         <sys_class_name>sys_dictionary</sys_class_name>
         <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
         <sys_created_on>2018-06-18 05:14:13</sys_created_on>
-        <sys_customer_update>false</sys_customer_update>
-        <sys_id>1f2c920d4ff65b00aab4a3b11310c7a8</sys_id>
+        <sys_id>b8eefb654f721300eb11eb118110c71c</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>function</sys_name>
         <sys_package display_value="Timesheets" source="x_cio19_timesheets">f4afbb85dbaa530073ab787dbf9619ce</sys_package>
         <sys_policy/>
-        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="Timesheets">f4afbb85dbaa530073ab787dbf9619ce</sys_scope>
         <sys_update_name>sys_dictionary_x_cio19_timesheets_ces_api_functions_map_function</sys_update_name>
-        <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-        <sys_updated_on>2018-06-18 05:14:13</sys_updated_on>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2018-06-20 01:42:12</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
